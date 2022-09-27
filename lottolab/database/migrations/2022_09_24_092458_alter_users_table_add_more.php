@@ -31,6 +31,7 @@ class AlterUsersTableAddMore extends Migration
             $table->tinyInteger('device_type')->default(1)->after('country_code');
             $table->tinyInteger('push_notification_status')->default(1)->after('country_code');
             $table->tinyInteger('email_notification_status')->default(1)->after('country_code'); 
+            $table->timestamp('email_verified_at')->nullable()->after('country_code');
   
         });
     }

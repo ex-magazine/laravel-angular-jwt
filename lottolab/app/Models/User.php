@@ -7,8 +7,11 @@ use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Tymon\JWTAuth\Contracts\JWTSubject;
 
-class User extends Authenticatable
+
+class User extends Authenticatable implements JWTSubject
 {
     use Notifiable, HasApiTokens;
 
@@ -49,13 +52,18 @@ class User extends Authenticatable
         'address' => 'object',
         'ver_code_send_at' => 'datetime'
     ];
-
+    
     protected $data = [
         'data'=>1
     ];
 
+    public function getJWTIdentifier() {
+        return $this->getKey();
+    }
 
-
+    public function getJWTCustomClaims() {
+        return [];
+    }  
 
     public function login_logs()
     {
