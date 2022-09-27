@@ -1,7 +1,19 @@
 npx -p @angular/cli ng new angular-demo
+npx -p @angular/cli ng new angular-demo-scss  --style=scss 
+
 
 npx create-nx-workspace@latest nx-demo
 
 npx ng generate component my-component
 
 npm install ts-lint --save-dev
+
+npm install -D tailwindcss postcss autoprefixer
+npx tailwindcss init -p 
+
+"./node_modules/bootstrap/dist/js/bootstrap.js",
+"./node_modules/jquery/dist/jquery.js"
+
+npx ng g s service/shared/jwt
+npx ng g s service/shared/tokenAuth
+npx ng g s service/shared/authentication-state
