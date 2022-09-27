@@ -3,6 +3,11 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
+use App\Http\Controllers\JwtAuthController;
+use App\Http\Controllers\ResetPwdReqController;
+use App\Http\Controllers\UpdatePwdController;
+
+
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -20,12 +25,9 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 */
 
-header('Access-Control-Allow-Origin:  *');
-header('Access-Control-Allow-Headers:  Content-Type, X-Auth-Token, Origin, Authorization,Access-Control-Allow-Origin, X-Requested-With');
+// header('Access-Control-Allow-Origin:  *');
+// header('Access-Control-Allow-Headers:  Content-Type, X-Auth-Token, Origin, Authorization,Access-Control-Allow-Origin, X-Requested-With');
 
-Route::middleware('auth:api')->get('/user', function (Request $request) {
-    return $request->user();
-});
 
 /*
 Route::group(['namespace' => 'Api'], function() {
@@ -44,6 +46,27 @@ Route::group(['namespace' => 'Api'], function() {
     Route::post('save-blog-comment', 'HomeController@saveBlogComment');
 });
 */
+
+
+
+Route::group([
+    'middleware' => 'api',
+    'prefix' => 'auth'
+], function ($router) {
+    Route::post('/signup', [JwtAuthController::class, 'register']);
+    Route::post('/signin', [JwtAuthController::class, 'login']);
+    Route::get('/user', [JwtAuthController::class, 'user']);
+    Route::post('/token-refresh', [JwtAuthController::class, 'refresh']);
+    Route::post('/signout', [JwtAuthController::class, 'signout']);
+    Route::post('/req-password-reset', [ResetPwdReqController::class, 'reqForgotPassword']);
+    Route::post('/update-password', [UpdatePwdController::class, 'updatePassword']);
+});
+
+/*
+Route::middleware('auth:api')->get('/user', function (Request $request) {
+    return $request->user();
+});
+
 Route::namespace('Api')->name('api.')->group(function(){
 
     //Ammelias
@@ -118,3 +141,4 @@ Route::namespace('Api')->name('api.')->group(function(){
 	});
 });
 
+*/
