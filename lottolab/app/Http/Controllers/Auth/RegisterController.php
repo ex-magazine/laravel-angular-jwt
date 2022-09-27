@@ -132,7 +132,7 @@ class RegisterController extends Controller
         } else {
             $referUser = null;
         }
-        //User Create
+        //User Create 
         $user = new User();
         $user->firstname = isset($data['firstname']) ? $data['firstname'] : null;
         $user->lastname = isset($data['lastname']) ? $data['lastname'] : null;
