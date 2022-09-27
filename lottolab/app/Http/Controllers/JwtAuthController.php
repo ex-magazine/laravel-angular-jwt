@@ -24,7 +24,6 @@ class JwtAuthController extends Controller
             'email' => 'required|email',
             'password' => 'required|string|min:5',
         ]);
-        
 
         if ($req->fails()) {
             return response()->json($req->errors(), 422);
