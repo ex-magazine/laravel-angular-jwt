@@ -3,3 +3,5 @@ npx -p @angular/cli ng new angular-demo
 npx create-nx-workspace@latest nx-demo
 
 npx ng generate component my-component
+
+npm install ts-lint --save-dev
