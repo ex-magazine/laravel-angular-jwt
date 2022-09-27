@@ -33,7 +33,7 @@ php artisan make:migration ammelias_create_user_blogs_table --create=ammelias_us
 php artisan make:migration ammelias_create_user_verification_codes_table --create=ammelias_user_verification_codes
 
 
-php artisan make:migration alter_ammelias_blogs_table_add_slug --table=ammelias_blogs
+php artisan make:migration alter_users_table_add_email_verified_at --table=user
 
 
 php artisan make:controller Ammelias/Admin/AdminController
@@ -89,9 +89,9 @@ php artisan make:model Ammelias/UserVerificationCode
 
 
 
+php artisan migrate:refresh --path=/database/migrations/2022_09_24_092458_alter_users_table_add_more.php
 
-
-
+php artisan migrate --path=/database/migrations/2022_09_27_084138_alter_users_table_add_email_verified_at.php
 //Smart env
 smartend_
 php artisan make:migration smartend_create_webmaster_languages_table --create=smartend_languages

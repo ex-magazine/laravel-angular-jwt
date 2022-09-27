@@ -15,9 +15,10 @@ return [
 
     'defaults' => [
         'guard' => 'web',
+        //'guard' => 'api',
         'passwords' => 'users',
     ],
-
+  
     /*
     |--------------------------------------------------------------------------
     | Authentication Guards
@@ -41,10 +42,16 @@ return [
             'provider' => 'users',
         ],
 
+        // 'api' => [
+        //     'driver' => 'session',
+        //     'provider' => 'users',
+        //     'hash' => true,
+        // ],
+
         'api' => [
-            'driver' => 'session',
+            'driver' => 'jwt',
             'provider' => 'users',
-            'hash' => true,
+            'hash' => false,
         ],
         
         'admin' => [
@@ -52,7 +59,7 @@ return [
             'provider' => 'admins',
         ],
     ],
-
+   
     /*
     |--------------------------------------------------------------------------
     | User Providers
