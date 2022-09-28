@@ -271,3 +271,55 @@ table td .people img{
 .category-table td ul li.qz-close span:before{
     color: #F05050;
 }
+.datepicker.dropdown-menu{
+    visibility: visible !important;
+    opacity: 1 !important;
+    min-width: 270px !important;
+    z-index: 99999999999999 !important;
+}
+/* Start add category 
+
+.add-category{
+    padding: 50px 0;
+}
+
+.add-category form .form-control{
+    border: none;
+    background: #F0F1F6;
+    box-shadow: none;
+    border-radius: 6px;
+}
+.add-category form select,
+.add-category form input{
+    height: 65px !important;
+}
+.add-category form select{
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    cursor: pointer;
+}
+.add-category form label{
+    font-weight: 700;
+    font-size: 16px;
+    text-transform: capitalize;
+    color: #858585;
+}
+
+.add-category-btn {
+    border-radius: 50px;
+    height: 50px;
+    padding: 0;
+    line-height: 50px;
+    font-size: 20px;
+    font-weight: 700;
+    outline: none;
+    background: linear-gradient(90deg, #0EC64E, #28DA66);
+    border: none;
+}
+.add-category-btn:hover,
+.add-category-btn:focus,
+.add-category-btn:active{
+    box-shadow: none !important;
+}
+*/

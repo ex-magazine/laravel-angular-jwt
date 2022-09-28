@@ -49,8 +49,8 @@ class PortfolioController extends Controller
                 })
                 ->addColumn('actions', function ($item) {
                     $html = '<ul class="d-flex activity-menu">';
-                    $html .= edit_html('admn.ammelias.portfolioEdit', $item->id);
-                    $html .= delete_html('admn.ammelias.portfolioDelete', $item->id);
+                    $html .= edit_html('admin.ammelias.portfolioEdit', $item->id);
+                    $html .= delete_html('admin.ammelias.portfolioDelete', $item->id);
                     $html .= '</ul>';
                     return $html;
                 })
@@ -94,8 +94,8 @@ class PortfolioController extends Controller
                 })
                 ->addColumn('actions', function ($item) {
                     $html = '<ul class="d-flex activity-menu">';
-                    $html .= edit_html('admn.ammelias.portfolioCategoryEdit', $item->id);
-                    $html .= delete_html('admn.ammelias.portfolioCategoryDelete', $item->id);
+                    $html .= edit_html('admin.ammelias.portfolioCategoryEdit', $item->id);
+                    $html .= delete_html('admin.ammelias.portfolioCategoryDelete', $item->id);
                     $html .= '</ul>';
                     return $html;
                 })
@@ -254,7 +254,7 @@ class PortfolioController extends Controller
             $response = app(PortfolioRepository::class)->portfolioSaveProcess($request);
            
             if ($response['success'] == true) {
-                return redirect()->route('admn.ammelias.portfolioList')->with('success', $response['message']);
+                return redirect()->route('admin.ammelias.portfolioList')->with('success', $response['message']);
             }
 
             return redirect()->back()->withInput()->with('dismiss', $response['message']);
@@ -280,7 +280,7 @@ class PortfolioController extends Controller
             }
             $response = app(PortfolioRepository::class)->deletePortfolio($id);
             if ($response['success'] == true) {
-                return redirect()->route('admn.ammelias.portfolioList')->with('success', $response['message']);
+                return redirect()->route('admin.ammelias.portfolioList')->with('success', $response['message']);
             }
 
             return redirect()->back()->withInput()->with('dismiss', $response['message']);

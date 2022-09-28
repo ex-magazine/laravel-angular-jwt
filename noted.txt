@@ -22,5 +22,7 @@ php artisan jwt:secret
 php artisan cache:clear
 php artisan config:clear
 
+ or php artisan optimize:clear
+
 php artisan make:middleware JwtMiddleware
 php artisan make:middleware CORS
