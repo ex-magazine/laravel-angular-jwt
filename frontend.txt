@@ -1,8 +1,10 @@
 npx -p @angular/cli ng new angular-demo
 npx -p @angular/cli ng new angular-demo-scss  --style=scss 
 
-npx create-react-app react-demo --style=css
-
+npx create-react-app react-redux-thunk-v18 --style=css
+npx create-react-app react-redux-saga-v18 --style=css
+npx create-react-app react-redux-context-v18 --style=css
+npm init vue
 
 
 
@@ -21,3 +23,6 @@ npx tailwindcss init -p
 npx ng g s service/shared/jwt
 npx ng g s service/shared/tokenAuth
 npx ng g s service/shared/authentication-state
+
+Vuejs learn
+https://www.youtube.com/watch?v=ZzHKKNvKCqw&list=PLh5At4osX60JRFzZ3ergdQVU2B4ekCkpv&index=3
