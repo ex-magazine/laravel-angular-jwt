@@ -18,21 +18,29 @@ use Log;
 class JwtAuthController extends Controller
 {
 
-    // public function __construct() {
-    //     $this->middleware('jwt.verify', ['except' => ['login', 'register']]);
-    // }
+    public function __construct() {
+        $this->middleware('auth:api', ['except' => ['login', 'register']]);
+    }
 
     public function authenticate(Request $request)
     {
-      $credentials = $request->only('email', 'password');
-      try {
-          if (! $token = JWTAuth::attempt($credentials)) {
-              return response()->json(['error' => 'invalid_credentials'], 400);
-          }
-      } catch (JWTException $e) {
-          return response()->json(['error' => 'could_not_create_token'], 500);
-      }
-      return response()->json(compact('token'));
+        // Log::emergency($message);
+        // Log::alert($message);
+        // Log::critical($message);
+        // Log::error($message);
+        // Log::warning($message);
+        // Log::notice($message);
+        // Log::info($message);
+        // Log::debug($message);
+        $credentials = $request->only('email', 'password');
+        try {
+            if (! $token = JWTAuth::attempt($credentials)) {
+                return response()->json(['error' => 'invalid_credentials'], 400);
+            }
+        } catch (JWTException $e) {
+            return response()->json(['error' => 'could_not_create_token'], 500);
+        }
+        return response()->json(compact('token'));
     }
 
     public function getAuthenticatedUser()
@@ -81,6 +89,8 @@ class JwtAuthController extends Controller
      * Get a JWT via given credentials.
     */
     public function login(Request $request){
+        Log::debug($request);
+        
     	$req = Validator::make($request->all(), [
             'email' => 'required|email',
             'password' => 'required|string|min:5',

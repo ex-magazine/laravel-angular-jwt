@@ -35,7 +35,7 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 // });
 
 Route::group([
-    'middleware' => 'jwt.verify',
+    'middleware' => 'api',
     'prefix' => 'auth'
 ], function ($router) {
     Route::post('/app-register', 'JwtAuthController@register');
@@ -44,13 +44,19 @@ Route::group([
 
     Route::post('/signup', [JwtAuthController::class, 'register']);
     Route::post('/signin', [JwtAuthController::class, 'login']);
-    Route::get('/user', [JwtAuthController::class, 'user']);
+    Route::get('/user-profile', [JwtAuthController::class, 'user']);
     Route::post('/token-refresh', [JwtAuthController::class, 'refresh']);
     Route::post('/signout', [JwtAuthController::class, 'signout']);
     Route::post('/req-password-reset', [ResetPwdReqController::class, 'reqForgotPassword']);
     Route::post('/update-password', [UpdatePwdController::class, 'updatePassword']);
 }); 
-
+Route::group([
+    "middleware" => "auth.jwt",
+    'prefix' => 'auth'
+], function ($router) {
+    Route::get("app-logout", "AuthController@logout");
+    //Route::resource("app-tasks", "TaskController");
+});
 
 
 Route::middleware('auth:api')->get('/user', function (Request $request) {
