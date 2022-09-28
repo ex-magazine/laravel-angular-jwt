@@ -96,7 +96,7 @@ class ContactUs extends Component {
         if (!error) return null;
 
         const errors = {};
-        for (const item of error.details) errors[item.path[0]] = item.message;
+      //  for (const item of error.details) errors[item.path[0]] = item.message;
         return errors;
     };
 

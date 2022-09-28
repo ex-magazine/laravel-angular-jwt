@@ -2,7 +2,7 @@ import React from 'react';
 import {Link} from "react-router-dom";
 import Grid from "@material-ui/core/Grid";
 
-import workInquiry from '../../images/work-inquiry.png';
+//import workInquiry from '../../images/work-inquiry.png';
 
 import './style.scss';
 
