@@ -5,7 +5,7 @@ import BreadCrumb from "../../components/BreadCrumb";
 import HireUs from "../../components/HireUs";
 
 import Grid from "@material-ui/core/Grid";
-import thumb1 from "../../images/team/team1.jpg";
+//import thumb1 from "../../images/team/team1.jpg";
 import {loadTeamAction} from "../../store/actions/action";
 
 import './style.scss';

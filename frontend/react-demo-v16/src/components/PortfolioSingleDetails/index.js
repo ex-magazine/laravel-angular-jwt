@@ -2,10 +2,10 @@ import React from 'react';
 import Grid from "@material-ui/core/Grid";
 
 // images
-import picture from '../../images/portfolio/prtdetails/picture.jpg';
-import picture1 from '../../images/portfolio/prtdetails/picture1.jpg';
-import picture2 from '../../images/portfolio/prtdetails/picture2.jpg';
-import picture3 from '../../images/portfolio/prtdetails/picture3.jpg'
+// import picture from '../../images/portfolio/prtdetails/picture.jpg';
+// import picture1 from '../../images/portfolio/prtdetails/picture1.jpg';
+// import picture2 from '../../images/portfolio/prtdetails/picture2.jpg';
+// import picture3 from '../../images/portfolio/prtdetails/picture3.jpg'
 
 import './style.scss';
 

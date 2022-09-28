@@ -32,7 +32,7 @@
                                 <b> :</b>
                             </div>
                             <div class="col-md-9">
-                                {!! clean($item->blog->title) !!}
+                                {!! __($item->blog->title) !!}
                             </div>
                         </div>
                         <div class="row">
@@ -43,7 +43,7 @@
                                 <b> :</b>
                             </div>
                             <div class="col-md-9">
-                                {!! clean($item->comment) !!}
+                                {!! __($item->comment) !!}
                             </div>
                         </div>
                         <div class="row">
@@ -54,7 +54,7 @@
                                 <b> :</b>
                             </div>
                             <div class="col-md-9">
-                                {!! clean($item->name) !!}
+                                {!! __($item->name) !!}
                             </div>
                         </div>
                         <div class="row">
@@ -65,7 +65,7 @@
                                 <b> :</b>
                             </div>
                             <div class="col-md-9">
-                                {!! clean($item->email) !!}
+                                {!! __($item->email) !!}
                             </div>
                         </div>
                         <div class="row">
@@ -76,7 +76,7 @@
                                 <b> :</b>
                             </div>
                             <div class="col-md-9">
-                                {!! clean(comment_status($item->status)) !!}
+                                {!! __(comment_status($item->status)) !!}
                             </div>
                         </div>
                         <div class="row">
@@ -87,13 +87,13 @@
                                 <b> :</b>
                             </div>
                             <div class="col-md-9">
-                                {!! clean(date('d M y', strtotime($item->created_at))) !!}
+                                {!! __(date('d M y', strtotime($item->created_at))) !!}
                             </div>
                         </div>
                         @if($item->status == COMMENT_PENDING)
                             <div class="row mt-5">
                                 <div class="col-md-1">
-                                    <a href="{{route('commentApprove')}}?active_id={{$item->id}}">
+                                    <a href="{{route('admin.ammelias.commentApprove')}}?active_id={{$item->id}}">
                                         <button class="btn btn-success">{{__('Approve')}}</button>
                                     </a>
                                 </div>
@@ -101,7 +101,7 @@
                          @else
                             <div class="row mt-5">
                                 <div class="col-md-1">
-                                    <a href="{{route('commentApprove')}}?active_id={{$item->id}}">
+                                    <a href="{{route('admin.ammelias.commentApprove')}}?active_id={{$item->id}}">
                                         <button class="btn btn-danger">{{__('Reject')}}</button>
                                     </a>
                                 </div>

@@ -277,6 +277,10 @@ table td .people img{
     min-width: 270px !important;
     z-index: 99999999999999 !important;
 }
+.btn-danger,
+.btn-success{
+    min-width: 200px;
+}
 /* Start add category 
 
 .add-category{
