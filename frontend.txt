@@ -1,6 +1,10 @@
 npx -p @angular/cli ng new angular-demo
 npx -p @angular/cli ng new angular-demo-scss  --style=scss 
 
+npx create-react-app react-demo --style=css
+
+
+
 
 npx create-nx-workspace@latest nx-demo
 

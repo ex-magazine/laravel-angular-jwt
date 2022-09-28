@@ -42,17 +42,17 @@ return [
             'provider' => 'users',
         ],
 
-        // 'api' => [
-        //     'driver' => 'session',
-        //     'provider' => 'users',
-        //     'hash' => true,
-        // ],
-
         'api' => [
-            'driver' => 'jwt',
+            'driver' => 'session',
             'provider' => 'users',
-            'hash' => false,
+            'hash' => true,
         ],
+
+        // 'api' => [
+        //     'driver' => 'jwt',
+        //     'provider' => 'users',
+        //     'hash' => false,
+        // ],
         
         'admin' => [
             'driver' => 'session',
