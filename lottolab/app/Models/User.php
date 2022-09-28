@@ -11,6 +11,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Tymon\JWTAuth\Contracts\JWTSubject;
 
 
+
 class User extends Authenticatable implements JWTSubject
 {
     use Notifiable, HasApiTokens;
@@ -57,7 +58,7 @@ class User extends Authenticatable implements JWTSubject
         'data'=>1
     ];
 
-    public function getJWTIdentifier() {
+    public function getJWTIdentifier() {        
         return $this->getKey();
     }
 
