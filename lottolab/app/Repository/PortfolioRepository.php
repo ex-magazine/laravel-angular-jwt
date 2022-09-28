@@ -8,6 +8,7 @@ use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
+use Log;
 
 class PortfolioRepository
 {
@@ -176,7 +177,7 @@ class PortfolioRepository
                     $response = [
                         'success' => true,
                         'message' => __('New portfolio created successfully.')
-                    ];
+                    ]; 
                 } else {
                     $response = [
                         'success' => false,

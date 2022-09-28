@@ -62,8 +62,9 @@
                                 <div class="col-md-6">
                                     <div class="form-group {{ $errors->has('date') ? ' has-error' : '' }}">
                                         <label>{{__('Date')}}<span class="text-danger">*</span></label>
-                                        <input type="text" name="date" @if(isset($item)) value="{{$item->date}}" @else value="{{old('date')}}"
-                                               @endif class="form-control datepicker" placeholder="{{__('YYYY-MM-DD')}}">
+                                        
+                                        <input id='datetimepicker' type="text" name="date" @if(isset($item)) value="{{$item->date}}" @else value="{{old('date')}}"
+                                               @endif class="form-control date datepicker" placeholder="{{__('YYYY-MM-DD')}}">
                                         <span class="text-danger"><strong>{{ $errors->first('date') }}</strong></span>
                                     </div>
                                 </div>
@@ -148,6 +149,13 @@
 
 @section('script')
     <script>
+        //  $('#datetimepicker').datepicker({  
+        //     autoclose: true,
+        //     format: "yyyy-mm-dd",
+        //     todayHighlight: true
+        // });  
+     
+    
         function readURL(input,name) {
             var n=1;
             if (input.files && input.files[0]) {

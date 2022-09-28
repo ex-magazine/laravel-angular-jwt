@@ -30,6 +30,8 @@
     <link rel="stylesheet" href="{{asset('assets/admin/css/vendor/jquery-jvectormap-2.0.5.css')}}">
     <!-- datepicker css -->
     <!-- <link rel="stylesheet" href="{{asset('assets/admin/css/vendor/datepicker.min.css')}}"> -->
+    <!---date picker-->
+    <link rel="stylesheet" href="{{asset('assets/admin/ammelias/DatePicker/datepicker.css')}}" />
     <!-- timepicky for time picker css -->
     <link rel="stylesheet" href="{{asset('assets/admin/css/vendor/jquery-timepicky.css')}}">
     <!-- bootstrap-clockpicker css -->
@@ -42,6 +44,7 @@
 
     <!-- Start ammelias -->
     <!-- Owl Carousel -->
+    <link rel="stylesheet" href="{{asset('assets/admin/ammelias/css/font-awesome.min.css')}}">
     <link rel="stylesheet" href="{{asset('assets/admin/ammelias/css/owl.carousel.min.css')}}">
     <link rel="stylesheet" href="{{asset('assets/admin/ammelias/css/owl.theme.default.min.css')}}">
     <!-- Slicknav -->
@@ -54,9 +57,8 @@
     <!-- Start data table -->
     <link rel="stylesheet" href="{{asset('assets/admin/ammelias/DataTables/css/jquery.dataTables.min.css')}}">
     <link rel="stylesheet" href="{{asset('assets/admin/ammelias/DataTables/css/responsive.dataTables.min.css')}}">
-    <!---date picker-->
-    <link href="{{asset('assets/admin/ammelias/DatePicker/datepicker.css')}}" rel="stylesheet" type="text/css" />
-    {{-- editor--}}
+       
+    <!-- editor -->
     <link href="{{asset('assets/admin/ammelias/Summernote/summernote-bs4.css')}}" rel="stylesheet">
     <!-- font family -->
     <link rel="stylesheet" href="{{asset('assets/admin/ammelias/css/proxima-nova.css')}}">
@@ -68,7 +70,7 @@
     <link href="{{asset('assets/admin/ammelias/alertify/css/alertify.min.css')}}" rel="stylesheet">  
     <!-- Site Style -->
     <link rel="stylesheet" href="{{asset('assets/admin/ammelias/style.css')}}">
-    <!-- <link rel="stylesheet" href="{{asset('assets/admin/ammelias/css/responsive.css')}}"> -->
+    <link rel="stylesheet" href="{{asset('assets/admin/ammelias/css/responsive.css')}}">
     <!-- End ammelias -->
 
 
@@ -120,6 +122,7 @@
 
 <!-- Start ammelias -->
 <!-- <script src="{{asset('assets/admin/ammelias/js/jquery.min.js')}}"></script> -->
+
 <script src="{{asset('assets/admin/ammelias/js/popper.min.js')}}" ></script>
 <!-- Owl Carousel -->
 <script src="{{asset('assets/admin/ammelias/js/owl.carousel.min.js')}}"></script>
@@ -139,6 +142,7 @@
 <script src="{{asset('assets/admin/ammelias/Summernote/summernote-bs4.js')}}"></script>
 <!---date picker-->
 <script src="{{asset('assets/admin/ammelias/DatePicker/bootstrap-datepicker.js')}}"></script>
+
 
 <!--drag and drop js-->
 <script src="{{asset('assets/admin/ammelias/dropify/js/dropify.min.js')}}"></script>

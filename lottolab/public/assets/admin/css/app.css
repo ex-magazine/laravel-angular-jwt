@@ -5388,7 +5388,7 @@ th.w-85 {
     margin-top: -3px;
 }
 
-.dropdown-menu {
+.navbar-wrapper .dropdown-menu {
     pointer-events: none;
     -webkit-transform-origin: 50% 0;
     -ms-transform-origin: 50% 0;
