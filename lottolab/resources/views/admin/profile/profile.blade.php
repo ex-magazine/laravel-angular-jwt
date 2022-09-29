@@ -30,8 +30,8 @@
                                     <img @if(isset($user->photo)) src="{{ asset(path_user_image().$user->photo)}}" @else src="{{asset('assets/images/avater.jpg')}}" @endif alt="" class="img-fluid">
                                 </div>
                                 <div class="qz-user-info">
-                                    <h4>{!! clean($user->name) !!}</h4>
-                                    <p>{!! clean($user->email) !!}</p>
+                                    <h4>{!! __($user->name) !!}</h4>
+                                    <p>{!! __($user->email) !!}</p>
                                 </div>
                             </div>
                         </div>

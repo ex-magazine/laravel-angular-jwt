@@ -34,8 +34,8 @@
                                     <img @if(isset($user->photo)) src="{{ asset(path_user_image().$user->photo)}}" @else src="{{asset('assets/images/avater.jpg')}}" @endif alt="" class="img-fluid">
                                 </div>
                                 <div class="qz-user-info">
-                                    <h4> $user->name }}</h4>
-                                    <p>{!! clean($user->email) !!}</p>
+                                    <h4> {{ $user->name }}</h4>
+                                    <p>{!! __($user->email) !!}</p>
                                 </div>
                             </div>
                         </div>
@@ -45,14 +45,14 @@
                                     <div class="row ">
                                         <div class="col-4">{{__('Name')}}</div>
                                         <div class="col-1">:</div>
-                                        <div class="col-md-7 col">{!! clean($user->name) !!}</div>
+                                        <div class="col-md-7 col">{!! $user->name !!}</div>
                                     </div>
                                 </li>
                                 <li>
                                     <div class="row">
                                         <div class="col-4">{{__('Phone')}}</div>
                                         <div class="col-1">:</div>
-                                        <div class="col-md-7 col">{!! clean($user->phone) !!}</div>
+                                        <div class="col-md-7 col">{!! ($user->phone) !!}</div>
                                     </div>
                                 </li>
                                 <li>
@@ -66,28 +66,28 @@
                                     <div class="row">
                                         <div class="col-4">{{__('City')}}</div>
                                         <div class="col-1">:</div>
-                                        <div class="col-md-7 col">{!! clean($user->city) !!}</div>
+                                        <div class="col-md-7 col">{!! ($user->city) !!}</div>
                                     </div>
                                 </li>
                                 <li>
                                     <div class="row">
                                         <div class="col-4">{{__('State')}}</div>
                                         <div class="col-1">:</div>
-                                        <div class="col-md-7 col">{!! clean($user->state) !!}</div>
+                                        <div class="col-md-7 col">{!! ($user->state) !!}</div>
                                     </div>
                                 </li>
                                 <li>
                                     <div class="row">
                                         <div class="col-4">{{__('Zip')}}</div>
                                         <div class="col-1">:</div>
-                                        <div class="col-md-7 col">{!! clean($user->zip) !!}</div>
+                                        <div class="col-md-7 col">{!! ($user->zip) !!}</div>
                                     </div>
                                 </li>
-                                <li>
-                                    <div class="row">
+                                <li>                                   
+                                    <div class="row ">
                                         <div class="col-4">{{__('Full Address')}}</div>
                                         <div class="col-1">:</div>
-                                        <div class="col-md-7 col-6">{!! clean($user->address) !!}</div>
+                                        <div class="col-md-7 col">{!! $user->country_code !!}</div>
                                     </div>
                                 </li>
                             </ul>
