@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 use App\Models\Address;
-use App\Repositories\AddressRepository;
+use App\Repository\AddressRepository;
 use App\Enums\Permission;
 use App\Exceptions\PickbazarException;
 use App\Http\Requests\ShopAddressRequest;

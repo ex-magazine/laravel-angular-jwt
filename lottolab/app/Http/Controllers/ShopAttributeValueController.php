@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
-use App\Repositories\AttributeValueRepository;
+use App\Repository\AttributeValueRepository;
 use App\Http\Requests\ShopAttributeValueRequest;
 use Prettus\Validator\Exceptions\ValidatorException;
 

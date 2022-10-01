@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 use App\Models\Tag;
-use App\Repositories\TagRepository;
+use App\Repository\TagRepository;
 use App\Exceptions\PickbazarException;
 use App\Http\Requests\ShopTagCreateRequest;
 use App\Http\Requests\ShopTagUpdateRequest;

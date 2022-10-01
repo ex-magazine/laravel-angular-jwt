@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 use App\Models\Address;
-use App\Repositories\SettingsRepository;
+use App\Repository\SettingsRepository;
 use App\Exceptions\PickbazarException;
 use App\Http\Requests\ShopSettingsRequest;
 use Prettus\Validator\Exceptions\ValidatorException;

@@ -7,7 +7,7 @@ use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Log;
 use App\Models\Type;
-use App\Repositories\TypeRepository;
+use App\Repository\TypeRepository;
 use App\Exceptions\PickbazarException;
 use App\Http\Requests\TypeRequest;
 use Prettus\Validator\Exceptions\ValidatorException;

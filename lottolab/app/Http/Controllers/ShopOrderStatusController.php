@@ -6,7 +6,7 @@ use Illuminate\Contracts\Pagination\LengthAwarePaginator;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Collection;
-use App\Repositories\OrderStatusRepository;
+use App\Repository\OrderStatusRepository;
 use App\Exceptions\PickbazarException;
 use App\Http\Requests\ShopOrderStatusRequest;
 use Prettus\Validator\Exceptions\ValidatorException;

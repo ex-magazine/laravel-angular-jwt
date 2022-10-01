@@ -11,7 +11,7 @@ use Illuminate\Support\Facades\Log;
 use App\Models\Order;
 use App\Models\Settings;
 use App\Models\UserShop;
-use App\Repositories\OrderRepository;
+use App\Repository\OrderRepository;
 use App\Enums\Permission;
 use App\Events\OrderCreated;
 use App\Exceptions\PickbazarException;

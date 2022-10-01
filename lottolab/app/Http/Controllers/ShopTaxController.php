@@ -9,7 +9,7 @@ use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\Log;
 use App\Http\Requests\ShopCreateTaxRequest;
 use App\Http\Requests\ShopUpdateTaxRequest;
-use App\Repositories\TaxRepository;
+use App\Repository\TaxRepository;
 use App\Exceptions\PickbazarException;
 use Prettus\Validator\Exceptions\ValidatorException;
 

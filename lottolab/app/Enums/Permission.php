@@ -1,7 +1,7 @@
 <?php
 
 
-namespace PickBazar\Enums;
+namespace App\Enums;
 
 use BenSampo\Enum\Enum;
 

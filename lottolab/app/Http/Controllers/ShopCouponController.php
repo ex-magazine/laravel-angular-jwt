@@ -8,7 +8,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Collection;
 use App\Http\Requests\ShopCouponRequest;
 use App\Http\Requests\ShopUpdateCouponRequest;
-use App\Database\Repositories\CouponRepository;
+use App\Repository\CouponRepository;
 use App\Exceptions\PickbazarException;
 use Prettus\Validator\Exceptions\ValidatorException;
 

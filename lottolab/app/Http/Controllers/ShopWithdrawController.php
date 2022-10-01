@@ -10,7 +10,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Log;
 use App\Models\Balance;
 use App\Models\Withdraw;
-use App\Repositories\WithdrawRepository;
+use App\Repository\WithdrawRepository;
 use App\Enums\Permission;
 use App\Exceptions\PickbazarException;
 use App\Http\Requests\ShopUpdateWithdrawRequest;

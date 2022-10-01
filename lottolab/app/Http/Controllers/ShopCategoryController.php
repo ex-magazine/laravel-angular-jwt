@@ -8,7 +8,7 @@ use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Log;
 use App\Models\Category;
-use App\Repositories\CategoryRepository;
+use App\Repository\CategoryRepository;
 use App\Exceptions\PickbazarException;
 use App\Http\Requests\ShopCategoryCreateRequest;
 use App\Http\Requests\ShopCategoryUpdateRequest;

@@ -133,6 +133,7 @@ class LoginController extends Controller
 
     public function authenticated(Request $request, $user)
     {
+        
         if ($user->status == 0) {
             $this->guard()->logout();
             $notify[] = ['error','Your account has been deactivated.'];

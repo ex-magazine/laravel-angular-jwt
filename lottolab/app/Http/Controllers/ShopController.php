@@ -9,7 +9,7 @@ use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Log;
 use App\Models\Balance;
 use App\Models\Product;
-use App\Repositories\ShopRepository;
+use App\Repository\ShopRepository;
 use App\Models\Shop;
 use App\Models\UserShop;
 use App\Enums\Permission;

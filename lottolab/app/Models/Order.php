@@ -79,7 +79,7 @@ class Order extends Model
      */
     public function children()
     {
-        return $this->hasMany('PickBazar\Database\Models\Order', 'parent_id', 'id');
+        return $this->hasMany('App\Models\Order', 'parent_id', 'id');
     }
 
     /**
@@ -87,6 +87,6 @@ class Order extends Model
      */
     public function parent_order()
     {
-        return $this->hasOne('PickBazar\Database\Models\Order', 'id', 'parent_id');
+        return $this->hasOne('App\Models\Order', 'id', 'parent_id');
     }
 }

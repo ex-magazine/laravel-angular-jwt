@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 use App\Models\Attachment;
-use App\Repositories\AttachmentRepository;
+use App\Repository\AttachmentRepository;
 use App\Exceptions\PickbazarException;
 use App\Http\Requests\ShopAttachmentRequest;
 use Prettus\Validator\Exceptions\ValidatorException;

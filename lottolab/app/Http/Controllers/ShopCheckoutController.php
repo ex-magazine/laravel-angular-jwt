@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Database\Repositories\CheckoutRepository;
+use App\Repository\CheckoutRepository;
 use App\Http\Requests\ShopCheckoutVerifyRequest;
 use App\Enums\Permission;
 use Illuminate\Http\JsonResponse;

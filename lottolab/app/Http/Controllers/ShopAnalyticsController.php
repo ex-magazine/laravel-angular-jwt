@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
-use App\Repositories\AddressRepository;
+use App\Repository\AddressRepository;
 use Carbon\Carbon;
 use Illuminate\Validation\ValidationException;
 use App\Models\Product;

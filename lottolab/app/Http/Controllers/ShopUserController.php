@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
-use App\Repositories\UserRepository;
+use App\Repository\UserRepository;
 use Illuminate\Validation\ValidationException;
 use App\Models\UserShop;
 use Illuminate\Support\Facades\Hash;

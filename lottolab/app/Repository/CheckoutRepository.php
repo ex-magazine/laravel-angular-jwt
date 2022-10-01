@@ -10,7 +10,7 @@ use App\Models\Tax;
 use App\Models\Shipping;
 use App\Models\Settings;
 use Illuminate\Support\Facades\Log;
-use PickBazar\Database\Models\VariationOption;
+use App\Models\VariationOption;
 
 class CheckoutRepository
 {

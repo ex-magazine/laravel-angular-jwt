@@ -8,7 +8,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Collection;
 use App\Http\Requests\ShopCreateShippingRequest;
 use App\Http\Requests\ShopUpdateShippingRequest;
-use App\Repositories\ShippingRepository;
+use App\Repository\ShippingRepository;
 use App\Exceptions\PickbazarException;
 use Prettus\Validator\Exceptions\ValidatorException;
 
