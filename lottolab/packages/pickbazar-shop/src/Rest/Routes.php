@@ -16,7 +16,7 @@ use PickBazar\Http\Controllers\CouponController;
 use PickBazar\Http\Controllers\AttachmentController;
 use PickBazar\Http\Controllers\ShippingController;
 use PickBazar\Http\Controllers\TaxController;
-use PickBazar\Enums\Permission;
+use PickBazar\Enums\Permission; 
 use PickBazar\Http\Controllers\ShopController;
 use PickBazar\Http\Controllers\TagController;
 use PickBazar\Http\Controllers\WithdrawController;

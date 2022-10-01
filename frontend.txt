@@ -6,7 +6,14 @@ npx create-react-app react-redux-saga-v18 --style=css
 npx create-react-app react-redux-context-v18 --style=css
 npm init vue
 
+Next
+npx create-next-app nextjs-shop-frontend-node-14
+yarn create next-app --typescript nextjs-shop-frontend-node-14
+yarn add -D tailwindcss postcss autoprefixer
+yarn tailwindcss init -p
 
+yarn dev 
+yarn install --force
 
 npx create-nx-workspace@latest nx-demo
 

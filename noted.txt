@@ -29,6 +29,13 @@ php artisan config:clear
 php artisan make:middleware JwtMiddleware
 php artisan make:middleware CORS
 
+
+php artisan make:controller Api/UserController -m User --api
+
+php artisan make:resource UserResource
+php artisan make:resource UserResourceCollection
+
+
 composer require orangehill/iseed
 composer require --dev bennett-treptow/laravel-migration-generator
 php artisan vendor:publish --provider="LaravelMigrationGenerator\LaravelMigrationGeneratorProvider"
@@ -37,9 +44,31 @@ php artisan generate:migrations --path=database/migrations
 
 php artisan generate:migrations
 
+1)
 php artisan iseed my_table,another_table,address,attachments,attributes,attribute_product,attribute_values,balances,categories,category_product,category_shop,coupons,failed_jobs,media,migrations
 php artisan iseed model_has_permissions,model_has_roles,orders,order_product,order_status,password_resets,permissions,personal_access_tokens,products,product_tag,providers,roles
 php artisan iseed role_has_permissions,settings,shipping_classes,variation_options,withdraws,shops,tags,tax_classes,types,users,user_profiles
+
+2) 
+php artisan iseed address,admins,admin_notifications,admin_password_resets,admin_settings,attachments,attributes,attribute_product,attribute_values,balances,blogs,blog_categories,blog_comments,categories,category_product,category_shop,commission_logs,contacts,coupons,deposits,email_logs,email_sms_templates,extensions,failed_jobs,frontends,galleries,gallery_categories,gateways,gateway_currencies,general_settings,languages,lotteries,media,menus,migrations,model_has_permissions,model_has_roles,oauth_access_tokens,oauth_auth_codes,oauth_clients,oauth_personal_access_clients
+php artisan iseed oauth_refresh_tokens,orders,order_product,order_status,pages,password_resets,permissions,personal_access_tokens,phases,portfolios,portfolio_categories,pricing_features,pricing_plans,products,product_tag,providers,referrals,roles,role_has_permissions,services,sessions,settings,shipping_classes,shops,subscribers,support_attachments,support_messages,support_tickets,tags,tax_classes,teams,testimonials,tickets,transactions,types,users,user_blogs,user_logins,user_profiles,user_verification_codes,variation_options,winners,win_bonuses,withdrawals,withdraws,withdraw_methods
+
+address,admins,admin_notifications,admin_password_resets,admin_settings,
+attachments,attributes,attribute_product,attribute_values,balances,blogs,blog_categories,
+blog_comments,categories,category_product,category_shop,commission_logs,contacts,
+coupons,deposits,email_logs,email_sms_templates,extensions,failed_jobs,frontends,
+galleries,gallery_categories,gateways,gateway_currencies,general_settings,languages,
+lotteries,media,menus,migrations,model_has_permissions,model_has_roles,oauth_access_tokens,
+oauth_auth_codes,oauth_clients,oauth_personal_access_clients,
+oauth_refresh_tokens,orders,order_product,order_status,pages,password_resets,permissions,
+personal_access_tokens,phases,portfolios,portfolio_categories,pricing_features,pricing_plans,
+products,product_tag,providers,referrals,roles,role_has_permissions,services,sessions,
+settings,shipping_classes,shops,subscribers,support_attachments,support_messages,
+support_tickets,tags,tax_classes,teams,testimonials,tickets,transactions,types,
+users,user_blogs,user_logins,user_profiles,user_verification_codes,variation_options,winners,
+win_bonuses,withdrawals,withdraws,withdraw_methods
+
+
 
 composer require reliese/laravel
 

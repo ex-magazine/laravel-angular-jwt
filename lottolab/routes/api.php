@@ -8,6 +8,26 @@ use App\Http\Controllers\ResetPwdReqController;
 use App\Http\Controllers\UpdatePwdController;
 
 
+
+
+use App\Http\Controllers\ShopAddressController;
+use App\Http\Controllers\ShopAttributeController;
+use App\Http\Controllers\ShopAttributeValueController;
+//use App\Http\Controllers\ShopProductController;
+use App\Http\Controllers\ShopSettingsController;
+use App\Http\Controllers\ShopUserController;
+use App\Http\Controllers\ShopTypeController;
+use App\Http\Controllers\ShopOrderController;
+use App\Http\Controllers\ShopOrderStatusController;
+use App\Http\Controllers\ShopCategoryController;
+use App\Http\Controllers\ShopCouponController;
+use App\Http\Controllers\ShopAttachmentController;
+use App\Http\Controllers\ShopShippingController;
+use App\Http\Controllers\ShopTaxController;
+use App\Enums\Permission;
+use App\Http\Controllers\ShopController;
+use App\Http\Controllers\ShopTagController;
+use App\Http\Controllers\ShopWithdrawController;
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -137,3 +157,148 @@ Route::namespace('Api')->name('api.')->group(function(){
 	});
 });
 
+
+
+
+
+
+Route::post('/pickbazar-register', 'App\Http\Controllers\ShopUserController@register');
+Route::post('/pickbazar-token', 'App\Http\Controllers\ShopUserController@token');
+Route::post('/pickbazar-forget-password', 'App\Http\Controllers\ShopUserController@forgetPassword');
+Route::post('/pickbazar-verify-forget-password-token', 'App\Http\Controllers\ShopUserController@verifyForgetPasswordToken');
+Route::post('/pickbazar-reset-password', 'App\Http\Controllers\ShopUserController@resetPassword');
+Route::post('/pickbazar-contact', 'App\Http\Controllers\ShopUserController@contactAdmin');
+Route::post('/pickbazar-social-login-token', 'App\Http\Controllers\ShopUserController@socialLogin');
+
+Route::apiResource('pickbazar-products', ShopProductController::class, [
+    'only' => ['index', 'show']
+]);
+Route::apiResource('pickbazar-types', ShopTypeController::class, [
+    'only' => ['index', 'show']
+]);
+Route::apiResource('pickbazar-attachments', ShopAttachmentController::class, [
+    'only' => ['index', 'show']
+]);
+Route::apiResource('pickbazar-categories', ShopCategoryController::class, [
+    'only' => ['index', 'show']
+]);
+Route::apiResource('pickbazar-tags', ShopTagController::class, [
+    'only' => ['index', 'show']
+]);
+
+Route::get('pickbazar-fetch-parent-category', 'App\Http\Controllers\ShopCategoryController@fetchOnlyParent');
+
+Route::apiResource('pickbazar-coupons', ShopCouponController::class, [
+    'only' => ['index', 'show']
+]);
+
+Route::post('pickbazar-coupons/verify', 'App\Http\Controllers\ShopCouponController@verify');
+
+
+Route::apiResource('pickbazar-order_status', ShopOrderStatusController::class, [
+    'only' => ['index', 'show']
+]);
+
+Route::apiResource('pickbazar-attributes', ShopAttributeController::class, [
+    'only' => ['index', 'show']
+]);
+
+Route::apiResource('pickbazar-all-shop', ShopShopController::class, [
+    'only' => ['index', 'show']
+]);
+
+Route::apiResource('pickbazar-attribute-values', ShopAttributeValueController::class, [
+    'only' => ['index', 'show']
+]);
+
+Route::apiResource('pickbazar-settings', ShopSettingsController::class, [
+    'only' => ['index']
+]);
+
+
+Route::group(['middleware' => ['can:' . Permission::CUSTOMER, 'auth:sanctum']], function () {
+    Route::post('/pickbazar-logout', 'App\Http\Controllers\ShopUserController@logout');
+    Route::apiResource('pickbazar-orders', ShopOrderController::class, [
+        'only' => ['index', 'show', 'store']
+    ]);
+    Route::get('pickbazar-orders/tracking_number/{tracking_number}', 'App\Http\Controllers\ShopOrderController@findByTrackingNumber');
+    Route::apiResource('pickbazar-attachments', ShopAttachmentController::class, [
+        'only' => ['store', 'update', 'destroy']
+    ]);
+    Route::post('pickbazar-checkout/verify', 'App\Http\Controllers\ShopCheckoutController@verify');
+    Route::get('pickbazar-me', 'App\Http\Controllers\ShopUserController@me');
+    Route::put('pickbazar-users/{id}', 'App\Http\Controllers\ShopUserController@update');
+    Route::post('/pickbazar-change-password', 'App\Http\Controllers\ShopUserController@changePassword');
+    Route::apiResource('pickbazar-address', ShopAddressController::class, [
+        'only' => ['destroy']
+    ]);
+});
+
+Route::group(
+    ['middleware' => ['permission:' . Permission::STAFF . '|' . Permission::STORE_OWNER, 'auth:sanctum']],
+    function () {
+        Route::get('pickbazar-analytics', 'App\Http\Controllers\ShopAnalyticsController@analytics');
+        Route::apiResource('products', ShopProductController::class, [
+            'only' => ['store', 'update', 'destroy']
+        ]);
+        Route::apiResource('pickbazar-attributes', ShopAttributeController::class, [
+            'only' => ['store', 'update', 'destroy']
+        ]);
+        Route::apiResource('pickbazar-attribute-values', ShopAttributeValueController::class, [
+            'only' => ['store', 'update', 'destroy']
+        ]);
+        Route::apiResource('pickbazar-orders', ShopOrderController::class, [
+            'only' => ['update', 'destroy']
+        ]);
+        Route::get('pickbazar-popular-products', 'App\Http\Controllers\ShopAnalyticsController@popularProducts');
+    }
+);
+Route::group(
+    ['middleware' => ['permission:' . Permission::STORE_OWNER, 'auth:sanctum']],
+    function () {
+        Route::apiResource('pickbazar-all-shop', ShopController::class, [
+            'only' => ['store', 'update', 'destroy']
+        ]);
+        Route::apiResource('pickbazar-withdraws', ShopWithdrawController::class, [
+            'only' => ['store', 'index', 'show']
+        ]);
+        Route::post('pickbazar-users/add-staff', 'App\Http\Controllers\ShopController@addStaff');
+        Route::post('pickbazar-users/remove-staff', 'App\Http\Controllers\ShopController@removeStaff');
+        Route::get('pickbazar-staffs', 'App\Http\Controllers\ShopUserController@staffs');
+        Route::get('pickbazar-my-shops', 'App\Http\Controllers\ShopController@myShops');
+    }
+);
+
+
+Route::group(['middleware' => ['permission:' . Permission::SUPER_ADMIN, 'auth:sanctum']], function () {
+    Route::apiResource('pickbazar-types', ShopTypeController::class, [
+        'only' => ['store', 'update', 'destroy']
+    ]);
+    Route::apiResource('pickbazar-withdraws', ShopWithdrawController::class, [
+        'only' => ['update', 'destroy']
+    ]);
+    Route::apiResource('pickbazar-categories', ShopCategoryController::class, [
+        'only' => ['store', 'update', 'destroy']
+    ]);
+    Route::apiResource('pickbazar-tags', ShopTagController::class, [
+        'only' => ['store', 'update', 'destroy']
+    ]);
+    Route::apiResource('pickbazar-coupons', ShopCouponController::class, [
+        'only' => ['store', 'update', 'destroy']
+    ]);
+    Route::apiResource('pickbazar-order_status', ShopOrderStatusController::class, [
+        'only' => ['store', 'update', 'destroy']
+    ]);
+
+    Route::apiResource('pickbazar-settings', ShopSettingsController::class, [
+        'only' => ['store']
+    ]);
+    Route::apiResource('pickbazar-users', ShopUserController::class);
+    Route::post('pickbazar-users/ban-user', 'App\Http\Controllers\ShopUserController@banUser');
+    Route::post('pickbazar-users/active-user', 'App\Http\Controllers\ShopUserController@activeUser');
+    Route::apiResource('pickbazar-taxes', ShopTaxController::class);
+    Route::apiResource('pickbazar-shipping', ShopShippingController::class);
+    Route::post('pickbazar-approve-shop', 'App\Http\Controllers\ShopController@approveShop');
+    Route::post('pickbazar-disapprove-shop', 'App\Http\Controllers\ShopController@disApproveShop');
+    Route::post('pickbazar-approve-withdraw', 'App\Http\Controllers\ShopWithdrawController@approveWithdraw');
+});
