@@ -6,14 +6,14 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\JwtAuthController;
 use App\Http\Controllers\ResetPwdReqController;
 use App\Http\Controllers\UpdatePwdController;
+use App\Enums\Permission;
 
 
-
-
+/*
 use App\Http\Controllers\ShopAddressController;
 use App\Http\Controllers\ShopAttributeController;
 use App\Http\Controllers\ShopAttributeValueController;
-//use App\Http\Controllers\ShopProductController;
+use App\Http\Controllers\ShopProductController;
 use App\Http\Controllers\ShopSettingsController;
 use App\Http\Controllers\ShopUserController;
 use App\Http\Controllers\ShopTypeController;
@@ -24,10 +24,11 @@ use App\Http\Controllers\ShopCouponController;
 use App\Http\Controllers\ShopAttachmentController;
 use App\Http\Controllers\ShopShippingController;
 use App\Http\Controllers\ShopTaxController;
-use App\Enums\Permission;
 use App\Http\Controllers\ShopController;
 use App\Http\Controllers\ShopTagController;
 use App\Http\Controllers\ShopWithdrawController;
+*/
+
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -159,146 +160,139 @@ Route::namespace('Api')->name('api.')->group(function(){
 
 
 
+//SHOP
+Route::post('/register', 'App\Http\Controllers\ShopUserController@register');
+Route::post('/token', 'App\Http\Controllers\ShopUserController@token');
+Route::post('/forget-password', 'App\Http\Controllers\ShopUserController@forgetPassword');
+Route::post('/verify-forget-password-token', 'App\Http\Controllers\ShopUserController@verifyForgetPasswordToken');
+Route::post('/reset-password', 'App\Http\Controllers\ShopUserController@resetPassword');
+Route::post('/contact', 'App\Http\Controllers\ShopUserController@contactAdmin');
+Route::post('/social-login-token', 'App\Http\Controllers\ShopUserController@socialLogin');
 
-
-
-Route::post('/pickbazar-register', 'App\Http\Controllers\ShopUserController@register');
-Route::post('/pickbazar-token', 'App\Http\Controllers\ShopUserController@token');
-Route::post('/pickbazar-forget-password', 'App\Http\Controllers\ShopUserController@forgetPassword');
-Route::post('/pickbazar-verify-forget-password-token', 'App\Http\Controllers\ShopUserController@verifyForgetPasswordToken');
-Route::post('/pickbazar-reset-password', 'App\Http\Controllers\ShopUserController@resetPassword');
-Route::post('/pickbazar-contact', 'App\Http\Controllers\ShopUserController@contactAdmin');
-Route::post('/pickbazar-social-login-token', 'App\Http\Controllers\ShopUserController@socialLogin');
-
-Route::apiResource('pickbazar-products', ShopProductController::class, [
+Route::apiResource('products', ShopProductController::class, [
     'only' => ['index', 'show']
 ]);
-Route::apiResource('pickbazar-types', ShopTypeController::class, [
+Route::apiResource('types', ShopTypeController::class, [
     'only' => ['index', 'show']
 ]);
-Route::apiResource('pickbazar-attachments', ShopAttachmentController::class, [
+Route::apiResource('attachments', ShopAttachmentController::class, [
     'only' => ['index', 'show']
 ]);
-Route::apiResource('pickbazar-categories', ShopCategoryController::class, [
+Route::apiResource('categories', ShopCategoryController::class, [
     'only' => ['index', 'show']
 ]);
-Route::apiResource('pickbazar-tags', ShopTagController::class, [
-    'only' => ['index', 'show']
-]);
-
-Route::get('pickbazar-fetch-parent-category', 'App\Http\Controllers\ShopCategoryController@fetchOnlyParent');
-
-Route::apiResource('pickbazar-coupons', ShopCouponController::class, [
+Route::apiResource('tags', ShopTagController::class, [
     'only' => ['index', 'show']
 ]);
 
-Route::post('pickbazar-coupons/verify', 'App\Http\Controllers\ShopCouponController@verify');
+Route::get('fetch-parent-category', 'ShopCategoryController@fetchOnlyParent');
 
-
-Route::apiResource('pickbazar-order_status', ShopOrderStatusController::class, [
+Route::apiResource('coupons', ShopCouponController::class, [
     'only' => ['index', 'show']
 ]);
 
-Route::apiResource('pickbazar-attributes', ShopAttributeController::class, [
+Route::post('coupons/verify', 'ShopCouponController@verify');
+
+Route::apiResource('order_status', ShopOrderStatusController::class, [
     'only' => ['index', 'show']
 ]);
 
-Route::apiResource('pickbazar-all-shop', ShopShopController::class, [
+Route::apiResource('attributes', ShopAttributeController::class, [
     'only' => ['index', 'show']
 ]);
 
-Route::apiResource('pickbazar-attribute-values', ShopAttributeValueController::class, [
+Route::apiResource('all-shop', ShopController::class, [
     'only' => ['index', 'show']
 ]);
 
-Route::apiResource('pickbazar-settings', ShopSettingsController::class, [
+Route::apiResource('attribute-values', ShopAttributeValueController::class, [
+    'only' => ['index', 'show']
+]);
+
+Route::apiResource('settings', ShopSettingsController::class, [
     'only' => ['index']
 ]);
 
-
 Route::group(['middleware' => ['can:' . Permission::CUSTOMER, 'auth:sanctum']], function () {
-    Route::post('/pickbazar-logout', 'App\Http\Controllers\ShopUserController@logout');
-    Route::apiResource('pickbazar-orders', ShopOrderController::class, [
+    Route::post('/logout', 'App\Http\Controllers\ShopUserController@logout');
+    Route::apiResource('orders', ShopOrderController::class, [
         'only' => ['index', 'show', 'store']
     ]);
-    Route::get('pickbazar-orders/tracking_number/{tracking_number}', 'App\Http\Controllers\ShopOrderController@findByTrackingNumber');
-    Route::apiResource('pickbazar-attachments', ShopAttachmentController::class, [
+    Route::get('orders/tracking_number/{tracking_number}', 'App\Http\Controllers\ShopOrderController@findByTrackingNumber');
+    Route::apiResource('attachments', ShopAttachmentController::class, [
         'only' => ['store', 'update', 'destroy']
     ]);
-    Route::post('pickbazar-checkout/verify', 'App\Http\Controllers\ShopCheckoutController@verify');
-    Route::get('pickbazar-me', 'App\Http\Controllers\ShopUserController@me');
-    Route::put('pickbazar-users/{id}', 'App\Http\Controllers\ShopUserController@update');
-    Route::post('/pickbazar-change-password', 'App\Http\Controllers\ShopUserController@changePassword');
-    Route::apiResource('pickbazar-address', ShopAddressController::class, [
+    Route::post('checkout/verify', 'App\Http\Controllers\ShopCheckoutController@verify');
+    Route::get('me', 'App\Http\Controllers\ShopUserController@me');
+    Route::put('users/{id}', 'App\Http\Controllers\ShopUserController@update');
+    Route::post('/change-password', 'App\Http\Controllers\ShopUserController@changePassword');
+    Route::apiResource('address', ShopAddressController::class, [
         'only' => ['destroy']
     ]);
 });
-
 Route::group(
     ['middleware' => ['permission:' . Permission::STAFF . '|' . Permission::STORE_OWNER, 'auth:sanctum']],
     function () {
-        Route::get('pickbazar-analytics', 'App\Http\Controllers\ShopAnalyticsController@analytics');
+        Route::get('analytics', 'App\Http\Controllers\ShopAnalyticsController@analytics');
         Route::apiResource('products', ShopProductController::class, [
             'only' => ['store', 'update', 'destroy']
         ]);
-        Route::apiResource('pickbazar-attributes', ShopAttributeController::class, [
+        Route::apiResource('attributes', ShopAttributeController::class, [
             'only' => ['store', 'update', 'destroy']
         ]);
-        Route::apiResource('pickbazar-attribute-values', ShopAttributeValueController::class, [
+        Route::apiResource('attribute-values', ShopAttributeValueController::class, [
             'only' => ['store', 'update', 'destroy']
         ]);
-        Route::apiResource('pickbazar-orders', ShopOrderController::class, [
+        Route::apiResource('orders', ShopOrderController::class, [
             'only' => ['update', 'destroy']
         ]);
-        Route::get('pickbazar-popular-products', 'App\Http\Controllers\ShopAnalyticsController@popularProducts');
+        Route::get('popular-products', 'App\Http\Controllers\ShopAnalyticsController@popularProducts');
     }
 );
 Route::group(
     ['middleware' => ['permission:' . Permission::STORE_OWNER, 'auth:sanctum']],
     function () {
-        Route::apiResource('pickbazar-all-shop', ShopController::class, [
+        Route::apiResource('all-shop', ShopController::class, [
             'only' => ['store', 'update', 'destroy']
         ]);
-        Route::apiResource('pickbazar-withdraws', ShopWithdrawController::class, [
+        Route::apiResource('withdraws', ShopWithdrawController::class, [
             'only' => ['store', 'index', 'show']
         ]);
-        Route::post('pickbazar-users/add-staff', 'App\Http\Controllers\ShopController@addStaff');
-        Route::post('pickbazar-users/remove-staff', 'App\Http\Controllers\ShopController@removeStaff');
-        Route::get('pickbazar-staffs', 'App\Http\Controllers\ShopUserController@staffs');
-        Route::get('pickbazar-my-shops', 'App\Http\Controllers\ShopController@myShops');
+        Route::post('users/add-staff', 'App\Http\Controllers\ShopController@addStaff');
+        Route::post('users/remove-staff', 'App\Http\Controllers\ShopController@removeStaff');
+        Route::get('staffs', 'App\Http\Controllers\ShopUserController@staffs');
+        Route::get('my-shops', 'App\Http\Controllers\ShopController@myShops');
     }
 );
-
-
 Route::group(['middleware' => ['permission:' . Permission::SUPER_ADMIN, 'auth:sanctum']], function () {
-    Route::apiResource('pickbazar-types', ShopTypeController::class, [
+    Route::apiResource('types', ShopTypeController::class, [
         'only' => ['store', 'update', 'destroy']
     ]);
-    Route::apiResource('pickbazar-withdraws', ShopWithdrawController::class, [
+    Route::apiResource('withdraws', ShopWithdrawController::class, [
         'only' => ['update', 'destroy']
     ]);
-    Route::apiResource('pickbazar-categories', ShopCategoryController::class, [
+    Route::apiResource('categories', ShopCategoryController::class, [
         'only' => ['store', 'update', 'destroy']
     ]);
-    Route::apiResource('pickbazar-tags', ShopTagController::class, [
+    Route::apiResource('tags', ShopTagController::class, [
         'only' => ['store', 'update', 'destroy']
     ]);
-    Route::apiResource('pickbazar-coupons', ShopCouponController::class, [
+    Route::apiResource('coupons', ShopCouponController::class, [
         'only' => ['store', 'update', 'destroy']
     ]);
-    Route::apiResource('pickbazar-order_status', ShopOrderStatusController::class, [
+    Route::apiResource('order_status', ShopOrderStatusController::class, [
         'only' => ['store', 'update', 'destroy']
     ]);
 
-    Route::apiResource('pickbazar-settings', ShopSettingsController::class, [
+    Route::apiResource('settings', ShopSettingsController::class, [
         'only' => ['store']
     ]);
-    Route::apiResource('pickbazar-users', ShopUserController::class);
-    Route::post('pickbazar-users/ban-user', 'App\Http\Controllers\ShopUserController@banUser');
-    Route::post('pickbazar-users/active-user', 'App\Http\Controllers\ShopUserController@activeUser');
-    Route::apiResource('pickbazar-taxes', ShopTaxController::class);
-    Route::apiResource('pickbazar-shipping', ShopShippingController::class);
-    Route::post('pickbazar-approve-shop', 'App\Http\Controllers\ShopController@approveShop');
-    Route::post('pickbazar-disapprove-shop', 'App\Http\Controllers\ShopController@disApproveShop');
-    Route::post('pickbazar-approve-withdraw', 'App\Http\Controllers\ShopWithdrawController@approveWithdraw');
+    Route::apiResource('users', ShopUserController::class);
+    Route::post('users/ban-user', 'App\Http\Controllers\ShopUserController@banUser');
+    Route::post('users/active-user', 'App\Http\Controllers\ShopUserController@activeUser');
+    Route::apiResource('taxes', ShopTaxController::class);
+    Route::apiResource('shipping', ShopShippingController::class);
+    Route::post('approve-shop', 'App\Http\Controllers\ShopController@approveShop');
+    Route::post('disapprove-shop', 'App\Http\Controllers\ShopController@disApproveShop');
+    Route::post('approve-withdraw', 'App\Http\Controllers\ShopWithdrawController@approveWithdraw');
 });
