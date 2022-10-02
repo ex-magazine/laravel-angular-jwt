@@ -78,3 +78,13 @@ mutation{
         name
     }
 }
+
+<VirtualHost *:80>
+	ServerAdmin webmaster@ittravel.local
+    DocumentRoot "C:/xampp/htdocs/laravel/laravel-angular-jwt/lottolab/public"    
+    ServerName ittravel.local
+    ServerAlias www.ittravel.local
+    ErrorLog "logs/ittravel.local-error.log"
+    CustomLog "logs/ittravel.local-access.log" common
+</VirtualHost>
+C:\Windows\System32\drivers\etc\hosts
