@@ -2,7 +2,7 @@
 
 namespace App\Repository;
 
-use App\Models\Category;
+use App\Models\CategoryShop;
 use Prettus\Repository\Criteria\RequestCriteria;
 use Prettus\Repository\Exceptions\RepositoryException;
 
@@ -33,6 +33,6 @@ class CategoryRepository extends BaseRepository
      **/
     public function model()
     {
-        return Category::class;
+        return CategoryShop::class;
     }
 }

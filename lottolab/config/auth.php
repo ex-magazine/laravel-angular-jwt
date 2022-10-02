@@ -11,10 +11,11 @@ return [
     | reset options for your application. You may change these defaults
     | as required, but they're a perfect start for most applications.
     |
-    */
+    */ 
 
     'defaults' => [
-        'guard' => 'api',      
+        //'guard' => 'api',   
+        'guard' => 'web',   
         'passwords' => 'users',
     ],
   
@@ -51,6 +52,16 @@ return [
             'driver' => 'jwt',
             'provider' => 'users',
             'hash' => false,
+        ],
+
+        'pickbazarapi' => [
+            'driver'   => 'sanctum',
+            'provider' => 'users',
+        ],
+
+        'sanctum' => [
+            'driver'   => 'sanctum',
+            'provider' => 'users',
         ],
         
         'admin' => [

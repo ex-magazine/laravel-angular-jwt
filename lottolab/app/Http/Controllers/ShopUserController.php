@@ -120,7 +120,7 @@ class ShopUserController extends Controller
             'password' => 'required',
         ]);
 
-        $user = User::where('email', $request->email)->where('is_active', true)->first();
+        $user = UserShop::where('email', $request->email)->where('is_active', true)->first();
 
         if (!$user || !Hash::check($request->password, $user->password)) {
             return ["token" => null, "permissions" => []];
@@ -158,7 +158,7 @@ class ShopUserController extends Controller
     {
         $user = $request->user();
         if ($user && $user->hasPermissionTo(Permission::SUPER_ADMIN) && $user->id != $request->id) {
-            $banUser =  User::find($request->id);
+            $banUser =  UserShop::find($request->id);
             $banUser->is_active = false;
             $banUser->save();
             return $banUser;
@@ -170,7 +170,7 @@ class ShopUserController extends Controller
     {
         $user = $request->user();
         if ($user && $user->hasPermissionTo(Permission::SUPER_ADMIN) && $user->id != $request->id) {
-            $activeUser =  User::find($request->id);
+            $activeUser =  UserShop::find($request->id);
             $activeUser->is_active = true;
             $activeUser->save();
             return $activeUser;
@@ -295,7 +295,7 @@ class ShopUserController extends Controller
         } catch (\Exception $e) {
             throw new PickbazarException('PICKBAZAR_ERROR.INVALID_CREDENTIALS');
         }
-        $userCreated = User::firstOrCreate(
+        $userCreated = UserShop::firstOrCreate(
             [
                 'email' => $user->getEmail()
             ],
