@@ -173,7 +173,7 @@ class ShopController extends Controller
     {
         if ($this->repository->hasPermission($request->user(), $request->shop_id)) {
             $permissions = [Permission::CUSTOMER, Permission::STAFF];
-            $user = User::create([
+            $user = UserShop::create([
                 'name'     => $request->name,
                 'email'    => $request->email,
                 'shop_id'  => $request->shop_id,
@@ -192,7 +192,7 @@ class ShopController extends Controller
     {
         $id = $request->id;
         try {
-            $staff = User::findOrFail($id);
+            $staff = UserShop::findOrFail($id);
         } catch (\Exception $e) {
             throw new PickbazarException('PICKBAZAR_ERROR.NOT_FOUND');
         }
