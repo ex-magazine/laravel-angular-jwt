@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th9 30, 2022 lúc 06:52 AM
+-- Thời gian đã tạo: Th10 02, 2022 lúc 02:48 PM
 -- Phiên bản máy phục vụ: 10.4.20-MariaDB
 -- Phiên bản PHP: 7.4.28
 
@@ -37,6 +37,17 @@ CREATE TABLE `address` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Đang đổ dữ liệu cho bảng `address`
+--
+
+INSERT INTO `address` (`id`, `title`, `type`, `default`, `address`, `customer_id`, `created_at`, `updated_at`) VALUES
+(1, 'Tommy', 'billing', 0, '{\"country\":\"VN\",\"city\":\"HCMC\",\"state\":\"HCM\",\"zip\":\"70000\",\"street_address\":\"District 9\"}', 1, '2022-10-01 16:15:54', '2022-10-01 16:15:54'),
+(2, 'Tommy', 'billing', 0, '{\"country\":\"VN\",\"city\":\"HCMC\",\"state\":\"HCM\",\"zip\":\"70000\",\"street_address\":\"District 9\"}', 2, '2022-10-01 16:15:54', '2022-10-01 16:15:54'),
+(3, 'Tommy', 'billing', 0, '{\"country\":\"VN\",\"city\":\"HCMC\",\"state\":\"HCM\",\"zip\":\"70000\",\"street_address\":\"District 9\"}', 3, '2022-10-01 16:15:54', '2022-10-01 16:15:54'),
+(4, 'Tommy', 'billing', 0, '{\"country\":\"VN\",\"city\":\"HCMC\",\"state\":\"HCM\",\"zip\":\"70000\",\"street_address\":\"District 9\"}', 4, '2022-10-01 16:15:54', '2022-10-01 16:15:54'),
+(5, 'Tommy', 'billing', 0, '{\"id\":5,\"country\":\"VN\",\"city\":\"HCMC\",\"state\":\"HCM\",\"zip\":\"60000\",\"street_address\":\"District 9\"}', 5, '2022-10-01 16:15:54', '2022-10-01 23:34:17');
 
 -- --------------------------------------------------------
 
@@ -2868,8 +2879,8 @@ INSERT INTO `frontends` (`id`, `data_keys`, `data_values`, `views`, `created_at`
 (85, 'lottery.content', '{\"heading\":\"Lottery Calendar\"}', 0, '2021-06-12 12:04:21', '2021-06-12 12:04:21'),
 (86, 'contact.content', '{\"title\":\"Get in Touch\",\"content\":\"Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt voluptates rerum corporis molestias dolores.\",\"address\":\"Medino, NY 10012, USA\",\"phone\":\"5488848798\",\"email\":\"demo@demo.com\"}', 0, '2021-06-12 13:19:41', '2021-06-12 13:19:41'),
 (87, 'blog.element', '{\"has_image\":[\"1\"],\"title\":\"Laboriosam distinctio nisi debitis deleniti voluptatum corporis.\",\"short_description\":\"Lorem ipsum dolor sit amet, consectetur adipisic elit. Iusto eos rem ducimus nam! Optio, soluta. Laboriosam distinctio nisi debitis deleniti ducim.\",\"description_nic\":\"<div>Consectetuer in non nibh lorem posuere, sapien dictum dolor libero aliquam suspendisse, diam a eu tristique amet donec, sed vestibulum elit ut sollicitudin. Lacus vivamus elit quam lorem, arcu justo pede eget vivamus, fringilla vestibulum sit nec magna duis, vel sed condimentum vestibulum molestie, tortor ut orci ornare mi purus. Rhoncus vestibulum quam auctor id per, a luctus, in sed wisi. Arcu et, pulvinar non semper ac neque facilisis nec, pellentesque porttitor dapibus etiam non. Sit tempor nulla vivamus condimentum lorem tempus, velit diam in nullam semper culpa. Erat mattis. Volutpat vel vitae wisi nulla ipsum, non lorem dui mi, ut neque sed maecenas nonummy<\\/div><div><br \\/><\\/div><div>duis, interdum platea enim pretium suspendisse non enim. Ullamcorper duis, fermentum nulla. Suspendisse nec vestibulum odio proin ipsum tincidunt. Adipiscing pede dictum tellus nulla eget integer, felis wisi donec vehicula vel turpis ipsum.<\\/div><div><br \\/><\\/div><div>Aenean metus lectus at id. Morbi aliquet commodo a sodales eget. Eu justo ante nibh et a turpis, aliquam phasellus hymenaeos, imperdiet eget cras sociosqu, tincidunt a amet. Faucibus urna luctus, arcu ni<\\/div><div>Inceptos quam, nam felis tortor tortor sed porta, a facilisis dictumst luctus ipsum phasellus, faucibus aliquam diam ullamcorper, a id ultrices non suscipit nulla. Nam nulla aliquet, imperdiet sit in massa a enim, amet suscipit dui sodales class vestibulum, in ut nec urna sed quis vestibulum. Quisque quis amet turpis, rhoncus integer, sed elit sed amet in mi, amet magna feugiat.tique amet donec, sed vestibulum elit ut sollicitudin. Lacus vivamus elit<\\/div><div><br \\/><\\/div><div>quam lorem, arcu justo pede eget vivamus, fringilla vestibulum sit nec magna duis, vel sed condimentum vestibulum dignissim suspendisse purus. Amet vivamus vivamus netus nec orci molestie, nisl morbi pulvinar vulputate eget, mi a mauris odio vel vulputate, cubilia praesent posuere tellus at velit.urpis nec ligula, pulvinar erat<\\/div><div><br \\/><\\/div><div>Quam arcu ac, at adipiscing justo lectus sit nibh massa. Quam euismod, nam eu tellus, et massa non mauris consequat, consequat lectus ultrices. Mi laoreet nunc consequat erat amet. Sem dignissim. Dignissim ac non, convallis id, vitae aliquam id urna a, placerat urna mauris aliquet lorem molestie nec.<\\/div>\",\"image\":\"60c73a74705b61623669364.jpg\"}', 4, '2021-06-14 10:46:04', '2022-09-29 18:23:02'),
-(88, 'blog.element', '{\"has_image\":[\"1\"],\"title\":\"Laboriosam distinctio nisi debitis deleniti voluptatum corporis.\",\"short_description\":\"Lorem ipsum dolor sit amet, consectetur adipisic elit. Iusto eos rem ducimus nam! Optio, soluta. Laboriosam distinctio nisi debitis deleniti ducim.\",\"description_nic\":\"<div>Consectetuer in non nibh lorem posuere, sapien dictum dolor libero aliquam suspendisse, diam a eu tristique amet donec, sed vestibulum elit ut sollicitudin. Lacus vivamus elit quam lorem, arcu justo pede eget vivamus, fringilla vestibulum sit nec magna duis, vel sed condimentum vestibulum molestie, tortor ut orci ornare mi purus. Rhoncus vestibulum quam auctor id per, a luctus, in sed wisi. Arcu et, pulvinar non semper ac neque facilisis nec, pellentesque porttitor dapibus etiam non. Sit tempor nulla vivamus condimentum lorem tempus, velit diam in nullam semper culpa. Erat mattis. Volutpat vel vitae wisi nulla ipsum, non lorem dui mi, ut neque sed maecenas nonummy<\\/div><div><br \\/><\\/div><div>duis, interdum platea enim pretium suspendisse non enim. Ullamcorper duis, fermentum nulla. Suspendisse nec vestibulum odio proin ipsum tincidunt. Adipiscing pede dictum tellus nulla eget integer, felis wisi donec vehicula vel turpis ipsum.<\\/div><div><br \\/><\\/div><div>Aenean metus lectus at id. Morbi aliquet commodo a sodales eget. Eu justo ante nibh et a turpis, aliquam phasellus hymenaeos, imperdiet eget cras sociosqu, tincidunt a amet. Faucibus urna luctus, arcu ni<\\/div><div>Inceptos quam, nam felis tortor tortor sed porta, a facilisis dictumst luctus ipsum phasellus, faucibus aliquam diam ullamcorper, a id ultrices non suscipit nulla. Nam nulla aliquet, imperdiet sit in massa a enim, amet suscipit dui sodales class vestibulum, in ut nec urna sed quis vestibulum. Quisque quis amet turpis, rhoncus integer, sed elit sed amet in mi, amet magna feugiat.tique amet donec, sed vestibulum elit ut sollicitudin. Lacus vivamus elit<\\/div><div><br \\/><\\/div><div>quam lorem, arcu justo pede eget vivamus, fringilla vestibulum sit nec magna duis, vel sed condimentum vestibulum dignissim suspendisse purus. Amet vivamus vivamus netus nec orci molestie, nisl morbi pulvinar vulputate eget, mi a mauris odio vel vulputate, cubilia praesent posuere tellus at velit.urpis nec ligula, pulvinar erat<\\/div><div><br \\/><\\/div><div>Quam arcu ac, at adipiscing justo lectus sit nibh massa. Quam euismod, nam eu tellus, et massa non mauris consequat, consequat lectus ultrices. Mi laoreet nunc consequat erat amet. Sem dignissim. Dignissim ac non, convallis id, vitae aliquam id urna a, placerat urna mauris aliquet lorem molestie nec.<\\/div>\",\"image\":\"60c73a95ec3891623669397.jpg\"}', 5, '2021-06-14 10:46:37', '2022-09-29 18:24:52'),
-(89, 'blog.element', '{\"has_image\":[\"1\"],\"title\":\"Laboriosam distinctio nisi debitis deleniti voluptatum corporis.\",\"short_description\":\"Lorem ipsum dolor sit amet, consectetur adipisic elit. Iusto eos rem ducimus nam! Optio, soluta. Laboriosam distinctio nisi debitis deleniti ducim.\",\"description_nic\":\"<div>Consectetuer in non nibh lorem posuere, sapien dictum dolor libero aliquam suspendisse, diam a eu tristique amet donec, sed vestibulum elit ut sollicitudin. Lacus vivamus elit quam lorem, arcu justo pede eget vivamus, fringilla vestibulum sit nec magna duis, vel sed condimentum vestibulum molestie, tortor ut orci ornare mi purus. Rhoncus vestibulum quam auctor id per, a luctus, in sed wisi. Arcu et, pulvinar non semper ac neque facilisis nec, pellentesque porttitor dapibus etiam non. Sit tempor nulla vivamus condimentum lorem tempus, velit diam in nullam semper culpa. Erat mattis. Volutpat vel vitae wisi nulla ipsum, non lorem dui mi, ut neque sed maecenas nonummy<\\/div><div><br \\/><\\/div><div>duis, interdum platea enim pretium suspendisse non enim. Ullamcorper duis, fermentum nulla. Suspendisse nec vestibulum odio proin ipsum tincidunt. Adipiscing pede dictum tellus nulla eget integer, felis wisi donec vehicula vel turpis ipsum.<\\/div><div><br \\/><\\/div><div>Aenean metus lectus at id. Morbi aliquet commodo a sodales eget. Eu justo ante nibh et a turpis, aliquam phasellus hymenaeos, imperdiet eget cras sociosqu, tincidunt a amet. Faucibus urna luctus, arcu ni<\\/div><div>Inceptos quam, nam felis tortor tortor sed porta, a facilisis dictumst luctus ipsum phasellus, faucibus aliquam diam ullamcorper, a id ultrices non suscipit nulla. Nam nulla aliquet, imperdiet sit in massa a enim, amet suscipit dui sodales class vestibulum, in ut nec urna sed quis vestibulum. Quisque quis amet turpis, rhoncus integer, sed elit sed amet in mi, amet magna feugiat.tique amet donec, sed vestibulum elit ut sollicitudin. Lacus vivamus elit<\\/div><div><br \\/><\\/div><div>quam lorem, arcu justo pede eget vivamus, fringilla vestibulum sit nec magna duis, vel sed condimentum vestibulum dignissim suspendisse purus. Amet vivamus vivamus netus nec orci molestie, nisl morbi pulvinar vulputate eget, mi a mauris odio vel vulputate, cubilia praesent posuere tellus at velit.urpis nec ligula, pulvinar erat<\\/div><div><br \\/><\\/div><div>Quam arcu ac, at adipiscing justo lectus sit nibh massa. Quam euismod, nam eu tellus, et massa non mauris consequat, consequat lectus ultrices. Mi laoreet nunc consequat erat amet. Sem dignissim. Dignissim ac non, convallis id, vitae aliquam id urna a, placerat urna mauris aliquet lorem molestie nec.<\\/div>\",\"image\":\"60c73aafdcdea1623669423.jpg\"}', 7, '2021-06-14 10:47:03', '2022-08-21 02:05:30'),
+(88, 'blog.element', '{\"has_image\":[\"1\"],\"title\":\"Laboriosam distinctio nisi debitis deleniti voluptatum corporis.\",\"short_description\":\"Lorem ipsum dolor sit amet, consectetur adipisic elit. Iusto eos rem ducimus nam! Optio, soluta. Laboriosam distinctio nisi debitis deleniti ducim.\",\"description_nic\":\"<div>Consectetuer in non nibh lorem posuere, sapien dictum dolor libero aliquam suspendisse, diam a eu tristique amet donec, sed vestibulum elit ut sollicitudin. Lacus vivamus elit quam lorem, arcu justo pede eget vivamus, fringilla vestibulum sit nec magna duis, vel sed condimentum vestibulum molestie, tortor ut orci ornare mi purus. Rhoncus vestibulum quam auctor id per, a luctus, in sed wisi. Arcu et, pulvinar non semper ac neque facilisis nec, pellentesque porttitor dapibus etiam non. Sit tempor nulla vivamus condimentum lorem tempus, velit diam in nullam semper culpa. Erat mattis. Volutpat vel vitae wisi nulla ipsum, non lorem dui mi, ut neque sed maecenas nonummy<\\/div><div><br \\/><\\/div><div>duis, interdum platea enim pretium suspendisse non enim. Ullamcorper duis, fermentum nulla. Suspendisse nec vestibulum odio proin ipsum tincidunt. Adipiscing pede dictum tellus nulla eget integer, felis wisi donec vehicula vel turpis ipsum.<\\/div><div><br \\/><\\/div><div>Aenean metus lectus at id. Morbi aliquet commodo a sodales eget. Eu justo ante nibh et a turpis, aliquam phasellus hymenaeos, imperdiet eget cras sociosqu, tincidunt a amet. Faucibus urna luctus, arcu ni<\\/div><div>Inceptos quam, nam felis tortor tortor sed porta, a facilisis dictumst luctus ipsum phasellus, faucibus aliquam diam ullamcorper, a id ultrices non suscipit nulla. Nam nulla aliquet, imperdiet sit in massa a enim, amet suscipit dui sodales class vestibulum, in ut nec urna sed quis vestibulum. Quisque quis amet turpis, rhoncus integer, sed elit sed amet in mi, amet magna feugiat.tique amet donec, sed vestibulum elit ut sollicitudin. Lacus vivamus elit<\\/div><div><br \\/><\\/div><div>quam lorem, arcu justo pede eget vivamus, fringilla vestibulum sit nec magna duis, vel sed condimentum vestibulum dignissim suspendisse purus. Amet vivamus vivamus netus nec orci molestie, nisl morbi pulvinar vulputate eget, mi a mauris odio vel vulputate, cubilia praesent posuere tellus at velit.urpis nec ligula, pulvinar erat<\\/div><div><br \\/><\\/div><div>Quam arcu ac, at adipiscing justo lectus sit nibh massa. Quam euismod, nam eu tellus, et massa non mauris consequat, consequat lectus ultrices. Mi laoreet nunc consequat erat amet. Sem dignissim. Dignissim ac non, convallis id, vitae aliquam id urna a, placerat urna mauris aliquet lorem molestie nec.<\\/div>\",\"image\":\"60c73a95ec3891623669397.jpg\"}', 6, '2021-06-14 10:46:37', '2022-09-30 18:37:38'),
+(89, 'blog.element', '{\"has_image\":[\"1\"],\"title\":\"Laboriosam distinctio nisi debitis deleniti voluptatum corporis.\",\"short_description\":\"Lorem ipsum dolor sit amet, consectetur adipisic elit. Iusto eos rem ducimus nam! Optio, soluta. Laboriosam distinctio nisi debitis deleniti ducim.\",\"description_nic\":\"<div>Consectetuer in non nibh lorem posuere, sapien dictum dolor libero aliquam suspendisse, diam a eu tristique amet donec, sed vestibulum elit ut sollicitudin. Lacus vivamus elit quam lorem, arcu justo pede eget vivamus, fringilla vestibulum sit nec magna duis, vel sed condimentum vestibulum molestie, tortor ut orci ornare mi purus. Rhoncus vestibulum quam auctor id per, a luctus, in sed wisi. Arcu et, pulvinar non semper ac neque facilisis nec, pellentesque porttitor dapibus etiam non. Sit tempor nulla vivamus condimentum lorem tempus, velit diam in nullam semper culpa. Erat mattis. Volutpat vel vitae wisi nulla ipsum, non lorem dui mi, ut neque sed maecenas nonummy<\\/div><div><br \\/><\\/div><div>duis, interdum platea enim pretium suspendisse non enim. Ullamcorper duis, fermentum nulla. Suspendisse nec vestibulum odio proin ipsum tincidunt. Adipiscing pede dictum tellus nulla eget integer, felis wisi donec vehicula vel turpis ipsum.<\\/div><div><br \\/><\\/div><div>Aenean metus lectus at id. Morbi aliquet commodo a sodales eget. Eu justo ante nibh et a turpis, aliquam phasellus hymenaeos, imperdiet eget cras sociosqu, tincidunt a amet. Faucibus urna luctus, arcu ni<\\/div><div>Inceptos quam, nam felis tortor tortor sed porta, a facilisis dictumst luctus ipsum phasellus, faucibus aliquam diam ullamcorper, a id ultrices non suscipit nulla. Nam nulla aliquet, imperdiet sit in massa a enim, amet suscipit dui sodales class vestibulum, in ut nec urna sed quis vestibulum. Quisque quis amet turpis, rhoncus integer, sed elit sed amet in mi, amet magna feugiat.tique amet donec, sed vestibulum elit ut sollicitudin. Lacus vivamus elit<\\/div><div><br \\/><\\/div><div>quam lorem, arcu justo pede eget vivamus, fringilla vestibulum sit nec magna duis, vel sed condimentum vestibulum dignissim suspendisse purus. Amet vivamus vivamus netus nec orci molestie, nisl morbi pulvinar vulputate eget, mi a mauris odio vel vulputate, cubilia praesent posuere tellus at velit.urpis nec ligula, pulvinar erat<\\/div><div><br \\/><\\/div><div>Quam arcu ac, at adipiscing justo lectus sit nibh massa. Quam euismod, nam eu tellus, et massa non mauris consequat, consequat lectus ultrices. Mi laoreet nunc consequat erat amet. Sem dignissim. Dignissim ac non, convallis id, vitae aliquam id urna a, placerat urna mauris aliquet lorem molestie nec.<\\/div>\",\"image\":\"60c73aafdcdea1623669423.jpg\"}', 8, '2021-06-14 10:47:03', '2022-10-01 18:24:05'),
 (90, 'blog.element', '{\"has_image\":[\"1\"],\"title\":\"Laboriosam distinctio nisi debitis deleniti voluptatum corporis.\",\"short_description\":\"Lorem ipsum dolor sit amet, consectetur adipisic elit. Iusto eos rem ducimus nam! Optio, soluta. Laboriosam distinctio nisi debitis deleniti ducim.\",\"description_nic\":\"<div>Consectetuer in non nibh lorem posuere, sapien dictum dolor libero aliquam suspendisse, diam a eu tristique amet donec, sed vestibulum elit ut sollicitudin. Lacus vivamus elit quam lorem, arcu justo pede eget vivamus, fringilla vestibulum sit nec magna duis, vel sed condimentum vestibulum molestie, tortor ut orci ornare mi purus. Rhoncus vestibulum quam auctor id per, a luctus, in sed wisi. Arcu et, pulvinar non semper ac neque facilisis nec, pellentesque porttitor dapibus etiam non. Sit tempor nulla vivamus condimentum lorem tempus, velit diam in nullam semper culpa. Erat mattis. Volutpat vel vitae wisi nulla ipsum, non lorem dui mi, ut neque sed maecenas nonummy<\\/div><div><br \\/><\\/div><div>duis, interdum platea enim pretium suspendisse non enim. Ullamcorper duis, fermentum nulla. Suspendisse nec vestibulum odio proin ipsum tincidunt. Adipiscing pede dictum tellus nulla eget integer, felis wisi donec vehicula vel turpis ipsum.<\\/div><div><br \\/><\\/div><div>Aenean metus lectus at id. Morbi aliquet commodo a sodales eget. Eu justo ante nibh et a turpis, aliquam phasellus hymenaeos, imperdiet eget cras sociosqu, tincidunt a amet. Faucibus urna luctus, arcu ni<\\/div><div>Inceptos quam, nam felis tortor tortor sed porta, a facilisis dictumst luctus ipsum phasellus, faucibus aliquam diam ullamcorper, a id ultrices non suscipit nulla. Nam nulla aliquet, imperdiet sit in massa a enim, amet suscipit dui sodales class vestibulum, in ut nec urna sed quis vestibulum. Quisque quis amet turpis, rhoncus integer, sed elit sed amet in mi, amet magna feugiat.tique amet donec, sed vestibulum elit ut sollicitudin. Lacus vivamus elit<\\/div><div><br \\/><\\/div><div>quam lorem, arcu justo pede eget vivamus, fringilla vestibulum sit nec magna duis, vel sed condimentum vestibulum dignissim suspendisse purus. Amet vivamus vivamus netus nec orci molestie, nisl morbi pulvinar vulputate eget, mi a mauris odio vel vulputate, cubilia praesent posuere tellus at velit.urpis nec ligula, pulvinar erat<\\/div><div><br \\/><\\/div><div>Quam arcu ac, at adipiscing justo lectus sit nibh massa. Quam euismod, nam eu tellus, et massa non mauris consequat, consequat lectus ultrices. Mi laoreet nunc consequat erat amet. Sem dignissim. Dignissim ac non, convallis id, vitae aliquam id urna a, placerat urna mauris aliquet lorem molestie nec.<\\/div>\",\"image\":\"60c73ac4a014c1623669444.jpg\"}', 4, '2021-06-14 10:47:24', '2022-09-29 18:22:49'),
 (91, 'blog.element', '{\"has_image\":[\"1\"],\"title\":\"Laboriosam distinctio nisi debitis deleniti voluptatum corporis.\",\"short_description\":\"Lorem ipsum dolor sit amet, consectetur adipisic elit. Iusto eos rem ducimus nam! Optio, soluta. Laboriosam distinctio nisi debitis deleniti ducim.\",\"description_nic\":\"<div>Consectetuer in non nibh lorem posuere, sapien dictum dolor libero aliquam suspendisse, diam a eu tristique amet donec, sed vestibulum elit ut sollicitudin. Lacus vivamus elit quam lorem, arcu justo pede eget vivamus, fringilla vestibulum sit nec magna duis, vel sed condimentum vestibulum molestie, tortor ut orci ornare mi purus. Rhoncus vestibulum quam auctor id per, a luctus, in sed wisi. Arcu et, pulvinar non semper ac neque facilisis nec, pellentesque porttitor dapibus etiam non. Sit tempor nulla vivamus condimentum lorem tempus, velit diam in nullam semper culpa. Erat mattis. Volutpat vel vitae wisi nulla ipsum, non lorem dui mi, ut neque sed maecenas nonummy<\\/div><div><br \\/><\\/div><div>duis, interdum platea enim pretium suspendisse non enim. Ullamcorper duis, fermentum nulla. Suspendisse nec vestibulum odio proin ipsum tincidunt. Adipiscing pede dictum tellus nulla eget integer, felis wisi donec vehicula vel turpis ipsum.<\\/div><div><br \\/><\\/div><div>Aenean metus lectus at id. Morbi aliquet commodo a sodales eget. Eu justo ante nibh et a turpis, aliquam phasellus hymenaeos, imperdiet eget cras sociosqu, tincidunt a amet. Faucibus urna luctus, arcu ni<\\/div><div>Inceptos quam, nam felis tortor tortor sed porta, a facilisis dictumst luctus ipsum phasellus, faucibus aliquam diam ullamcorper, a id ultrices non suscipit nulla. Nam nulla aliquet, imperdiet sit in massa a enim, amet suscipit dui sodales class vestibulum, in ut nec urna sed quis vestibulum. Quisque quis amet turpis, rhoncus integer, sed elit sed amet in mi, amet magna feugiat.tique amet donec, sed vestibulum elit ut sollicitudin. Lacus vivamus elit<\\/div><div><br \\/><\\/div><div>quam lorem, arcu justo pede eget vivamus, fringilla vestibulum sit nec magna duis, vel sed condimentum vestibulum dignissim suspendisse purus. Amet vivamus vivamus netus nec orci molestie, nisl morbi pulvinar vulputate eget, mi a mauris odio vel vulputate, cubilia praesent posuere tellus at velit.urpis nec ligula, pulvinar erat<\\/div><div><br \\/><\\/div><div>Quam arcu ac, at adipiscing justo lectus sit nibh massa. Quam euismod, nam eu tellus, et massa non mauris consequat, consequat lectus ultrices. Mi laoreet nunc consequat erat amet. Sem dignissim. Dignissim ac non, convallis id, vitae aliquam id urna a, placerat urna mauris aliquet lorem molestie nec.<\\/div>\",\"image\":\"60c73ae590f041623669477.jpg\"}', 13, '2021-06-14 10:47:57', '2022-09-29 18:22:42'),
 (92, 'blog.element', '{\"has_image\":[\"1\"],\"title\":\"Laboriosam distinctio nisi debitis deleniti voluptatum corporis.\",\"short_description\":\"Lorem ipsum dolor sit amet, consectetur adipisic elit. Iusto eos rem ducimus nam! Optio, soluta. Laboriosam distinctio nisi debitis deleniti ducim.\",\"description_nic\":\"<div>Consectetuer in non nibh lorem posuere, sapien dictum dolor libero aliquam suspendisse, diam a eu tristique amet donec, sed vestibulum elit ut sollicitudin. Lacus vivamus elit quam lorem, arcu justo pede eget vivamus, fringilla vestibulum sit nec magna duis, vel sed condimentum vestibulum molestie, tortor ut orci ornare mi purus. Rhoncus vestibulum quam auctor id per, a luctus, in sed wisi. Arcu et, pulvinar non semper ac neque facilisis nec, pellentesque porttitor dapibus etiam non. Sit tempor nulla vivamus condimentum lorem tempus, velit diam in nullam semper culpa. Erat mattis. Volutpat vel vitae wisi nulla ipsum, non lorem dui mi, ut neque sed maecenas nonummy<\\/div><div><br \\/><\\/div><div>duis, interdum platea enim pretium suspendisse non enim. Ullamcorper duis, fermentum nulla. Suspendisse nec vestibulum odio proin ipsum tincidunt. Adipiscing pede dictum tellus nulla eget integer, felis wisi donec vehicula vel turpis ipsum.<\\/div><div><br \\/><\\/div><div>Aenean metus lectus at id. Morbi aliquet commodo a sodales eget. Eu justo ante nibh et a turpis, aliquam phasellus hymenaeos, imperdiet eget cras sociosqu, tincidunt a amet. Faucibus urna luctus, arcu ni<\\/div><div>Inceptos quam, nam felis tortor tortor sed porta, a facilisis dictumst luctus ipsum phasellus, faucibus aliquam diam ullamcorper, a id ultrices non suscipit nulla. Nam nulla aliquet, imperdiet sit in massa a enim, amet suscipit dui sodales class vestibulum, in ut nec urna sed quis vestibulum. Quisque quis amet turpis, rhoncus integer, sed elit sed amet in mi, amet magna feugiat.tique amet donec, sed vestibulum elit ut sollicitudin. Lacus vivamus elit<\\/div><div><br \\/><\\/div><div>quam lorem, arcu justo pede eget vivamus, fringilla vestibulum sit nec magna duis, vel sed condimentum vestibulum dignissim suspendisse purus. Amet vivamus vivamus netus nec orci molestie, nisl morbi pulvinar vulputate eget, mi a mauris odio vel vulputate, cubilia praesent posuere tellus at velit.urpis nec ligula, pulvinar erat<\\/div><div><br \\/><\\/div><div>Quam arcu ac, at adipiscing justo lectus sit nibh massa. Quam euismod, nam eu tellus, et massa non mauris consequat, consequat lectus ultrices. Mi laoreet nunc consequat erat amet. Sem dignissim. Dignissim ac non, convallis id, vitae aliquam id urna a, placerat urna mauris aliquet lorem molestie nec.<\\/div>\",\"image\":\"60c73afce52f71623669500.jpg\"}', 37, '2021-06-14 10:48:20', '2022-09-29 18:23:08');
@@ -4187,6 +4198,7 @@ INSERT INTO `model_has_permissions` (`permission_id`, `model_type`, `model_id`) 
 (1, 'App\\Models\\UserShop', 2),
 (2, 'App\\Models\\UserShop', 1),
 (2, 'App\\Models\\UserShop', 2),
+(2, 'PickBazar\\Database\\Models\\User', 5),
 (3, 'App\\Models\\UserShop', 1),
 (3, 'App\\Models\\UserShop', 2);
 
@@ -4446,7 +4458,9 @@ CREATE TABLE `personal_access_tokens` (
 --
 
 INSERT INTO `personal_access_tokens` (`id`, `tokenable_type`, `tokenable_id`, `name`, `token`, `abilities`, `last_used_at`, `created_at`, `updated_at`) VALUES
-(1, 'App\\Models\\UserShop', 2, 'auth_token', '20df32c221f34eadf0f30d4ae5b6709eac23d27aac5d4803dc31131f8819ee70', '[\"*\"]', '2022-09-28 16:48:53', '2022-09-28 16:44:47', '2022-09-28 16:48:53');
+(1, 'App\\Models\\UserShop', 2, 'auth_token', '20df32c221f34eadf0f30d4ae5b6709eac23d27aac5d4803dc31131f8819ee70', '[\"*\"]', '2022-09-28 16:48:53', '2022-09-28 16:44:47', '2022-09-28 16:48:53'),
+(2, 'PickBazar\\Database\\Models\\User', 5, 'auth_token', 'ee72b625d70ce478014319354934f0c6329b317055e800d96bee9271ead3007e', '[\"*\"]', '2022-10-01 23:03:22', '2022-10-01 22:50:43', '2022-10-01 23:03:22'),
+(3, 'PickBazar\\Database\\Models\\User', 5, 'auth_token', 'cbda895c454932fb9a73cebce4c514f6788b454f38b671d2ef720564fecc7f26', '[\"*\"]', '2022-10-01 23:58:21', '2022-10-01 23:23:03', '2022-10-01 23:58:21');
 
 -- --------------------------------------------------------
 
@@ -5296,12 +5310,29 @@ CREATE TABLE `sessions` (
 --
 
 INSERT INTO `sessions` (`id`, `user_id`, `ip_address`, `user_agent`, `payload`, `last_activity`) VALUES
-('07BkJ7F1iZqRyt2c1IIAmUdN5J3DcshthEEZl6Hb', NULL, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/106.0.0.0 Safari/537.36', 'YTozOntzOjY6Il90b2tlbiI7czo0MDoiU0VsTGxQUG9GQlVXRElrWVZqM1lRZm8zVHBrVlpXSDdTRjI4U2phNyI7czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6MjE6Imh0dHA6Ly9pdHRyYXZlbC5sb2NhbCI7fXM6NjoiX2ZsYXNoIjthOjI6e3M6Mzoib2xkIjthOjA6e31zOjM6Im5ldyI7YTowOnt9fX0=', 1664424690),
-('7DxNAbUMUoSTNvsTz4vx6UgRc0UR9K3c4LGCVFbQ', NULL, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/106.0.0.0 Safari/537.36', 'YTozOntzOjY6Il90b2tlbiI7czo0MDoicWdBRjVkc2FNQUt0WXhneUtlZWY2d2dIWlNPVVFwcURaRXEyS09MNCI7czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6MjE6Imh0dHA6Ly9pdHRyYXZlbC5sb2NhbCI7fXM6NjoiX2ZsYXNoIjthOjI6e3M6Mzoib2xkIjthOjA6e31zOjM6Im5ldyI7YTowOnt9fX0=', 1664500932),
-('Bbx6rseceZgShvPqhivwF01VAT30Fjjb6Vp6oKVV', NULL, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/106.0.0.0 Safari/537.36', 'YTozOntzOjY6Il90b2tlbiI7czo0MDoiTjUzU21GWmEydnhLcmI1Q3o4bWFQQmtHaXlwMGhkR0lSMnhmdFBsRSI7czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6MzE6Imh0dHA6Ly9pdHRyYXZlbC5sb2NhbC8tZ3JhcGhpcWwiO31zOjY6Il9mbGFzaCI7YToyOntzOjM6Im9sZCI7YTowOnt9czozOiJuZXciO2E6MDp7fX19', 1664440557),
-('Fk9V7hMmcvqAeTwYr2BILoTiAHlUDhHN5pfRULfO', NULL, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/106.0.0.0 Safari/537.36', 'YTozOntzOjY6Il90b2tlbiI7czo0MDoiRERoamRBaDNaeXoxT1c1cTEwR2o1TTRuY3lORllNSWRmVGNxQ0V3ViI7czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6MjE6Imh0dHA6Ly9pdHRyYXZlbC5sb2NhbCI7fXM6NjoiX2ZsYXNoIjthOjI6e3M6Mzoib2xkIjthOjA6e31zOjM6Im5ldyI7YTowOnt9fX0=', 1664500932),
-('vYbZo1xBDjhypbCvcqiADttNYt0pvpOzztEAcqqX', NULL, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/106.0.0.0 Safari/537.36', 'YTo1OntzOjY6Il90b2tlbiI7czo0MDoiZUNobUlTSHVZRGhNeGZrSE9VMmFrZm91ODRuRGlDNDBMQXlidnlMaSI7czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6OTM6Imh0dHA6Ly9pdHRyYXZlbC5sb2NhbC9ibG9nLzg4L2xhYm9yaW9zYW0tZGlzdGluY3Rpby1uaXNpLWRlYml0aXMtZGVsZW5pdGktdm9sdXB0YXR1bS1jb3Jwb3JpcyI7fXM6NjoiX2ZsYXNoIjthOjI6e3M6Mzoib2xkIjthOjA6e31zOjM6Im5ldyI7YTowOnt9fXM6MTU6ImNvb2tpZV9hY2NlcHRlZCI7YjoxO3M6NDoibGFuZyI7czoyOiJlbiI7fQ==', 1664501092),
-('YULXNHtU7MDAo9BV0qNJCTsZ0bTkQX6C6XPE4S0z', NULL, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/106.0.0.0 Safari/537.36', 'YTo0OntzOjY6Il90b2tlbiI7czo0MDoiUWM5SWZYRlZ2ZDFKN0pwdEdES0cyMTY5V2pzMzhvbzdRa2hCaER1diI7czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6NDQ6Imh0dHA6Ly9pdHRyYXZlbC5sb2NhbC9hZG1pbi9hbW1lbGlhcy1wcm9maWxlIjt9czo2OiJfZmxhc2giO2E6Mjp7czozOiJvbGQiO2E6MDp7fXM6MzoibmV3IjthOjA6e319czo1MjoibG9naW5fYWRtaW5fNTliYTM2YWRkYzJiMmY5NDAxNTgwZjAxNGM3ZjU4ZWE0ZTMwOTg5ZCI7aToxO30=', 1664413661);
+('2PwBpGOMwn9FWTZWmKXMAlbA7cmPJwzQYt7JwpKP', 1, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/105.0.0.0 Safari/537.36 Edg/105.0.1343.53', 'YTo2OntzOjY6Il90b2tlbiI7czo0MDoiSHBISHBTaURhaDU0c2pudUtrWEQ3VjVSTGFYQ1BwWmZaMVR5Y09JWSI7czo2OiJfZmxhc2giO2E6Mjp7czozOiJvbGQiO2E6MDp7fXM6MzoibmV3IjthOjA6e319czoxNToiY29va2llX2FjY2VwdGVkIjtiOjE7czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6MzY6Imh0dHA6Ly9pdHRyYXZlbC5sb2NhbC91c2VyL2Rhc2hib2FyZCI7fXM6NDoibGFuZyI7czoyOiJlbiI7czo1MDoibG9naW5fd2ViXzU5YmEzNmFkZGMyYjJmOTQwMTU4MGYwMTRjN2Y1OGVhNGUzMDk4OWQiO2k6MTt9', 1664683522),
+('2PZ5rqkZ8FpQMvGCOnComHuyJR9aJPCLoB6IVufb', NULL, '127.0.0.1', 'axios/0.21.1', 'YTozOntzOjY6Il90b2tlbiI7czo0MDoiTHA5UlNlMDJJQTRUZDVOWWNPemRhRFUwSG9OMHpRQTZZZXAzYmdQQiI7czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6Mjc6Imh0dHA6Ly9pdHRyYXZlbC5sb2NhbC90eXBlcyI7fXM6NjoiX2ZsYXNoIjthOjI6e3M6Mzoib2xkIjthOjA6e31zOjM6Im5ldyI7YTowOnt9fX0=', 1664684177),
+('2QpNZXHTb0ySIjhbWd4oxqtd8yMwscAMdg0wCN0M', NULL, '127.0.0.1', 'axios/0.21.1', 'YTozOntzOjY6Il90b2tlbiI7czo0MDoiRU5kbllBSXgyMzVjZ1RYOE9tckV3ZlZSYUJ2VWtKZ2pMaDNQTzZQTyI7czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6Mjc6Imh0dHA6Ly9pdHRyYXZlbC5sb2NhbC90eXBlcyI7fXM6NjoiX2ZsYXNoIjthOjI6e3M6Mzoib2xkIjthOjA6e31zOjM6Im5ldyI7YTowOnt9fX0=', 1664684192),
+('8Wx14gtnSnKeg41P0qMSkBgzsvcj8rDcDTl8ioDu', NULL, '127.0.0.1', 'axios/0.21.1', 'YTozOntzOjY6Il90b2tlbiI7czo0MDoiS01VQ2pkTlBjMEY0ODhlNXQ0OWNXZ0xhOTlReXVRQWxjSTR0bGptMiI7czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6MzI6Imh0dHA6Ly9sb2NhbGhvc3QvcGlja2JhemFyLXR5cGVzIjt9czo2OiJfZmxhc2giO2E6Mjp7czozOiJvbGQiO2E6MDp7fXM6MzoibmV3IjthOjA6e319fQ==', 1664615136),
+('aAQOIyCVGfXKM7JSr68R5vzLvCkTFiEWYKurlZAV', NULL, '127.0.0.1', 'axios/0.21.1', 'YTozOntzOjY6Il90b2tlbiI7czo0MDoiNXh6TnVMYXNPM016YVo5dkdBckhCRVA3RVBBUlYyZ3puZHVsV01kZiI7czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6Mjc6Imh0dHA6Ly9pdHRyYXZlbC5sb2NhbC90eXBlcyI7fXM6NjoiX2ZsYXNoIjthOjI6e3M6Mzoib2xkIjthOjA6e31zOjM6Im5ldyI7YTowOnt9fX0=', 1664684187),
+('cFbUEsDnalqnQ2jXvAQV5FuFHJT7LQdkAmxfOQ7d', NULL, '127.0.0.1', 'axios/0.21.1', 'YTozOntzOjY6Il90b2tlbiI7czo0MDoiNmJTaFJuaVZtTkVCcXdORjVNN3dXM3VnYTljRmQ1MllvUFBqUmVJVyI7czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6MzI6Imh0dHA6Ly9sb2NhbGhvc3QvcGlja2JhemFyLXR5cGVzIjt9czo2OiJfZmxhc2giO2E6Mjp7czozOiJvbGQiO2E6MDp7fXM6MzoibmV3IjthOjA6e319fQ==', 1664615158),
+('iEdo8XkcjblsmAUAlczKebGMlkOVrPRY2cbhUVzH', NULL, '127.0.0.1', 'axios/0.21.1', 'YTozOntzOjY6Il90b2tlbiI7czo0MDoiYjNhdmpwNUh6aDYxNTZFV21sbXQxeERwVDZPYThaSTVMbEcxTGtZRiI7czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6MzI6Imh0dHA6Ly9sb2NhbGhvc3QvcGlja2JhemFyLXR5cGVzIjt9czo2OiJfZmxhc2giO2E6Mjp7czozOiJvbGQiO2E6MDp7fXM6MzoibmV3IjthOjA6e319fQ==', 1664615170),
+('J0s5ZWh4tYq0Wrkqp4qfDtXkW2HTww4dLTF1Kn5W', NULL, '127.0.0.1', 'axios/0.21.1', 'YTozOntzOjY6Il90b2tlbiI7czo0MDoiZkN5Rzd5aFR6bHF6N0RVTXA0WWlUMUtoRG5vazJMWWRMN0VhaGJKcyI7czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6MzI6Imh0dHA6Ly9sb2NhbGhvc3QvcGlja2JhemFyLXR5cGVzIjt9czo2OiJfZmxhc2giO2E6Mjp7czozOiJvbGQiO2E6MDp7fXM6MzoibmV3IjthOjA6e319fQ==', 1664615136),
+('JxuipRNj2eCdXBWBjcXmesPgemnob6Iczs4ukrpo', NULL, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/105.0.0.0 Safari/537.36 Edg/105.0.1343.53', 'YTo0OntzOjY6Il90b2tlbiI7czo0MDoiVmRKREw0bUdtQVBLZldYd0FjU1hiR0djZlpra0Z1eElvTk1DTmdXVCI7czo2OiJfZmxhc2giO2E6Mjp7czozOiJvbGQiO2E6MDp7fXM6MzoibmV3IjthOjA6e319czoxNToiY29va2llX2FjY2VwdGVkIjtiOjE7czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6Mjc6Imh0dHA6Ly9pdHRyYXZlbC5sb2NhbC9sb2dpbiI7fX0=', 1664674040),
+('Litent9vwoX2yKGPYI3HzD1ESiHNNQdiYbNkjU86', NULL, '127.0.0.1', 'axios/0.21.1', 'YTozOntzOjY6Il90b2tlbiI7czo0MDoiUWlzTmVJVkliaEQ3b2x3SmZUVVJUeXVnMXJIQmlTVzc4dU1lRThDaCI7czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6Mjc6Imh0dHA6Ly9pdHRyYXZlbC5sb2NhbC90eXBlcyI7fXM6NjoiX2ZsYXNoIjthOjI6e3M6Mzoib2xkIjthOjA6e31zOjM6Im5ldyI7YTowOnt9fX0=', 1664684182),
+('m5QS7cF4dsksHlvnRik5thAWqwtnVM3GTcdPwMYs', NULL, '127.0.0.1', 'axios/0.21.1', 'YTozOntzOjY6Il90b2tlbiI7czo0MDoiWDVmM1E3NERZVkxzYWI3Z0laSzg0UVRqRFpSNXg2bXhBc0JudHA4VSI7czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6Mjc6Imh0dHA6Ly9pdHRyYXZlbC5sb2NhbC90eXBlcyI7fXM6NjoiX2ZsYXNoIjthOjI6e3M6Mzoib2xkIjthOjA6e31zOjM6Im5ldyI7YTowOnt9fX0=', 1664684456),
+('mBdo9SKMInQ0Y4UwlJRlu5SJ3AYg2l0Giyg0bmCv', NULL, '127.0.0.1', 'axios/0.21.1', 'YTozOntzOjY6Il90b2tlbiI7czo0MDoibkcwNmwzcnY2MVphQlYxSUtJUjYwVHJrUXFKWlBJaFFRZ2lkanJpaSI7czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6Mjc6Imh0dHA6Ly9pdHRyYXZlbC5sb2NhbC90eXBlcyI7fXM6NjoiX2ZsYXNoIjthOjI6e3M6Mzoib2xkIjthOjA6e31zOjM6Im5ldyI7YTowOnt9fX0=', 1664684170),
+('mtirjBquLBDOZddejCbduA7kJuboKWZSpcnk3BKP', NULL, '127.0.0.1', 'axios/0.21.1', 'YTozOntzOjY6Il90b2tlbiI7czo0MDoialRGd04yZ3g1RGNYWTJ4NTB4MlZ6TkdhMjRFS20xajJxQ3dBaDA5TSI7czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6MjI6Imh0dHA6Ly9sb2NhbGhvc3QvdHlwZXMiO31zOjY6Il9mbGFzaCI7YToyOntzOjM6Im9sZCI7YTowOnt9czozOiJuZXciO2E6MDp7fX19', 1664615271),
+('n2zRTzlS16jPurPMgyr7wPU21cwQBufa8lGQ14L6', NULL, '127.0.0.1', 'axios/0.21.1', 'YTozOntzOjY6Il90b2tlbiI7czo0MDoiaGt3NXZXRllZVFJ0OVJVRDBJQUdZdVozQTAzcURGaGp1Z2p0YkJreCI7czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6MjI6Imh0dHA6Ly9sb2NhbGhvc3QvdHlwZXMiO31zOjY6Il9mbGFzaCI7YToyOntzOjM6Im9sZCI7YTowOnt9czozOiJuZXciO2E6MDp7fX19', 1664615266),
+('o8Q4fJYdqVmWXQcgQ6M9SgsOVheam9mDNvBwLM7i', NULL, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/106.0.0.0 Safari/537.36', 'YTo0OntzOjY6Il90b2tlbiI7czo0MDoiN3NMNzc3SnRJRVhrbFBwaGJYbmxFalY2Rjl1T3c2MExvUVRqeWdUVCI7czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6Mjc6Imh0dHA6Ly9pdHRyYXZlbC5sb2NhbC9sb2dpbiI7fXM6NjoiX2ZsYXNoIjthOjI6e3M6Mzoib2xkIjthOjA6e31zOjM6Im5ldyI7YTowOnt9fXM6MTU6ImNvb2tpZV9hY2NlcHRlZCI7YjoxO30=', 1664673850),
+('obrXzCyUD9KqHKQ4VMxWA6KBd9F3y1E5TwL5Tg3v', NULL, '127.0.0.1', 'axios/0.21.1', 'YTozOntzOjY6Il90b2tlbiI7czo0MDoiRE1RT3E3NlBmbHhIbkY2Y3dMNURPTEZzUk84clJQUmJSQ2pmdzdkaCI7czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6MjI6Imh0dHA6Ly9sb2NhbGhvc3QvdHlwZXMiO31zOjY6Il9mbGFzaCI7YToyOntzOjM6Im9sZCI7YTowOnt9czozOiJuZXciO2E6MDp7fX19', 1664615277),
+('pCoI8apZMyjMcyGlR8MjJySpIeKo47jxOpV3LhlO', NULL, '127.0.0.1', 'axios/0.21.1', 'YTozOntzOjY6Il90b2tlbiI7czo0MDoiOTBZcXVVNUJZN1k2T3VaNk5VT2J1Q2V0R2RMbG1LY3J1UUw3MENucCI7czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6MzI6Imh0dHA6Ly9sb2NhbGhvc3QvcGlja2JhemFyLXR5cGVzIjt9czo2OiJfZmxhc2giO2E6Mjp7czozOiJvbGQiO2E6MDp7fXM6MzoibmV3IjthOjA6e319fQ==', 1664615153),
+('RFa3VLSN3Yp86MhaFnjfvFJwAKNv9VslxVA2Fmqq', NULL, '127.0.0.1', 'axios/0.21.1', 'YTozOntzOjY6Il90b2tlbiI7czo0MDoidVNJdG56VHBwVE9QZ0lKYm5Id2J4ekN4ZFhSNjU1QjNyaFlnN2NyMyI7czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6MjI6Imh0dHA6Ly9sb2NhbGhvc3QvdHlwZXMiO31zOjY6Il9mbGFzaCI7YToyOntzOjM6Im9sZCI7YTowOnt9czozOiJuZXciO2E6MDp7fX19', 1664615249),
+('SNukwWS0jVmHFAPKgp5mx1luD83IKC67oFMzJPlq', NULL, '127.0.0.1', 'axios/0.21.1', 'YTozOntzOjY6Il90b2tlbiI7czo0MDoiYlZ5N0FYemVQTFdRMTRPTTdkbUFLU0tJOUc0UDI2dFc4bkJ6TjBwdiI7czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6Mjc6Imh0dHA6Ly9pdHRyYXZlbC5sb2NhbC90eXBlcyI7fXM6NjoiX2ZsYXNoIjthOjI6e3M6Mzoib2xkIjthOjA6e31zOjM6Im5ldyI7YTowOnt9fX0=', 1664684144),
+('tBRPRmDKPnDTf0732OKrVDn0miQ2rKHnE3Bs5CrW', NULL, '127.0.0.1', 'axios/0.21.1', 'YTozOntzOjY6Il90b2tlbiI7czo0MDoiVWlVVGY2d3lVcktNb3VPa2QxajdWRnZSdmlLdDU3VXA0emgzenJlMSI7czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6NjM6Imh0dHA6Ly9pdHRyYXZlbC5sb2NhbC9wcm9kdWN0cz9saW1pdD0xMDAmc2VhcmNoPSZzZWFyY2hKb2luPWFuZCI7fXM6NjoiX2ZsYXNoIjthOjI6e3M6Mzoib2xkIjthOjA6e31zOjM6Im5ldyI7YTowOnt9fX0=', 1664684458),
+('v9OevMOmFY0c5lDBUQ45TuBdamLQzGZl4xsJdUAg', NULL, '127.0.0.1', 'axios/0.21.1', 'YTozOntzOjY6Il90b2tlbiI7czo0MDoiQ2VlM0FxN1JCd3NBVENJN25pNWc1Q2pwMFlTbVZiM3lqcnJvY1JDTCI7czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6MzI6Imh0dHA6Ly9sb2NhbGhvc3QvcGlja2JhemFyLXR5cGVzIjt9czo2OiJfZmxhc2giO2E6Mjp7czozOiJvbGQiO2E6MDp7fXM6MzoibmV3IjthOjA6e319fQ==', 1664615163),
+('vkryWgrVoz8jcNactabnXbGRFGtFtxsKfhLdEUvP', NULL, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/105.0.0.0 Safari/537.36 Edg/105.0.1343.53', 'YTo2OntzOjY6Il90b2tlbiI7czo0MDoiSlNXYUtGd0hid2RYM0Z1WlN4dDVkM092Mk1sQVVwcjB1SVdkVnJiRyI7czo2OiJfZmxhc2giO2E6Mjp7czozOiJvbGQiO2E6MDp7fXM6MzoibmV3IjthOjA6e319czoxNToiY29va2llX2FjY2VwdGVkIjtiOjE7czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6Mjc6Imh0dHA6Ly9pdHRyYXZlbC5sb2NhbC9sb2dpbiI7fXM6NDoibGFuZyI7czoyOiJlbiI7czo1MDoibG9naW5fd2ViXzU5YmEzNmFkZGMyYjJmOTQwMTU4MGYwMTRjN2Y1OGVhNGUzMDk4OWQiO2k6MTt9', 1664676076),
+('XkUgfN8ddNpay4rr5nn1xWTJeRjXOHZOmPNCtkUl', NULL, '127.0.0.1', 'axios/0.21.1', 'YTozOntzOjY6Il90b2tlbiI7czo0MDoienBmY2JKSDVnSGkzR3g2RlhuRFhQRkhJNG5KUGFBRUZhVzNMNGlWYSI7czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6MzI6Imh0dHA6Ly9sb2NhbGhvc3QvcGlja2JhemFyLXR5cGVzIjt9czo2OiJfZmxhc2giO2E6Mjp7czozOiJvbGQiO2E6MDp7fXM6MzoibmV3IjthOjA6e319fQ==', 1664615148);
 
 -- --------------------------------------------------------
 
@@ -5409,7 +5440,8 @@ INSERT INTO `subscribers` (`id`, `email`, `status`, `created_at`, `updated_at`) 
 (9, 'thuy.tranthanh.bd03@gmail.com', 1, '2022-09-28 07:13:21', '2022-09-28 07:13:21'),
 (10, 'thuy.tranthanh.bd04@gmail.com', 1, '2022-09-28 07:13:27', '2022-09-28 07:13:27'),
 (11, 'thuy.tranthanh.bd05@gmail.com', 1, '2022-09-28 07:13:34', '2022-09-28 07:13:34'),
-(12, 'thuy.tranthanh.bd06@gmail.com', 1, '2022-09-28 07:13:39', '2022-09-28 07:13:39');
+(12, 'thuy.tranthanh.bd06@gmail.com', 1, '2022-09-28 07:13:39', '2022-09-28 07:13:39'),
+(13, 'store_owner@demo.com', 1, '2022-09-30 19:01:06', '2022-09-30 19:01:06');
 
 -- --------------------------------------------------------
 
@@ -5653,7 +5685,7 @@ CREATE TABLE `users` (
   `id` bigint(20) UNSIGNED NOT NULL,
   `firstname` varchar(40) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `lastname` varchar(40) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `username` varchar(40) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `username` varchar(40) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `email` varchar(40) COLLATE utf8mb4_unicode_ci NOT NULL,
   `country_code` varchar(40) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `is_active` tinyint(1) NOT NULL DEFAULT 1,
@@ -5701,8 +5733,9 @@ CREATE TABLE `users` (
 INSERT INTO `users` (`id`, `firstname`, `lastname`, `username`, `email`, `country_code`, `is_active`, `shop_id`, `email_notification_status`, `push_notification_status`, `device_type`, `language`, `device_id`, `zip`, `state`, `city`, `reset_code`, `email_verified`, `role`, `photo`, `phone`, `country`, `active_status`, `name`, `mobile`, `ref_by`, `balance`, `password`, `image`, `email_verified_at`, `address`, `status`, `ev`, `sv`, `ver_code`, `ver_code_send_at`, `ts`, `tv`, `tsc`, `remember_token`, `created_at`, `updated_at`) VALUES
 (1, 'Tran', 'Thuy', 'tranthanhbinhmathdephcm001', 'tranthanhbinhmathdephcm.001@gmail.com', 'VN', 1, NULL, 1, 1, 1, NULL, NULL, NULL, NULL, NULL, NULL, '1', 1, NULL, NULL, 'DS', 1, 'tranthanhbinhmathdephcm.001', '840936637595', 0, '64459.00000000', '$2y$10$ntkFcfElzbOetDxoqpcoX.QErAzHh3w.jjg5wdLVjxkPiOixggPH.', '62f84b7ec746c1660439422.png', NULL, '{\"address\":\"63 Vo Van Tan\",\"state\":\"HCMC\",\"zip\":\"700000\",\"country\":\"Vietnam\",\"city\":\"HCMC\"}', 1, 1, 1, NULL, NULL, 0, 1, NULL, NULL, '2022-08-11 08:42:58', '2022-09-25 00:39:46'),
 (2, 'Tran', 'Thuy', 'tranthanhbinhmathdephcm002', 'tranthanhbinhmathdephcm.002@gmail.com', 'AF', 1, NULL, 1, 1, 1, NULL, NULL, NULL, NULL, NULL, NULL, '1', 2, NULL, NULL, 'AF', 1, 'tranthanhbinhmathdephcm.002', '930936637594', 0, '0.00000000', '$2y$10$3IDQB2LX3OdtIHNrXI89AOV1EbwW8.hUoydmXRfml0JLe4ypIodku', '62f524064be621660232710.png', NULL, '{\"address\":\"10 Vo Van Tan\",\"state\":\"HCMC\",\"zip\":\"70000\",\"country\":\"Afghanistan\",\"city\":\"HCMC\"}', 1, 1, 1, NULL, NULL, 0, 1, NULL, NULL, '2022-08-11 08:44:03', '2022-09-25 00:29:35'),
-(3, NULL, NULL, '', 'store_owner@demo.com', NULL, 1, NULL, 1, 1, 1, NULL, NULL, NULL, NULL, NULL, NULL, '0', 2, NULL, NULL, NULL, 1, 'Store Owner', NULL, 0, '0.00000000', '$2y$10$YcO21.ddXuoiA.8AD5X1OOxfjmBHkl45Vg58pAdMQ3sZ/bjkpXYZK', NULL, NULL, NULL, 1, 0, 0, NULL, NULL, 0, 1, NULL, NULL, '2021-06-26 14:13:00', '2021-06-26 14:13:00'),
-(4, NULL, NULL, '', 'admin@admin.com', NULL, 1, NULL, 1, 1, 1, NULL, NULL, NULL, NULL, NULL, NULL, '0', 2, NULL, NULL, NULL, 1, 'admin', NULL, 0, '0.00000000', '$2y$10$cQmOB6pCp8g.FNVRJVUI.eM9k6HE4sP4VzlP5RVuRvYJvmBguEfi6', NULL, NULL, NULL, 1, 0, 0, NULL, NULL, 0, 1, NULL, NULL, '2022-09-28 11:27:30', '2022-09-28 11:27:30');
+(3, 'Thuy', 'Tran Thanh', 'tommy.001', 'thuy.tranthanh.bd@gmail.com', 'VN', 1, NULL, 1, 1, 1, NULL, NULL, NULL, NULL, NULL, NULL, '0', 2, NULL, NULL, NULL, 1, 'Store Owner', '0936637594', 0, '0.00000000', '$2y$10$YcO21.ddXuoiA.8AD5X1OOxfjmBHkl45Vg58pAdMQ3sZ/bjkpXYZK', NULL, NULL, '{\"address\":\"86 Duong Dinh Hoi\",\"city\":\"HCMC\",\"state\":\"HCMV\",\"zip\":\"70000\",\"country\":\"Vietnam\"}', 1, 1, 0, NULL, NULL, 0, 1, NULL, NULL, '2021-06-26 14:13:00', '2022-09-30 18:56:25'),
+(4, 'Thuy', 'Tran Thanh', 'tommy.002', 'admin@admin.com', 'VN', 1, NULL, 1, 1, 1, NULL, NULL, NULL, NULL, NULL, NULL, '0', 2, NULL, NULL, NULL, 1, 'admin', '0936637595', 0, '0.00000000', '$2y$10$cQmOB6pCp8g.FNVRJVUI.eM9k6HE4sP4VzlP5RVuRvYJvmBguEfi6', NULL, NULL, '{\"address\":\"86 Duong Dinh Hoi\",\"city\":\"HCMC\",\"state\":\"HCMV\",\"zip\":\"70000\",\"country\":\"Vietnam\"}', 1, 0, 0, NULL, NULL, 0, 1, NULL, NULL, '2022-09-28 11:27:30', '2022-09-30 18:55:17'),
+(5, NULL, NULL, NULL, 'tommy.003@gmail.com', NULL, 1, NULL, 1, 1, 1, NULL, NULL, NULL, NULL, NULL, NULL, '0', 2, NULL, NULL, NULL, 1, 'tommy.003', NULL, 0, '0.00000000', '$2y$10$Wl33.5QV9g0EjuRfPFHYpeQV58wEvEK6aPeZH/mLjb7HpDZe0d04e', NULL, NULL, NULL, 1, 0, 0, NULL, NULL, 0, 1, NULL, NULL, '2022-10-01 22:50:42', '2022-10-01 22:50:42');
 
 -- --------------------------------------------------------
 
@@ -5761,7 +5794,8 @@ INSERT INTO `user_logins` (`id`, `user_id`, `user_ip`, `city`, `country`, `count
 (5, 1, '127.0.0.1', '', '', '', '', '', 'Chrome', 'Windows 10', '2022-08-13 19:53:37', '2022-08-13 19:53:37'),
 (6, 1, '127.0.0.1', '', '', '', '', '', 'Chrome', 'Windows 10', '2022-09-22 06:46:32', '2022-09-22 06:46:32'),
 (7, 1, '127.0.0.1', '', '', '', '', '', 'Chrome', 'Windows 10', '2022-09-24 04:02:44', '2022-09-24 04:02:44'),
-(8, 1, '127.0.0.1', '', '', '', '', '', 'Chrome', 'Windows 10', '2022-09-27 07:52:39', '2022-09-27 07:52:39');
+(8, 1, '127.0.0.1', '', '', '', '', '', 'Chrome', 'Windows 10', '2022-09-27 07:52:39', '2022-09-27 07:52:39'),
+(9, 1, '127.0.0.1', '', '', '', '', '', 'Chrome', 'Windows 10', '2022-10-01 18:59:59', '2022-10-01 18:59:59');
 
 -- --------------------------------------------------------
 
@@ -5785,7 +5819,11 @@ CREATE TABLE `user_profiles` (
 --
 
 INSERT INTO `user_profiles` (`id`, `avatar`, `bio`, `socials`, `contact`, `customer_id`, `created_at`, `updated_at`) VALUES
-(1, '{\"id\": \"883\", \"original\": \"https://pickbazarlaravel.s3.ap-southeast-1.amazonaws.com/881/aatik-tasneem-7omHUGhhmZ0-unsplash%402x.png\", \"thumbnail\": \"https://pickbazarlaravel.s3.ap-southeast-1.amazonaws.com/881/conversions/aatik-tasneem-7omHUGhhmZ0-unsplash%402x-thumbnail.jpg\"}', 'This is the store owner and we have 6 shops under our banner. We are running all the shops to give our customers hassle-free service and quality products. Our goal is to provide best possible customer service and products for our clients', NULL, '12365141641631', 1, '2021-06-29 21:20:29', '2021-06-30 00:13:53');
+(1, '{\"id\": \"883\", \"original\": \"https://pickbazarlaravel.s3.ap-southeast-1.amazonaws.com/881/aatik-tasneem-7omHUGhhmZ0-unsplash%402x.png\", \"thumbnail\": \"https://pickbazarlaravel.s3.ap-southeast-1.amazonaws.com/881/conversions/aatik-tasneem-7omHUGhhmZ0-unsplash%402x-thumbnail.jpg\"}', 'This is the store owner and we have 6 shops under our banner. We are running all the shops to give our customers hassle-free service and quality products. Our goal is to provide best possible customer service and products for our clients', NULL, '12365141641631', 1, '2021-06-29 21:20:29', '2021-06-30 00:13:53'),
+(2, '{\"id\": \"883\", \"original\": \"https://pickbazarlaravel.s3.ap-southeast-1.amazonaws.com/881/aatik-tasneem-7omHUGhhmZ0-unsplash%402x.png\", \"thumbnail\": \"https://pickbazarlaravel.s3.ap-southeast-1.amazonaws.com/881/conversions/aatik-tasneem-7omHUGhhmZ0-unsplash%402x-thumbnail.jpg\"}', 'This is the store owner and we have 6 shops under our banner. We are running all the shops to give our customers hassle-free service and quality products. Our goal is to provide best possible customer service and products for our clients', NULL, '12365141641631', 2, '2021-06-29 21:20:29', '2021-06-30 00:13:53'),
+(3, '{\"id\": \"883\", \"original\": \"https://pickbazarlaravel.s3.ap-southeast-1.amazonaws.com/881/aatik-tasneem-7omHUGhhmZ0-unsplash%402x.png\", \"thumbnail\": \"https://pickbazarlaravel.s3.ap-southeast-1.amazonaws.com/881/conversions/aatik-tasneem-7omHUGhhmZ0-unsplash%402x-thumbnail.jpg\"}', 'It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using \'Content here, content here\', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for \'lorem ipsum\' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).', NULL, '0(944) 225 21 2', 3, '2022-10-01 16:08:50', '2022-10-01 16:08:50'),
+(4, '{\"id\": \"883\", \"original\": \"https://pickbazarlaravel.s3.ap-southeast-1.amazonaws.com/881/aatik-tasneem-7omHUGhhmZ0-unsplash%402x.png\", \"thumbnail\": \"https://pickbazarlaravel.s3.ap-southeast-1.amazonaws.com/881/conversions/aatik-tasneem-7omHUGhhmZ0-unsplash%402x-thumbnail.jpg\"}', 'This is the store owner and we have 6 shops under our banner. We are running all the shops to give our customers hassle-free service and quality products. Our goal is to provide best possible customer service and products for our clients', NULL, '12365141641631', 4, '2021-06-29 21:20:29', '2021-06-30 00:13:53'),
+(5, '{\"id\": \"883\", \"original\": \"https://pickbazarlaravel.s3.ap-southeast-1.amazonaws.com/881/aatik-tasneem-7omHUGhhmZ0-unsplash%402x.png\", \"thumbnail\": \"https://pickbazarlaravel.s3.ap-southeast-1.amazonaws.com/881/conversions/aatik-tasneem-7omHUGhhmZ0-unsplash%402x-thumbnail.jpg\"}', 'It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using \'Content here, content here\', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for \'lorem ipsum\' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).', NULL, '0(944) 225 21 2', 5, '2022-10-01 16:08:50', '2022-10-01 16:08:50');
 
 -- --------------------------------------------------------
 
@@ -6220,7 +6258,25 @@ ALTER TABLE `blog_comments`
 -- Chỉ mục cho bảng `categories`
 --
 ALTER TABLE `categories`
-  ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `categories_parent_foreign` (`parent`),
+  ADD KEY `categories_type_id_foreign` (`type_id`);
+
+--
+-- Chỉ mục cho bảng `category_product`
+--
+ALTER TABLE `category_product`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `category_product_product_id_foreign` (`product_id`),
+  ADD KEY `category_product_category_id_foreign` (`category_id`);
+
+--
+-- Chỉ mục cho bảng `category_shop`
+--
+ALTER TABLE `category_shop`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `category_shop_shop_id_foreign` (`shop_id`),
+  ADD KEY `category_shop_category_id_foreign` (`category_id`);
 
 --
 -- Chỉ mục cho bảng `commission_logs`
@@ -6232,6 +6288,12 @@ ALTER TABLE `commission_logs`
 -- Chỉ mục cho bảng `contacts`
 --
 ALTER TABLE `contacts`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Chỉ mục cho bảng `coupons`
+--
+ALTER TABLE `coupons`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -6257,6 +6319,13 @@ ALTER TABLE `email_sms_templates`
 --
 ALTER TABLE `extensions`
   ADD PRIMARY KEY (`id`);
+
+--
+-- Chỉ mục cho bảng `failed_jobs`
+--
+ALTER TABLE `failed_jobs`
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `failed_jobs_uuid_unique` (`uuid`);
 
 --
 -- Chỉ mục cho bảng `frontends`
@@ -6308,6 +6377,13 @@ ALTER TABLE `lotteries`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Chỉ mục cho bảng `media`
+--
+ALTER TABLE `media`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `media_model_type_model_id_index` (`model_type`,`model_id`);
+
+--
 -- Chỉ mục cho bảng `menus`
 --
 ALTER TABLE `menus`
@@ -6318,6 +6394,20 @@ ALTER TABLE `menus`
 --
 ALTER TABLE `migrations`
   ADD PRIMARY KEY (`id`);
+
+--
+-- Chỉ mục cho bảng `model_has_permissions`
+--
+ALTER TABLE `model_has_permissions`
+  ADD PRIMARY KEY (`permission_id`,`model_id`,`model_type`),
+  ADD KEY `model_has_permissions_model_id_model_type_index` (`model_id`,`model_type`);
+
+--
+-- Chỉ mục cho bảng `model_has_roles`
+--
+ALTER TABLE `model_has_roles`
+  ADD PRIMARY KEY (`role_id`,`model_id`,`model_type`),
+  ADD KEY `model_has_roles_model_id_model_type_index` (`model_id`,`model_type`);
 
 --
 -- Chỉ mục cho bảng `oauth_access_tokens`
@@ -6354,9 +6444,47 @@ ALTER TABLE `oauth_refresh_tokens`
   ADD KEY `oauth_refresh_tokens_access_token_id_index` (`access_token_id`);
 
 --
+-- Chỉ mục cho bảng `orders`
+--
+ALTER TABLE `orders`
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `orders_tracking_number_unique` (`tracking_number`),
+  ADD KEY `orders_status_foreign` (`status`),
+  ADD KEY `orders_customer_id_foreign` (`customer_id`),
+  ADD KEY `orders_shop_id_foreign` (`shop_id`),
+  ADD KEY `orders_parent_id_foreign` (`parent_id`);
+
+--
+-- Chỉ mục cho bảng `order_product`
+--
+ALTER TABLE `order_product`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `order_product_order_id_foreign` (`order_id`),
+  ADD KEY `order_product_product_id_foreign` (`product_id`),
+  ADD KEY `order_product_variation_option_id_foreign` (`variation_option_id`);
+
+--
+-- Chỉ mục cho bảng `order_status`
+--
+ALTER TABLE `order_status`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Chỉ mục cho bảng `pages`
 --
 ALTER TABLE `pages`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Chỉ mục cho bảng `password_resets`
+--
+ALTER TABLE `password_resets`
+  ADD KEY `password_resets_email_index` (`email`);
+
+--
+-- Chỉ mục cho bảng `permissions`
+--
+ALTER TABLE `permissions`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -6400,10 +6528,47 @@ ALTER TABLE `pricing_plans`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Chỉ mục cho bảng `products`
+--
+ALTER TABLE `products`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `products_type_id_foreign` (`type_id`),
+  ADD KEY `products_shipping_class_id_foreign` (`shipping_class_id`),
+  ADD KEY `products_shop_id_foreign` (`shop_id`);
+
+--
+-- Chỉ mục cho bảng `product_tag`
+--
+ALTER TABLE `product_tag`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `product_tag_product_id_foreign` (`product_id`),
+  ADD KEY `product_tag_tag_id_foreign` (`tag_id`);
+
+--
+-- Chỉ mục cho bảng `providers`
+--
+ALTER TABLE `providers`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `providers_user_id_foreign` (`user_id`);
+
+--
 -- Chỉ mục cho bảng `referrals`
 --
 ALTER TABLE `referrals`
   ADD PRIMARY KEY (`id`);
+
+--
+-- Chỉ mục cho bảng `roles`
+--
+ALTER TABLE `roles`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Chỉ mục cho bảng `role_has_permissions`
+--
+ALTER TABLE `role_has_permissions`
+  ADD PRIMARY KEY (`permission_id`,`role_id`),
+  ADD KEY `role_has_permissions_role_id_foreign` (`role_id`);
 
 --
 -- Chỉ mục cho bảng `services`
@@ -6418,6 +6583,25 @@ ALTER TABLE `sessions`
   ADD PRIMARY KEY (`id`),
   ADD KEY `sessions_user_id_index` (`user_id`),
   ADD KEY `sessions_last_activity_index` (`last_activity`);
+
+--
+-- Chỉ mục cho bảng `settings`
+--
+ALTER TABLE `settings`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Chỉ mục cho bảng `shipping_classes`
+--
+ALTER TABLE `shipping_classes`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Chỉ mục cho bảng `shops`
+--
+ALTER TABLE `shops`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `shops_owner_id_foreign` (`owner_id`);
 
 --
 -- Chỉ mục cho bảng `subscribers`
@@ -6441,6 +6625,19 @@ ALTER TABLE `support_messages`
 -- Chỉ mục cho bảng `support_tickets`
 --
 ALTER TABLE `support_tickets`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Chỉ mục cho bảng `tags`
+--
+ALTER TABLE `tags`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `tags_type_id_foreign` (`type_id`);
+
+--
+-- Chỉ mục cho bảng `tax_classes`
+--
+ALTER TABLE `tax_classes`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -6469,11 +6666,19 @@ ALTER TABLE `transactions`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Chỉ mục cho bảng `types`
+--
+ALTER TABLE `types`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Chỉ mục cho bảng `users`
 --
 ALTER TABLE `users`
   ADD PRIMARY KEY (`id`),
-  ADD UNIQUE KEY `username` (`username`,`email`);
+  ADD UNIQUE KEY `users_email_unique` (`email`),
+  ADD UNIQUE KEY `username` (`username`,`email`),
+  ADD KEY `users_shop_id_foreign` (`shop_id`);
 
 --
 -- Chỉ mục cho bảng `user_blogs`
@@ -6489,11 +6694,25 @@ ALTER TABLE `user_logins`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Chỉ mục cho bảng `user_profiles`
+--
+ALTER TABLE `user_profiles`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `user_profiles_customer_id_foreign` (`customer_id`);
+
+--
 -- Chỉ mục cho bảng `user_verification_codes`
 --
 ALTER TABLE `user_verification_codes`
   ADD PRIMARY KEY (`id`),
   ADD KEY `user_verification_codes_user_id_foreign` (`user_id`);
+
+--
+-- Chỉ mục cho bảng `variation_options`
+--
+ALTER TABLE `variation_options`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `variation_options_product_id_foreign` (`product_id`);
 
 --
 -- Chỉ mục cho bảng `winners`
@@ -6512,6 +6731,13 @@ ALTER TABLE `win_bonuses`
 --
 ALTER TABLE `withdrawals`
   ADD PRIMARY KEY (`id`);
+
+--
+-- Chỉ mục cho bảng `withdraws`
+--
+ALTER TABLE `withdraws`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `withdraws_shop_id_foreign` (`shop_id`);
 
 --
 -- Chỉ mục cho bảng `withdraw_methods`
@@ -6689,7 +6915,7 @@ ALTER TABLE `pages`
 -- AUTO_INCREMENT cho bảng `personal_access_tokens`
 --
 ALTER TABLE `personal_access_tokens`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT cho bảng `phases`
@@ -6737,7 +6963,7 @@ ALTER TABLE `services`
 -- AUTO_INCREMENT cho bảng `subscribers`
 --
 ALTER TABLE `subscribers`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- AUTO_INCREMENT cho bảng `support_attachments`
@@ -6785,7 +7011,7 @@ ALTER TABLE `transactions`
 -- AUTO_INCREMENT cho bảng `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT cho bảng `user_blogs`
@@ -6797,7 +7023,7 @@ ALTER TABLE `user_blogs`
 -- AUTO_INCREMENT cho bảng `user_logins`
 --
 ALTER TABLE `user_logins`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT cho bảng `user_verification_codes`
@@ -6834,6 +7060,37 @@ ALTER TABLE `withdraw_methods`
 --
 
 --
+-- Các ràng buộc cho bảng `address`
+--
+ALTER TABLE `address`
+  ADD CONSTRAINT `address_customer_id_foreign` FOREIGN KEY (`customer_id`) REFERENCES `users` (`id`);
+
+--
+-- Các ràng buộc cho bảng `attributes`
+--
+ALTER TABLE `attributes`
+  ADD CONSTRAINT `attributes_shop_id_foreign` FOREIGN KEY (`shop_id`) REFERENCES `shops` (`id`) ON DELETE CASCADE;
+
+--
+-- Các ràng buộc cho bảng `attribute_product`
+--
+ALTER TABLE `attribute_product`
+  ADD CONSTRAINT `attribute_product_attribute_value_id_foreign` FOREIGN KEY (`attribute_value_id`) REFERENCES `attribute_values` (`id`) ON DELETE CASCADE,
+  ADD CONSTRAINT `attribute_product_product_id_foreign` FOREIGN KEY (`product_id`) REFERENCES `products` (`id`) ON DELETE CASCADE;
+
+--
+-- Các ràng buộc cho bảng `attribute_values`
+--
+ALTER TABLE `attribute_values`
+  ADD CONSTRAINT `attribute_values_attribute_id_foreign` FOREIGN KEY (`attribute_id`) REFERENCES `attributes` (`id`) ON DELETE CASCADE;
+
+--
+-- Các ràng buộc cho bảng `balances`
+--
+ALTER TABLE `balances`
+  ADD CONSTRAINT `balances_shop_id_foreign` FOREIGN KEY (`shop_id`) REFERENCES `shops` (`id`);
+
+--
 -- Các ràng buộc cho bảng `blogs`
 --
 ALTER TABLE `blogs`
@@ -6847,10 +7104,60 @@ ALTER TABLE `blog_comments`
   ADD CONSTRAINT `blog_comments_blog_id_foreign` FOREIGN KEY (`blog_id`) REFERENCES `blogs` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
+-- Các ràng buộc cho bảng `categories`
+--
+ALTER TABLE `categories`
+  ADD CONSTRAINT `categories_parent_foreign` FOREIGN KEY (`parent`) REFERENCES `categories` (`id`),
+  ADD CONSTRAINT `categories_type_id_foreign` FOREIGN KEY (`type_id`) REFERENCES `types` (`id`);
+
+--
+-- Các ràng buộc cho bảng `category_product`
+--
+ALTER TABLE `category_product`
+  ADD CONSTRAINT `category_product_category_id_foreign` FOREIGN KEY (`category_id`) REFERENCES `categories` (`id`) ON DELETE CASCADE,
+  ADD CONSTRAINT `category_product_product_id_foreign` FOREIGN KEY (`product_id`) REFERENCES `products` (`id`) ON DELETE CASCADE;
+
+--
+-- Các ràng buộc cho bảng `category_shop`
+--
+ALTER TABLE `category_shop`
+  ADD CONSTRAINT `category_shop_category_id_foreign` FOREIGN KEY (`category_id`) REFERENCES `categories` (`id`) ON DELETE CASCADE,
+  ADD CONSTRAINT `category_shop_shop_id_foreign` FOREIGN KEY (`shop_id`) REFERENCES `shops` (`id`) ON DELETE CASCADE;
+
+--
 -- Các ràng buộc cho bảng `galleries`
 --
 ALTER TABLE `galleries`
   ADD CONSTRAINT `galleries_category_id_foreign` FOREIGN KEY (`category_id`) REFERENCES `gallery_categories` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Các ràng buộc cho bảng `model_has_permissions`
+--
+ALTER TABLE `model_has_permissions`
+  ADD CONSTRAINT `model_has_permissions_permission_id_foreign` FOREIGN KEY (`permission_id`) REFERENCES `permissions` (`id`) ON DELETE CASCADE;
+
+--
+-- Các ràng buộc cho bảng `model_has_roles`
+--
+ALTER TABLE `model_has_roles`
+  ADD CONSTRAINT `model_has_roles_role_id_foreign` FOREIGN KEY (`role_id`) REFERENCES `roles` (`id`) ON DELETE CASCADE;
+
+--
+-- Các ràng buộc cho bảng `orders`
+--
+ALTER TABLE `orders`
+  ADD CONSTRAINT `orders_customer_id_foreign` FOREIGN KEY (`customer_id`) REFERENCES `users` (`id`),
+  ADD CONSTRAINT `orders_parent_id_foreign` FOREIGN KEY (`parent_id`) REFERENCES `orders` (`id`) ON DELETE CASCADE,
+  ADD CONSTRAINT `orders_shop_id_foreign` FOREIGN KEY (`shop_id`) REFERENCES `shops` (`id`) ON DELETE CASCADE,
+  ADD CONSTRAINT `orders_status_foreign` FOREIGN KEY (`status`) REFERENCES `order_status` (`id`);
+
+--
+-- Các ràng buộc cho bảng `order_product`
+--
+ALTER TABLE `order_product`
+  ADD CONSTRAINT `order_product_order_id_foreign` FOREIGN KEY (`order_id`) REFERENCES `orders` (`id`),
+  ADD CONSTRAINT `order_product_product_id_foreign` FOREIGN KEY (`product_id`) REFERENCES `products` (`id`),
+  ADD CONSTRAINT `order_product_variation_option_id_foreign` FOREIGN KEY (`variation_option_id`) REFERENCES `variation_options` (`id`);
 
 --
 -- Các ràng buộc cho bảng `portfolios`
@@ -6865,6 +7172,46 @@ ALTER TABLE `pricing_features`
   ADD CONSTRAINT `pricing_features_plan_id_foreign` FOREIGN KEY (`plan_id`) REFERENCES `pricing_plans` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
+-- Các ràng buộc cho bảng `products`
+--
+ALTER TABLE `products`
+  ADD CONSTRAINT `products_shipping_class_id_foreign` FOREIGN KEY (`shipping_class_id`) REFERENCES `shipping_classes` (`id`),
+  ADD CONSTRAINT `products_shop_id_foreign` FOREIGN KEY (`shop_id`) REFERENCES `shops` (`id`) ON DELETE CASCADE,
+  ADD CONSTRAINT `products_type_id_foreign` FOREIGN KEY (`type_id`) REFERENCES `types` (`id`) ON DELETE CASCADE;
+
+--
+-- Các ràng buộc cho bảng `product_tag`
+--
+ALTER TABLE `product_tag`
+  ADD CONSTRAINT `product_tag_product_id_foreign` FOREIGN KEY (`product_id`) REFERENCES `products` (`id`) ON DELETE CASCADE,
+  ADD CONSTRAINT `product_tag_tag_id_foreign` FOREIGN KEY (`tag_id`) REFERENCES `tags` (`id`) ON DELETE CASCADE;
+
+--
+-- Các ràng buộc cho bảng `providers`
+--
+ALTER TABLE `providers`
+  ADD CONSTRAINT `providers_user_id_foreign` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE;
+
+--
+-- Các ràng buộc cho bảng `role_has_permissions`
+--
+ALTER TABLE `role_has_permissions`
+  ADD CONSTRAINT `role_has_permissions_permission_id_foreign` FOREIGN KEY (`permission_id`) REFERENCES `permissions` (`id`) ON DELETE CASCADE,
+  ADD CONSTRAINT `role_has_permissions_role_id_foreign` FOREIGN KEY (`role_id`) REFERENCES `roles` (`id`) ON DELETE CASCADE;
+
+--
+-- Các ràng buộc cho bảng `shops`
+--
+ALTER TABLE `shops`
+  ADD CONSTRAINT `shops_owner_id_foreign` FOREIGN KEY (`owner_id`) REFERENCES `users` (`id`);
+
+--
+-- Các ràng buộc cho bảng `tags`
+--
+ALTER TABLE `tags`
+  ADD CONSTRAINT `tags_type_id_foreign` FOREIGN KEY (`type_id`) REFERENCES `types` (`id`);
+
+--
 -- Các ràng buộc cho bảng `teams`
 --
 ALTER TABLE `teams`
@@ -6877,10 +7224,28 @@ ALTER TABLE `user_blogs`
   ADD CONSTRAINT `user_blogs_blog_id_foreign` FOREIGN KEY (`blog_id`) REFERENCES `blogs` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
+-- Các ràng buộc cho bảng `user_profiles`
+--
+ALTER TABLE `user_profiles`
+  ADD CONSTRAINT `user_profiles_customer_id_foreign` FOREIGN KEY (`customer_id`) REFERENCES `users` (`id`);
+
+--
 -- Các ràng buộc cho bảng `user_verification_codes`
 --
 ALTER TABLE `user_verification_codes`
   ADD CONSTRAINT `user_verification_codes_user_id_foreign` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Các ràng buộc cho bảng `variation_options`
+--
+ALTER TABLE `variation_options`
+  ADD CONSTRAINT `variation_options_product_id_foreign` FOREIGN KEY (`product_id`) REFERENCES `products` (`id`);
+
+--
+-- Các ràng buộc cho bảng `withdraws`
+--
+ALTER TABLE `withdraws`
+  ADD CONSTRAINT `withdraws_shop_id_foreign` FOREIGN KEY (`shop_id`) REFERENCES `shops` (`id`) ON DELETE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
