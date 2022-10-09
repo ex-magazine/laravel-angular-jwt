@@ -48,16 +48,15 @@ return [
         //     'hash' => true,
         // ],
 
-        'api' => [
+        'auth.jwt' => [
             'driver' => 'jwt',
             'provider' => 'users',
             'hash' => false,
-        ],
-
-        'pickbazarapi' => [
-            'driver'   => 'sanctum',
-            'provider' => 'users',
-        ],
+        ],      
+        // 'api' => [
+        //     'driver'   => 'sanctum',
+        //     'provider' => 'users',
+        // ],
 
         'sanctum' => [
             'driver'   => 'sanctum',
