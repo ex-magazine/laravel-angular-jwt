@@ -49,35 +49,63 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 // header('Access-Control-Allow-Origin:  *');
 // header('Access-Control-Allow-Headers:  Content-Type, X-Auth-Token, Origin, Authorization,Access-Control-Allow-Origin, X-Requested-With');
 
-
-
-// Route::group(['middleware' => ['jwt.verify']], function() {
-    
-// });
-
 Route::group([
-    'middleware' => 'auth.jwt',
+    'middleware' => 'jwt.verify',
     'prefix' => 'auth'
-], function ($router) {
-    Route::post('/app-register', 'JwtAuthController@register');
-    Route::post('/app-login', 'JwtAuthController@authenticate');
-    Route::post('/app-user','JwtAuthController@getAuthenticatedUser');
-
-    Route::post('/signup', [JwtAuthController::class, 'register']);
-    Route::post('/signin', [JwtAuthController::class, 'login']);
-    Route::get('/user-profile', [JwtAuthController::class, 'user']);
-    Route::post('/token-refresh', [JwtAuthController::class, 'refresh']);
+], function ($router) {       
     Route::post('/signout', [JwtAuthController::class, 'signout']);
-    Route::post('/req-password-reset', [ResetPwdReqController::class, 'reqForgotPassword']);
+    Route::post('/req-password-reset', [ResetPwdReqController::class, 'reqForgotPassword']);    
     Route::post('/update-password', [UpdatePwdController::class, 'updatePassword']);
 }); 
 Route::group([
-    "middleware" => "auth.jwt",
+    'middleware' => 'jwt.auth',
     'prefix' => 'auth'
+], function ($router) {     
+    Route::get('/user-profile', [JwtAuthController::class, 'user']);          
+}); 
+Route::group([
+    'middleware' => 'jwt.refresh',
+    'prefix' => 'auth'
+], function ($router) {     
+    Route::post('/token-refresh', [JwtAuthController::class, 'refresh']);
+    
+}); 
+Route::group([  
+    'prefix' => 'auth' 
 ], function ($router) {
-    Route::get("app-logout", "AuthController@logout");
+    Route::post('/signup', [JwtAuthController::class, 'register']);
+    Route::post('/signin', [JwtAuthController::class, 'authenticate']);
+   
+    //Route::get("app-logout", "AuthController@logout");
     //Route::resource("app-tasks", "TaskController");
+    // Route::post('/app-register', 'JwtAuthController@register');
+    // Route::post('/app-login', 'JwtAuthController@authenticate');
+    // Route::post('/app-user','JwtAuthController@getAuthenticatedUser');
 });
+// Route::prefix('admin')->controller(AuthController::class)->group(function () {
+//     Route::post('login', 'login');
+//     Route::post('register', 'register');
+//     Route::middleware('auth:admin_api')->group(function () {
+//         Route::post('logout', 'logout');
+//         Route::post('me', 'me');
+//     });
+// });
+// Route::post('login', [ApiController::class, 'authenticate']);
+// Route::post('register', [ApiController::class, 'register']);
+
+// Route::group(['middleware' => ['jwt.verify']], function() {
+//     Route::get('logout', [ApiController::class, 'logout']);
+//     Route::get('get_user', [ApiController::class, 'get_user']);
+//     Route::get('products', [ProductController::class, 'index']);
+//     Route::get('products/{id}', [ProductController::class, 'show']);
+//     Route::post('create', [ProductController::class, 'store']);
+//     Route::put('update/{product}',  [ProductController::class, 'update']);
+//     Route::delete('delete/{product}',  [ProductController::class, 'destroy']);
+// });
+
+
+
+
 
 
 Route::middleware('auth:api')->get('/user', function (Request $request) {
