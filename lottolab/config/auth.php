@@ -42,17 +42,17 @@ return [
             'provider' => 'users',
         ],
 
-        // 'api' => [
-        //     'driver' => 'session',
-        //     'provider' => 'users', 
-        //     'hash' => true,
-        // ],
-
-        'auth.jwt' => [
-            'driver' => 'jwt',
-            'provider' => 'users',
-            'hash' => false,
-        ],      
+        'api' => [
+            'driver' => 'session',
+            'provider' => 'users', 
+            'hash' => true,
+        ],
+      
+        // 'customer_apijwt' => [
+        //     'driver' => 'jwt',
+        //     'provider' => 'users',
+            
+        // ],      
         // 'api' => [
         //     'driver'   => 'sanctum',
         //     'provider' => 'users',

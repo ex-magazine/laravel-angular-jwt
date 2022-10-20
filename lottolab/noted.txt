@@ -87,7 +87,7 @@ php artisan make:model Ammelias/UserVerificationCode
 
 
 
-
+php artisan migrate >>> tao het bang luon
 
 php artisan migrate:refresh --path=/database/migrations/2022_09_30_015739_alter_users_table_add_two_column.php
 
@@ -98,3 +98,10 @@ php artisan make:migration smartend_create_webmaster_languages_table --create=sm
 
 php artisan jetstream:install livewire
 npm install && npm run dev
+
+php artisan db:seed
+
+php artisan make:model Product -rcm
+-r = ressource
+-c = controller
+-m = migration

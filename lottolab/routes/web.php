@@ -575,6 +575,11 @@ Route::name('user.')->prefix('user')->group(function () {
     });
 });
 
+
+Route::get('/frontend-shop', '\App\Http\Controllers\Frontend\HomeController@index')->name('frontend.index');
+
+
+
 Route::get('/contact', 'SiteController@contact')->name('contact');
 Route::post('/contact', 'SiteController@contactSubmit');
 Route::get('/change/{lang?}', 'SiteController@changeLanguage')->name('lang');
@@ -601,52 +606,7 @@ Route::get('/', 'SiteController@index')->name('home');
 
 
 
-
-
-
-
 /*
-|--------------------------------------------------------------------------
-| Start Ammelias micro project
-|--------------------------------------------------------------------------
-*/
-/*
-
-//userLogin
-Route::get('/ammelias/signin','AuthController@login')->name('login');
-Route::post('/ammelias/postsignin','AuthController@postLogin')->name('postLogin');
-Route::get('/ammelias/verify-{id}-{verification_code}','AuthController@verifyEmail')->name('verifyEmail');
-
-//forgot password
-Route::get('/ammelias/forget-password','AuthController@forgetPassword')->name('forgetPassword');
-Route::post('/ammelias/forget-password-process', 'AuthController@forgetPasswordProcess')->name('forgetPasswordProcess');
-Route::get('/ammelias/forget-password-change/{reset_code}', 'AuthController@forgetPasswordChange')->name('forgetPasswordChange');
-Route::get('/ammelias/forget-password-reset', 'AuthController@forgetPasswordReset')->name('forgetPasswordReset');
-Route::post('/ammelias/forget-password-reset-process/{reset_code}', 'AuthController@forgetPasswordResetProcess')->name('forgetPasswordResetProcess');
-Route::get('/ammelias/privacy-and-policy', 'AuthController@privacyPolicy')->name('privacyPolicy');
-Route::get('/ammelias/terms-and-conditions', 'AuthController@termsCondition')->name('termsCondition');
-
-require base_path('routes/ammelias/admin.php');
-
-Route::group(['middleware' =>['auth']], function () {
-    //logout
-    Route::get('/ammelias/logout', 'AuthController@logout')->name('logOut');
-});
-
-*/
-
-
-/*
-|--------------------------------------------------------------------------
-| Start Smartend micro project
-|--------------------------------------------------------------------------
-*/
-
-// require base_path('routes/smartend/dashboard.php');
-// require base_path('routes/smartend/web.php');
-
-
-
 Route::middleware([
     'auth:sanctum',
     config('jetstream.auth_session'),
@@ -656,3 +616,4 @@ Route::middleware([
         return view('dashboard');
     })->name('dashboard');
 });
+*/

@@ -99,7 +99,7 @@ class ShopWhereConditionsServiceProvider extends ServiceProvider
                 "A set of conditions that requires at least one condition to match."
                 OR: [$name!]
             }
-GRAPHQL
+            GRAPHQL
         );
     }
 }
