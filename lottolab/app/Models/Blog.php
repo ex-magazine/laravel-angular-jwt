@@ -7,6 +7,9 @@ use Illuminate\Database\Eloquent\Model;
 
 class Blog extends Model
 {
+    protected  $table = 'blogs';
+    protected  $primaryKey = 'id';
+    protected $guarded =[];
     protected $fillable = ['category_id', 'user_id', 'title', 'slug', 'description', 'image', 'status'];
 
     public function category()

@@ -11,14 +11,21 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Support\Facades\Log;
 use App\Http\Controllers\TagController;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
+
 
 class Product extends Model
 {
     use Sluggable, SoftDeletes;
 
+    use HasFactory;
+
+    protected   $table = 'products';
+    protected   $primaryKey = 'id';
+
+
     public $guarded = [];
 
-    protected $table = 'products';
 
 
     protected $casts = [

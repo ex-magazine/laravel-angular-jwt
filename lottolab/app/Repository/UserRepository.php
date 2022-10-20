@@ -1,5 +1,6 @@
 <?php
 namespace App\Repository;
+
 use App\Models\UserVerificationCode;
 use App\Models\User;
 use Illuminate\Support\Facades\Auth;
