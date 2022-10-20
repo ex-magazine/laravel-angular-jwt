@@ -7,8 +7,11 @@ npx create-react-app react-redux-context-v18 --style=css
 npm init vue
 
 Next
-npx create-next-app nextjs-shop-frontend-node-14
+npx create-next-app admin-rest --typescript
 yarn create next-app --typescript nextjs-shop-frontend-node-14
+
+
+
 yarn add -D tailwindcss postcss autoprefixer
 yarn tailwindcss init -p
 

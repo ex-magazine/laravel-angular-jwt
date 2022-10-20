@@ -18,7 +18,7 @@ use App\Models\Profile;
 use App\Models\Shop;
 use App\Exceptions\PickbazarException;
 
-class UserRepository extends BaseRepository
+class UserShopRepository extends BaseRepository
 {
     /**
      * @var array

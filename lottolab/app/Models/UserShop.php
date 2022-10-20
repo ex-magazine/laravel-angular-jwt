@@ -30,7 +30,7 @@ class UserShop extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password', 'is_active', 'shop_id'
+        'name', 'email', 'password', 'is_active', 'shop_id', 'avatar', 'level', 'description'
     ];
 
     /**

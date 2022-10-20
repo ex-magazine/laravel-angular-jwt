@@ -21,6 +21,8 @@ class CreateBlogCommentsTable extends Migration
             $table->text('comment')->nullable();
             $table->boolean('status')->default(0);
             $table->timestamps();
+
+
             
             $table->foreign('blog_id', 'blog_comments_blog_id_foreign')->references('id')->on('blogs')->onDelete('cascade')->onUpdate('cascade');
         });
