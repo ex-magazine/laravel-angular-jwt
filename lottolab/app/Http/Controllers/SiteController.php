@@ -53,7 +53,6 @@ class SiteController extends Controller
         return view($this->activeTemplate . 'pages', compact('pageTitle','sections'));
     }
 
-
     public function contact()
     {
         $pageTitle = "Contact Us";
