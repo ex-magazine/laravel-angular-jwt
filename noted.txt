@@ -79,12 +79,140 @@ mutation{
     }
 }
 
-<VirtualHost *:80>
-	ServerAdmin webmaster@ittravel.local
-    DocumentRoot "C:/xampp/htdocs/laravel/laravel-angular-jwt/lottolab/public"    
-    ServerName ittravel.local
-    ServerAlias www.ittravel.local
-    ErrorLog "logs/ittravel.local-error.log"
-    CustomLog "logs/ittravel.local-access.log" common
-</VirtualHost>
-C:\Windows\System32\drivers\etc\hosts
+<?=$body?>
+
+Check exist view
+use Illuminate\Support\Facades\View;
+View::exists($view):
+
+@json($array, $flag)
+
+Providers/AppServiceProvider.php.
+public function boot()
+{
+    View::share('siteTitle', 'Toidicode.com');
+}
+
+Cặp dấu {{}} tượng trưng cho câu lệnh echo trong PHP
+ kết hợp với hàm htmlspecialchars để phòng chống lỗi XSS attack
+
+//khong muon blade bien dich dong code
+@verbatim
+    <div class="container">
+        Hello, {{ name }}.
+    </div>
+@endverbatim
+
+
+//Comment
+{{--Day la comment --}}
+
+
+Property	Description
+$loop->index	Lấy ra chỉ mục (index) của vòng lặp hiện tại, bắt đầu từ 0.
+$loop->iteration	Lấy ra lần lặp thiện tại là lần lặp thứ mấy (bắt đầu từ 1).
+$loop->remaining	Vòng lặp còn phải lặp thêm bao nhiêu lần nữa.
+$loop->count	Lấy ra số lượng item của vòng lặp.
+$loop->first	Kiểm tra xem lần lặp hiện tại có phải lần lặp đầu tiên không.
+$loop->last	Kiểm tra xem lần lặp hiện tại có phải lần lặp cuối cùng không.
+$loop->even	Kiểm tra xem lần lặp này có phải chẵn không
+$loop->odd	Kiểm tra xem lần lặp này có phải lẻ không
+$loop->depth	Mức độ lồng của vòng lặp hiện tại.
+$loop->parent	Truy xuất đến thông tin của vòng lặp cha.
+
+
+
+@push('scripts')
+    <script>
+        alert("Hello again!")
+    </script>
+@endpush
+//Day len dau
+@prepend('scripts')
+    <script>
+        alert("Hello again!")
+    </script>
+@endprepend
+//Sau do goi @stack('scripts')
+
+
+//Goi service
+@inject('metrics', 'App\Services\MetricsService')
+
+<div>
+    Monthly Revenue: {{ $metrics->monthlyRevenue() }}.
+</div>
+
+
+<form action="{{ route('upload.handle') }}" method="POST" enctype="multipart/form-data">
+    @csrf
+    <input type="file" name="image">
+    <input type="submit" value="Submit">
+</form>
+
+
+return response($content)
+->withHeaders([
+    'Content-Type' => $type,
+    'X-Header-One' => 'Header Value',
+    'X-Header-Two' => 'Header Value',
+]);
+
+return response('Hello World')->cookie(
+    'name', 'value', $minutes
+);
+
+return response('Hello World')->withoutCookie('name');
+
+
+Route::get('/dashboard', function () {
+    return redirect('home/dashboard');
+});
+
+Route::post('/user/profile', function () {
+    // Validate the request...
+
+    return back()->withInput();
+});
+
+return redirect()->route('login');
+
+return redirect()->away('https://www.google.com');
+
+
+return response()->download($pathToFile);
+
+// Hoặc
+
+return response()->download($pathToFile, $name, $headers);
+
+return response()->file($pathToFile);
+
+// hoặc
+
+return response()->file($pathToFile, $headers);
+
+
+return response()->streamDownload(function () {
+    echo GitHub::api('repo')
+                ->contents()
+                ->readme('laravel', 'laravel')['contents'];
+}, 'laravel-readme.md');
+
+
+
+protected $routeMiddleware = [
+    //...
+    //...
+    'validate_token' => \App\Http\Middleware\EnsureTokenIsValid::class
+];
+
+Route::get('/user', function () {
+    //
+})->middleware('validate_token');
+
+Route::get('/', function () {
+    return redirect()->back();
+})->middleware('validate_token:/login');
+
+php artisan make:mail SendMailreset --markdown=Email.passwordReset

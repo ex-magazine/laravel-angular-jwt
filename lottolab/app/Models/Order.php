@@ -11,7 +11,7 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 class Order extends Model
 {
     use SoftDeletes;
-    use HasFactory;
+   
 
     protected   $table = 'orders';
     protected   $primaryKey = 'id';

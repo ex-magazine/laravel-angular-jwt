@@ -91,7 +91,10 @@ php artisan migrate >>> tao het bang luon
 
 php artisan migrate:refresh --path=/database/migrations/2022_09_30_015739_alter_users_table_add_two_column.php
 
-php artisan migrate --path=/database/migrations/2022_09_27_084138_alter_users_table_add_email_verified_at.php
+php artisan migrate --path=/database/migrations/2022_10_21_134220_create_cache_table.php
+
+
+F:\www\www-learn\laravel-angular-jwt\lottolab\database\migrations\2022_10_21_134220_create_cache_table.php
 //Smart env
 smartend_
 php artisan make:migration smartend_create_webmaster_languages_table --create=smartend_languages
@@ -105,3 +108,20 @@ php artisan make:model Product -rcm
 -r = ressource
 -c = controller
 -m = migration
+
+
+php artisan down --secret="1630542a-246b-4b66-afa1-dd72a4c43515"
+
+php artisan down --render="errors::503"
+
+
+Route dành cho web.
+Route dành cho cli (commnad).
+Route dành cho broadcast.
+
+php artisan route:cache
+php artisan route:clear
+
+
+php artisan view:cache
+php artisan view:clear

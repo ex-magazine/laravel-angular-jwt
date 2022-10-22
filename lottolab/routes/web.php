@@ -17,14 +17,6 @@ Route::get('/clear', function(){
 | contains the "web" middleware group. Now create something great!
 |
 */
-/*
-Route::get('/', function () {
-    return view('welcome');
-});
-
-*/
-
-
 //Cron Route
 Route::get('cron','SiteController@cron')->name('cron');
 
@@ -576,8 +568,6 @@ Route::name('user.')->prefix('user')->group(function () {
 });
 
 
-Route::get('/frontend-shop', '\App\Http\Controllers\Frontend\HomeController@index')->name('frontend.index');
-
 
 
 Route::get('/contact', 'SiteController@contact')->name('contact');
@@ -602,18 +592,147 @@ Route::get('placeholder-image/{size}', 'SiteController@placeholderImage')->name(
 Route::get('/{slug}', 'SiteController@pages')->name('pages');
 Route::get('/', 'SiteController@index')->name('home');
 
+// Route::match($methods, $uri, $callback)
+// Route::any($uri, $callback)
+
+// Route::get('welcome', function () {
+//     return "Xin chao";
+// });
+//Route::get('greeting', [\App\Http\Controllers\GreetingController::class, 'greet']);
+//Route::redirect($uri, $redirectTo, $status)
+//Route::view($uri, $viewName, $data)
+/*
+Route::prefix('greeting')->group(function () {
+	// work for: /greeting/vn
+    Route::get('vn', function () {
+        return "Xin chào!";
+    });
+
+    // work for: /greeting/en
+    Route::get('en', function () {
+        return "Hello!";
+    });
+
+    // work for: /greeting/cn
+    Route::get('cn', function () {
+        return "你好!";
+    });
+});
+*/
+/*
+Route::get('user/{id}', function ($id) {
+    return "User id: $id";
+});
+Route::get('user/{id?}', function ($id = null) {
+    if (!$id) {
+        return "Xin mời nhập id";
+    }
+
+    return "User id: $id";
+});
+Route::get('user/{id}/comment/{commentId}', function ($id, $commentId) {
+    return "User id: $id and comment id: $commentId";
+});
+Route::get('user/{id}/comment/{commentId}', function ($id, $commentId) {
+    return "User id: $id and comment id: $commentId";
+})->where('id', '[0-9]+')->where('commentId', '[0-9]+');
+
+Route::get('user/{id}/comment/{commentId}', function ($id, $commentId) {
+    return "User id: $id and comment id: $commentId";
+})->where(['id' => '[0-9]+', 'commentId' => '[0-9]+']);
+
+whereNumber($name): tuong duong voi where($name, '[0-9]+')
+whereAlpha($name): tuong duong voi where($name, '[a-zA-Z]+')
+whereAlphaNumeric($name): tuong duong voi where($name, '[a-zA-Z0-9]+')
+whereUuid($name): tuong duong voi where($name, '[\da-fA-F]{8}-[\da-fA-F]{4}-[\da-fA-F]{4}-[\da-fA-F]{4}-[\da-fA-F]{12}') (định dạng UUID)
 
 
+*/
+/*
+DI
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Route;
 
+Route::get('/users', function (Request $request) {
+    // ...
+});
+Route::get('user/{id}/comment/{commentId}', function (Request $request, $id, $commentId) {
+    return "User id: $id and comment id: $commentId";
+})->where(['id' => '[0-9]+', 'commentId' => '[0-9]+']);
+*/
 
 /*
-Route::middleware([
-    'auth:sanctum',
-    config('jetstream.auth_session'),
-    'verified'
-])->group(function () {
+Route::get('/user/profile', function () {
+    //
+})->name('profile');
+
+Route::prefix('user')->as('user.')->group(function () {
+    Route::get('profile', function () {
+        //
+    })->name('profile');
+
+    Route::get('setting', function () {
+        //
+    })->name('setting');
+});
+Route::prefix('user')->name('user.')->group(function () {
+    Route::get('profile', function () {
+        //
+    })->name('profile');
+
+    Route::get('setting', function () {
+        //
+    })->name('setting');
+});
+*/
+
+/*
+Route::middleware(['auth'])->group(function () {
+    Route::get('/user/profile', function () {
+        //
+    });
+});
+Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified'])->group(function () {
     Route::get('/dashboard', function () {
         return view('dashboard');
     })->name('dashboard');
 });
+*/
+/*
+Route::domain('{account}.example.com')->group(function () {
+    Route::get('user/{id}', function ($account, $id) {
+        //
+    });
+});
+*/
+
+/*
+use App\Models\User;
+
+Route::get('/users/{user}', function (User $user) {
+    return $user->email;
+});
+*/
+
+/*
+CSRF token
+app/Http/Middleware/VerifyCsrfToken.php
+
+
+http header voi header name la X-XSRF-TOKEN.
+parameter string voi name la _token.
+
+csrf_token().
+csrf_field().
+
+@csrf
+<form action="/example" method="POST">
+    @csrf
+</form>
+
+
+Route::current()
+Route::currentRouteName() 
+Route::currentRouteAction()
+
 */
