@@ -4,8 +4,6 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\JwtAuthController;
-use App\Http\Controllers\ResetPwdReqController;
-use App\Http\Controllers\UpdatePwdController;
 use App\Enums\Permission;
 
 
@@ -54,8 +52,8 @@ Route::group([
     'prefix' => 'auth'
 ], function ($router) {       
     Route::post('/signout', [JwtAuthController::class, 'signout']);
-    Route::post('/req-password-reset', [ResetPwdReqController::class, 'reqForgotPassword']);    
-    Route::post('/update-password', [UpdatePwdController::class, 'updatePassword']);
+   // Route::post('/req-password-reset', [ResetPwdReqController::class, 'reqForgotPassword']);    
+    //Route::post('/update-password', [UpdatePwdController::class, 'updatePassword']);
 }); 
 Route::group([
     'middleware' => 'jwt.auth',

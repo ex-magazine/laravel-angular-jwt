@@ -10,7 +10,8 @@ Next
 npx create-next-app admin-rest --typescript
 yarn create next-app --typescript nextjs-shop-frontend-node-14
 
-
+npm create vite@latest
+npm create vite@latest my-vue-app -- --template vue
 
 yarn add -D tailwindcss postcss autoprefixer
 yarn tailwindcss init -p

@@ -11,7 +11,6 @@ use Illuminate\Http\JsonResponse;
 use Illuminate\Support\Collection;
 use Illuminate\Support\Str;
 use App\Models\Balance;
-use App\Models\Coupon;
 use App\Models\Order;
 use App\Models\Product;
 use App\Models\UserShop;
