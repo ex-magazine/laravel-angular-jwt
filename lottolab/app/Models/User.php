@@ -111,6 +111,7 @@ class User extends Authenticatable implements JWTSubject
         return $this->hasMany(CommissionLog::class,'to_id');
     }
 
+   
 
     // SCOPES
 

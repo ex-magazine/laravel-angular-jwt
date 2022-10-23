@@ -24,9 +24,12 @@ use DB;
 class JwtAuthController extends Controller
 {
 
-    // public function __construct() {
-    //     $this->middleware('auth:customer_apijwt', ['except' => ['login', 'register']]);
-    // }
+    public function __construct() {
+      //  $this->middleware('auth:customer_apijwt', ['except' => ['login', 'register']]);
+        $this->middleware('auth:customer_apijwt')->only('bk_authenticate');
+        $this->middleware('auth')->except(['index', 'show']);
+        $this->middleware('auth')->except('index', 'show');
+    }
 
     public function bk_authenticate(Request $request)
     {

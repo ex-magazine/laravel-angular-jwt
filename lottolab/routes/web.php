@@ -19,7 +19,39 @@ Route::get('/clear', function(){
 */
 //Cron Route
 Route::get('cron','SiteController@cron')->name('cron');
-
+Route::resource('photos', PhotoController::class);
+/*
+Route::get('photos', function (Request $request) {
+    $validator = Validator::make($request->all(), [
+        'title' => 'required|unique:posts|max:255',
+        'body' => 'required',
+    ]);
+})->name('photos');
+Route::get('photos', function (Request $request) {
+    $validator = Validator::make($request->all(), [
+        'title' => 'required|unique:posts|max:255',
+        'body' => 'required',
+    ]);
+    if ($validator->fails()) {
+        // validate fails
+    }
+})->name('photos');
+Route::get('photos', function (Request $request) {
+    Validator::make($request->all(), [
+        'title' => 'required|unique:posts|max:255',
+        'body' => 'required',
+    ])->validate();
+})->name('photos');
+Route::resource('photos', PhotoController::class)->names(['create' => 'photos.build']);
+Route::resource('photos', PhotoController::class)->parameters(['users' => 'photos_id']);
+Route::apiResource('photos', PhotoController::class);
+Route::resource('photos', PhotoController::class)->except([
+    'index', 'show'
+]);
+Route::resource('photos', PhotoController::class)->only([
+    'index', 'show'
+]);
+*/
 Route::namespace('Gateway')->prefix('ipn')->name('ipn.')->group(function () {
     Route::post('paypal', 'Paypal\ProcessController@ipn')->name('Paypal');
     Route::get('paypal-sdk', 'PaypalSdk\ProcessController@ipn')->name('PaypalSdk');

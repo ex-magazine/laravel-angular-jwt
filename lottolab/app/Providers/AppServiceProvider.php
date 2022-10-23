@@ -13,7 +13,7 @@ use App\Models\User;
 use App\Models\Withdrawal;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Pagination\Paginator;
-
+use Illuminate\Support\Facades\Blade;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -35,8 +35,28 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
- 
+        /*
+        Blade::withoutDoubleEncoding();
+        Blade::directive('datetime', function ($expression) {
+            return "<?php echo ($expression)->format('d-m-y h:i'); ?>";
+        });
 
+        Blade::if('disk', function ($value) {
+            return config('filesystems.default') === $value;
+        });
+
+        @disk('local')
+            <!-- The application is using the local disk... -->
+        @elsedisk('s3')
+            <!-- The application is using the s3 disk... -->
+        @else
+            <!-- The application is using some other disk... -->
+        @enddisk
+
+        @unlessdisk('local')
+            <!-- The application is not using the local disk... -->
+        @enddisk
+        */
         $activeTemplate = activeTemplate();
         $general = GeneralSetting::first();
         $viewShare['general'] = $general;
