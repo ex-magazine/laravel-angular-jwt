@@ -34,7 +34,7 @@ php artisan make:migration ammelias_create_user_verification_codes_table --creat
 
 
 php artisan make:migration alter_users_table_add_two_column --table=user
-
+ 
 
 php artisan make:controller Ammelias/Admin/AdminController
 php artisan make:controller Ammelias/Admin/BlogController
@@ -110,9 +110,21 @@ php artisan make:model Product -rcm
 -m = migration
 
 
+composer dump-autoload
+php artisan config:clear
+php artisan view:clear
+
+php artisan config:cache
+php artisan migrate --force
+php artisan sitemap:generate 
+
 php artisan down --secret="1630542a-246b-4b66-afa1-dd72a4c43515"
 
 php artisan down --render="errors::503"
+
+php artisan make:resource Products --collection
+php artisan make:resource ProductCollection
+php artisan make:resource UserResource
 
 
 Route dành cho web.
@@ -125,3 +137,9 @@ php artisan route:clear
 
 php artisan view:cache
 php artisan view:clear
+
+php artisan make:test Posts/GetListPostTest
+
+phpunit --filter user_can_get_list_posts
+
+php artisan test --filter test_example

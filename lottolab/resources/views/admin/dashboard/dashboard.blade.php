@@ -30,7 +30,7 @@
                                     <img src="{{asset('assets/images/icon/total_user.svg')}}" alt="">
                                 </div>
                                 <div class="dash-text">
-                                    <h4 class="qz-blance">{!! clean($totalUser) !!}</h4>
+                                    <h4 class="qz-blance">{!! $totalUser !!}</h4>
                                     <h5 class="qz-total-qustions">{{__('Total User')}}</h5>
                                 </div>
                             </div>
@@ -41,7 +41,7 @@
                                     <img src="{{asset('assets/images/icon/portfolio.svg')}}" alt="">
                                 </div>
                                 <div class="dash-text">
-                                    <h4 class="qz-blance">{!! clean($totalProject) !!}</h4>
+                                    <h4 class="qz-blance">{!! $totalProject !!}</h4>
                                     <h5 class="qz-total-qustions">{{__('Total Portfolio')}}</h5>
                                 </div>
                             </div>
@@ -52,7 +52,7 @@
                                     <img src="{{asset('assets/images/icon/team.svg')}}" alt="">
                                 </div>
                                 <div class="dash-text">
-                                    <h4 class="qz-blance">{!! clean($teams) !!}</h4>
+                                    <h4 class="qz-blance">{!! $teams !!}</h4>
                                     <h5 class="qz-total-qustions">{{__('Team Members')}}</h5>
                                 </div>
                             </div>
@@ -65,7 +65,7 @@
                                     <img src="{{asset('assets/images/icon/blog.svg')}}" alt="">
                                 </div>
                                 <div class="dash-text">
-                                    <h4 class="qz-blance">{!! clean($posts) !!}</h4>
+                                    <h4 class="qz-blance">{!! $posts !!}</h4>
                                     <h5 class="qz-total-qustions">{{__('Blog Posts')}}</h5>
                                 </div>
                             </div>
@@ -76,7 +76,7 @@
                                     <img src="{{asset('assets/images/icon/services.svg')}}" alt="">
                                 </div>
                                 <div class="dash-text">
-                                    <h4 class="qz-blance">{!! clean($services) !!}</h4>
+                                    <h4 class="qz-blance">{!! $services !!}</h4>
                                     <h5 class="qz-total-qustions">{{__('Services')}}</h5>
                                 </div>
                             </div>
@@ -87,7 +87,7 @@
                                     <img src="{{asset('assets/images/icon/pricing.svg')}}" alt="">
                                 </div>
                                 <div class="dash-text">
-                                    <h4 class="qz-blance">{!! clean($plans) !!}</h4>
+                                    <h4 class="qz-blance">{!! $plans !!}</h4>
                                     <h5 class="qz-total-qustions">{{__('Pricing Plans')}}</h5>
                                 </div>
                             </div>
@@ -128,9 +128,9 @@
                                                 <tr>
                                                     <td>{{$sl++}}</td>
                                                     <td class="table-image"><img src="{{$item->image}}" alt=""></td>
-                                                    <td>{!! clean(str_limit($item->title,80)) !!}</td>
-                                                    <td>{!! clean(get_comments_count($item->id)) !!}</td>
-                                                    <td>{!! clean(date('d M y', strtotime($item->created_at))) !!}</td>
+                                                    <td>{!! str_limit($item->title,80) !!}</td>
+                                                    <td>{!! get_comments_count($item->id) !!}</td>
+                                                    <td>{!! date('d M y', strtotime($item->created_at)) !!}</td>
                                                 </tr>
                                             @endforeach
                                         <tr class="qz-table-footer">
@@ -138,7 +138,7 @@
                                             <td></td>
                                             <td></td>
                                             <td></td>
-                                            <td colspan=""><h5><a href="{{ route('blogList') }}">{{__('View All')}}</a></h5></td>
+                                            <td colspan=""><h5><a href="{{ route('admin.ammelias.blogList') }}">{{__('View All')}}</a></h5></td>
                                         </tr>
                                         @else
                                             <tr>
@@ -173,9 +173,9 @@
                                                 <tr>
                                                     <td>{{$sl++}}</td>
                                                     <td class="table-image"><img src="{{$item->image[0]}}" alt=""></td>
-                                                    <td>{!! clean(str_limit($item->title,80)) !!}</td>
-                                                    <td>{!! clean($item->category->name) !!}</td>
-                                                    <td>{!! clean(date('d M y', strtotime($item->created_at))) !!}</td>
+                                                    <td>{!! str_limit($item->title,80) !!}</td>
+                                                    <td>{!! $item->category->name !!}</td>
+                                                    <td>{!! date('d M y', strtotime($item->created_at)) !!}</td>
                                                 </tr>
                                             @endforeach
                                         <tr class="qz-table-footer">
@@ -183,7 +183,7 @@
                                             <td></td>
                                             <td></td>
                                             <td></td>
-                                            <td colspan=""><h5><a href="{{ route('portfolioList') }}">{{__('View All')}}</a></h5></td>
+                                            <td colspan=""><h5><a href="{{ route('admin.ammelias.portfolioList') }}">{{__('View All')}}</a></h5></td>
                                         </tr>
                                         @else
                                             <tr>

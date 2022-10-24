@@ -80,13 +80,7 @@
                                     <i class="menu-icon las la-dot-circle"></i>
                                     <span class="menu-title">@lang('Subscriber List')</span>
                                 </a>
-                            </li>
-                            <li class="sidebar-menu-item {{menuActive('admin.ammelias.userProfile')}} ">
-                                <a href="{{route('admin.ammelias.userProfile')}}" class="nav-link">
-                                    <i class="menu-icon las la-dot-circle"></i>
-                                    <span class="menu-title">@lang('User Profile')</span>
-                                </a>
-                            </li>
+                            </li>                         
                             <li class="sidebar-menu-item {{menuActive('admin.ammelias.teamList')}} ">
                                 <a href="{{route('admin.ammelias.teamList')}}" class="nav-link">
                                     <i class="menu-icon las la-dot-circle"></i>

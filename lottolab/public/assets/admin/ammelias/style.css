@@ -163,6 +163,7 @@ table.table.category-table tbody td{
     font-size: 15px;
     padding: 25px 15px;
     border-color: #ecf1ff;
+    text-align: left;
 }
 
 .table-responsive.category-table{
@@ -280,6 +281,10 @@ table td .people img{
 .btn-danger,
 .btn-success{
     min-width: 200px;
+}
+
+.table-image img {
+    max-width: 100px;
 }
 /* Start add category 
 

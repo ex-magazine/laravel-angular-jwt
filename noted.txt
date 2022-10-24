@@ -6,7 +6,7 @@ composer require laravel/ui --dev
 composer require --with-all-dependencies league/flysystem-aws-s3-v3 "^1.0"
 
 php artisan make:enum UserType
-
+php artisan optimize
 php artisan ui bootstrap 
 php artisan ui vue
 php artisan ui react
@@ -214,5 +214,461 @@ Route::get('/user', function () {
 Route::get('/', function () {
     return redirect()->back();
 })->middleware('validate_token:/login');
+
+
+
+url('home');
+// http://example.com/home
+
+url('home', ['page', 2]);
+// http://example.com/home/page/2
+
+url('home', ['page', 2], true);
+// https://example.com/home/page/2
+
+echo url()->current();
+echo url()->full();
+echo url()->previous();
+
+echo URL::current();
+echo URL::full();
+echo URL::previous();
+
+echo route('post.show', ['post' => 1]);
+Route::get('/post/{post}/comment/{comment}', function () {
+    //
+})->name('comment.show');
+
+echo route('comment.show', ['post' => 1, 'comment' => 3]);
+
+// http://example.com/post/1/comment/3
+
+
+Route::get('/post/{post}', function () {
+    //
+})->name('post.show');
+
+echo route('post.show', ['post' => 1, 'search' => 'rocket']);
+
+// http://example.com/post/1?search=rocket
+
+
+use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\URL;
+
+Route::get('home', function () {
+    return 'home';
+})->name('home')->middleware('signed');
+
+echo URL::signedRoute('home');
+
+// http://example.com/home?signature=d2f00428a23f6aae7f365dbbdb69f45a0a69633a1943e287abd7d16df6566da8
+
+
+
+
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\URL;
+
+Route::get('home', function (Request $request) {
+    if (! $request->hasValidSignature()) {
+        abort(401);
+    }
+
+    return 'home';
+})->name('home');
+
+echo URL::signedRoute('home');
+
+// http://example.com/home?signature=d2f00428a23f6aae7f365dbbdb69f45a0a69633a1943e287abd7d16df6566da8
+
+
+
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\URL;
+
+Route::get('home', function (Request $request) {
+    if (! $request->hasValidSignature()) {
+        abort(401);
+    }
+    return 'home';
+})->name('home');
+
+Route::get('/', function () {
+    return URL::temporarySignedRoute('home', now()->addHours(2));
+});
+
+// http://127.0.0.1:8000/home?expires=1610708830&signature=2010579f38999eca041cfb1b63c29355531ad0c318b19605f27ec8ccd68eeb65
+
+
+
+
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\URL;
+
+URL::defaults(['locale' => 'vi']);
+
+Route::get('{locale}/about/', function (Request $request) {
+    return 'about';
+})->name('about');
+
+Route::get('/', function () {
+    return route('about');
+});
+
+
+
+
+ $value = $request->session()->get('key');
+// hoặc
+$value = session('key');
+// hoặc
+
+$value = session()->get('key');
+
+// hoặc
+
+$value = Session::get('key');
+
+$value = $request->session()->get('key', 'default');
+
+$value = $request->session()->get('key', function () {
+    return 'default';
+});
+
+session()->put($key, $value);
+
+$sessions = Session::push("cart.products", ['id' => 2, 'item' => 1]);
+$sessions = Session::pull("cart.products");
+$request->session()->increment('count'); 
+$request->session()->increment('count', $incrementBy = 2);
+$request->session()->decrement('count');
+$request->session()->decrement('count', $decrementBy = 2);
+
+$sessions = Session::flash($key, $value);
+$request->session()->reflash();
+
+// Forget a single key...
+$request->session()->forget('name');
+
+// Forget multiple keys...
+$request->session()->forget(['name', 'status']);
+$request->session()->flush();
+$request->session()->regenerate();
+$request->session()->invalidate();
+
+
+$request->validate($rules, $customMessage);
+
+Route::get('store', function (Request $request) {
+    $request->validate([
+        'id' => 'required|integer'
+    ]);
+})->name('store');
+Route::get('store', function (Request $request) {
+    $request->validate([
+        'id' => ['required', 'integer']
+    ]);
+})->name('store');
+
+
+
+
+$errors = $validator->errors();
+echo $errors->first('email');
+{{ $errors->first('email') }}
+foreach ($errors->get('email') as $message) {
+    //
+}
+foreach ($errors->get('attachments.*') as $message) {
+    //
+}
+foreach ($errors->all() as $message) {
+    //
+}
+if ($errors->has('email')) {
+    //
+}
+
+use Illuminate\Support\Facades\Validator;
+
+$validator = Validator::make($request->all(), [
+    'title' => [
+        'required',
+        'max:255',
+        function ($attribute, $value, $fail) {
+            if ($value === 'foo') {
+                $fail('The '.$attribute.' is invalid.');
+            }
+        },
+    ],
+]);
+
+
+
+
+Collection::macro($methodName, $closure);
+Collection::macro('toUpper', function () {
+    return $this->map(function ($value) {
+        return Str::upper($value);
+    });
+});
+
+
+LazyCollection::make();
+use Illuminate\Support\LazyCollection;
+LazyCollection::make(function () {
+    $handle = fopen('log.txt', 'r');
+
+    while (($line = fgets($handle)) !== false) {
+        yield $line;
+    }
+});
+
+
+
+(\Illuminate\Support\Facades\DB).
+use Illuminate\Support\Facades\Route;
+
+$users = DB::select("SELECT * FROM users where active = 1");
+$users = DB::select("SELECT * FROM users where active = ?", [1]);
+$users = DB::select('select * from users where id = :id', ['id' => 1]);
+DB::insert("insert into users (id, name) values (1, 'Marc')");
+DB::insert('insert into users (id, name) values (?, ?)', [1, 'Marc']);
+$affected = DB::update("update users set votes = 100 where name = 'Anita'");
+$affected = DB::update('update users set votes = ? where name = ?', [100, 'Anita']);
+$deleted = DB::delete('delete from users');
+DB::statement('drop table users');
+$users = DB::connection('sqlite')->select(...);
+DB::listen(function ($query) {
+    // $query->sql
+    // $query->bindings
+    // $query->time
+});
+DB::transaction(function () {
+    DB::update('update users set votes = 1');
+
+    DB::delete('delete from posts');
+});
+
+DB::transaction(function () {
+    DB::update('update users set votes = 1');
+
+    DB::delete('delete from posts');
+}, 5);
+try {
+    DB::beginTransaction();
+    DB::update('update users set votes = 1');
+    DB::delete('delete from posts');
+    DB::commit();
+} catch (Exception $exception) {
+    DB::commit();
+}
+
+
+$users = DB::table('users')->get();
+$user = DB::table('users')->first();
+$user = DB::table('users')->where('name', 'Tai')->first();
+$user = DB::table('users')->find(3);
+DB::table('users')->orderBy('id')->chunk(100, function ($users) {
+    foreach ($users as $user) {
+        //
+    }
+});
+
+
+DB::table('users')->orderBy('id')->chunk(100, function ($users) {
+    foreach ($users as $user) {
+        if ($users->id) {
+            return false; // Stop chunking
+        }
+
+        // code
+    }
+});
+$users = DB::table('users')->count();
+$price = DB::table('orders')->max('price');
+
+$price = DB::table('orders')->min('price');
+
+$price = DB::table('orders')->avg('price');
+
+$price = DB::table('orders')->sum('price');
+if (DB::table('orders')->where('finalized', 1)->exists()) {
+    // ...
+}
+if (DB::table('orders')->where('finalized', 1)->doesntExist()) {
+    // ...
+}
+$users = DB::table('users')
+            ->select('name', 'email')
+            ->get();
+$users = DB::table('users')
+            ->select(['name', 'email'])
+            ->get();
+$users = DB::table('users')
+            ->select('name', 'email as user_email')
+            ->get();
+
+$query = DB::table('users')->select('name');
+
+$users = $query->addSelect('age')->get();
+$users = DB::table('users')->distinct()->get();
+
+$users = DB::table('users')
+             ->select(DB::raw('count(*) as user_count, status'))
+             ->where('status', '<>', 1)
+             ->groupBy('status')
+             ->get();
+
+$users = DB::table('users')
+            ->join('contacts', 'users.id', '=', 'contacts.user_id')
+            ->join('orders', 'users.id', '=', 'orders.user_id')
+            ->select('users.*', 'contacts.phone', 'orders.price')
+            ->get();
+$users = DB::table('users')
+            ->leftJoin('posts', 'users.id', '=', 'posts.user_id')
+            ->get();
+
+$users = DB::table('users')
+            ->rightJoin('posts', 'users.id', '=', 'posts.user_id')
+            ->get();
+
+$sizes = DB::table('sizes')
+            ->crossJoin('colors')
+            ->get();
+
+
+DB::table('users')
+        ->join('contacts', function ($join) {
+            $join->on('users.id', '=', 'contacts.user_id')
+                 ->where('contacts.user_id', '>', 5);
+        })
+        ->get();
+$latestPosts = DB::table('posts')
+                   ->select('user_id', DB::raw('MAX(created_at) as last_post_created_at'))
+                   ->where('is_published', true)
+                   ->groupBy('user_id');
+
+$users = DB::table('users')
+        ->joinSub($latestPosts, 'latest_posts', function ($join) {
+            $join->on('users.id', '=', 'latest_posts.user_id');
+        })->get();
+
+$first = DB::table('users')
+            ->whereNull('first_name');
+
+$users = DB::table('users')
+            ->whereNull('last_name')
+            ->union($first)
+            ->get();
+$users = DB::table('users')
+                ->where('votes', '=', 100)
+                ->where('age', '>', 35)
+                ->get();
+
+DB::table('users')->where('votes', '=', 100);
+DB::table('users')->where('votes', 100);
+
+DB::table('users')->where('votes', 100)->where('age', 15);
+DB::table('users')->where(['votes' => 100, 'age' => 15]);
+
+
+$users = DB::table('users')
+                    ->where('votes', '>', 100)
+                    ->orWhere('name', 'John')
+                    ->get();
+
+$users = DB::table('users')
+            ->where('votes', '>', 100)
+            ->orWhere(function($query) {
+                $query->where('name', 'Abigail')
+                      ->where('votes', '>', 50);
+            })
+            ->get();
+
+$users = DB::table('users')
+                ->whereNull('updated_at')
+                ->get();
+
+$users = DB::table('users')
+                ->whereDate('created_at', '2016-12-31')
+                ->get();
+
+$users = DB::table('users')
+                ->whereMonth('created_at', '12')
+                ->get();
+
+$users = DB::table('users')
+                ->whereDay('created_at', '31')
+                ->get();
+
+$users = DB::table('users')
+                ->whereYear('created_at', '2016')
+                ->get();
+
+$users = DB::table('users')
+                ->whereTime('created_at', '=', '11:20:45')
+                ->get();
+
+paginate($perPage, $columns, $pageName, $page);
+
+return view('user.index', [
+        'users' => DB::table('users')->paginate(5)
+    ]);
+
+$users = DB::table('users')->simplePaginate(15);
+$users = User::paginate(15);
+$users = User::where('votes', '>', 100)->paginate(15);
+
+Route::get('/users', function () {
+    $users = User::paginate(15);
+
+    $users->withPath('/admin/users');
+
+    //
+});
+
+
+Route::get('/users', function () {
+    $users = User::paginate(15);
+    $users->appends(['sort' => 'votes']);
+    //
+});
+
+$users = User::paginate(15)->withQueryString();
+$users = User::paginate(15)->fragment('users');
+
+
+Schema::create('posts', function (Blueprint $table) {
+        $table->id()->startingValue(1200);
+        ...
+    });
+
+
+
+php artisan config:clear
+php artisan migrate:refresh --seed
+php artisan db:seed
+php artisan db:seed --class=UserSeeder
+
+php artisan make:model Flight -mfsc
+php artisan make:observer UserObserver --model=User
+
+php artisan schema:dump
+php artisan schema:dump --prune
+
+php artisan make:rule Uppercase
+php artisan make:request StoreContactRequest
+php artisan session:table
+
+php artisan make:controller ProvisionServer --invokable
+
+php artisan make:controller PhotoController --resource
+
+php artisan make:controller ControllerName --resource --model=ModelName
 
 php artisan make:mail SendMailreset --markdown=Email.passwordReset

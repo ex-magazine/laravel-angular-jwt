@@ -18,7 +18,7 @@
             </div>
         </div>
     </div>
-    <!-- End page title -->
+    <!-- End page title --> 
     @include('layouts.message')
     <div class="qz-content-area">
         <div class="card add-category">
@@ -90,8 +90,9 @@
                                         <div class="qz-question-category">
                                             <select name="lang" class="form-control">
                                                 @foreach(language() as $val)
+                                               
                                                     <option @if(isset($adm_setting['lang']) && $adm_setting['lang']==$val) selected @endif value="{{$val}}">{{langName($val)}}</option>
-                                                @endforeach
+                                                @endforeach 
                                             </select>
                                         </div>
                                         <span class="text-danger"><strong>{{ $errors->first('lang') }}</strong></span>
