@@ -2,7 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 
-
+use App\Http\Controllers\Api\AuthController;
 
 Route::get('/clear', function(){
     \Illuminate\Support\Facades\Artisan::call('optimize:clear');
@@ -19,6 +19,10 @@ Route::get('/clear', function(){
 */
 //Cron Route
 Route::get('cron','SiteController@cron')->name('cron');
+Route::post('/react-next-login', [AuthController::class, 'reactNextLogin']);
+Route::post('/react-next-logout', [AuthController::class, 'reactNextLogout']);
+
+
 Route::resource('photos', PhotoController::class);
 /*
 Route::get('photos', function (Request $request) {
@@ -97,7 +101,7 @@ Route::prefix('ticket')->group(function () {
 Route::namespace('Admin')->prefix('admin')->name('admin.')->group(function () {
     Route::namespace('Auth')->group(function () {
         Route::get('/', 'LoginController@showLoginForm')->name('login');
-        Route::post('/', 'LoginController@login')->name('login');
+        Route::post('/', 'LoginController@login')->name('loginpost');
         Route::get('logout', 'LoginController@logout')->name('logout');
         // Admin Password Reset
         Route::get('password/reset', 'ForgotPasswordController@showLinkRequestForm')->name('password.reset');
@@ -271,7 +275,7 @@ Route::namespace('Admin')->prefix('admin')->name('admin.')->group(function () {
         Route::post('user/update/{id}', 'ManageUsersController@update')->name('users.update');
         Route::post('user/add-sub-balance/{id}', 'ManageUsersController@addSubBalance')->name('users.add.sub.balance');
         Route::get('user/send-email/{id}', 'ManageUsersController@showEmailSingleForm')->name('users.email.single');
-        Route::post('user/send-email/{id}', 'ManageUsersController@sendEmailSingle')->name('users.email.single');
+        Route::post('user/send-email/{id}', 'ManageUsersController@sendEmailSingle')->name('users.email.singlepost');
         Route::get('user/login/{id}', 'ManageUsersController@login')->name('users.login');
         Route::get('user/transactions/{id}', 'ManageUsersController@transactions')->name('users.transactions');
         Route::get('user/deposits/{id}', 'ManageUsersController@deposits')->name('users.deposits');
@@ -290,7 +294,7 @@ Route::namespace('Admin')->prefix('admin')->name('admin.')->group(function () {
         Route::get('subscriber', 'SubscriberController@index')->name('subscriber.index');
         Route::get('subscriber/send-email', 'SubscriberController@sendEmailForm')->name('subscriber.sendEmail');
         Route::post('subscriber/remove', 'SubscriberController@remove')->name('subscriber.remove');
-        Route::post('subscriber/send-email', 'SubscriberController@sendEmail')->name('subscriber.sendEmail');
+        Route::post('subscriber/send-email', 'SubscriberController@sendEmail')->name('subscriber.sendEmailpost');
 
         Route::get('user/wins/{id}', 'ManageUsersController@wins')->name('users.wins');
         Route::get('user/tickets/{id}', 'ManageUsersController@tickets')->name('users.tickets');
@@ -443,7 +447,7 @@ Route::namespace('Admin')->prefix('admin')->name('admin.')->group(function () {
 
         // Logo-Icon
         Route::get('setting/logo-icon', 'GeneralSettingController@logoIcon')->name('setting.logo.icon');
-        Route::post('setting/logo-icon', 'GeneralSettingController@logoIconUpdate')->name('setting.logo.icon');
+        Route::post('setting/logo-icon', 'GeneralSettingController@logoIconUpdate')->name('setting.logo.iconpost');
 
         //Custom CSS
         Route::get('custom-css','GeneralSettingController@customCss')->name('setting.custom.css');
@@ -465,9 +469,9 @@ Route::namespace('Admin')->prefix('admin')->name('admin.')->group(function () {
 
         // Email Setting
         Route::get('email-template/global', 'EmailTemplateController@emailTemplate')->name('email.template.global');
-        Route::post('email-template/global', 'EmailTemplateController@emailTemplateUpdate')->name('email.template.global');
+        Route::post('email-template/global', 'EmailTemplateController@emailTemplateUpdate')->name('email.template.globalpost');
         Route::get('email-template/setting', 'EmailTemplateController@emailSetting')->name('email.template.setting');
-        Route::post('email-template/setting', 'EmailTemplateController@emailSettingUpdate')->name('email.template.setting');
+        Route::post('email-template/setting', 'EmailTemplateController@emailSettingUpdate')->name('email.template.settingpost');
         Route::get('email-template/index', 'EmailTemplateController@index')->name('email.template.index');
         Route::get('email-template/{id}/edit', 'EmailTemplateController@edit')->name('email.template.edit');
         Route::post('email-template/{id}/update', 'EmailTemplateController@update')->name('email.template.update');
@@ -476,7 +480,7 @@ Route::namespace('Admin')->prefix('admin')->name('admin.')->group(function () {
 
         // SMS Setting
         Route::get('sms-template/global', 'SmsTemplateController@smsTemplate')->name('sms.template.global');
-        Route::post('sms-template/global', 'SmsTemplateController@smsTemplateUpdate')->name('sms.template.global');
+        Route::post('sms-template/global', 'SmsTemplateController@smsTemplateUpdate')->name('sms.template.globalpost');
         Route::get('sms-template/setting','SmsTemplateController@smsSetting')->name('sms.templates.setting');
         Route::post('sms-template/setting', 'SmsTemplateController@smsSettingUpdate')->name('sms.template.setting');
         Route::get('sms-template/index', 'SmsTemplateController@index')->name('sms.template.index');

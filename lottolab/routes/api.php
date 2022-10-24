@@ -3,6 +3,7 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
+use App\Http\Controllers\Api\TicketbController;
 use App\Http\Controllers\JwtAuthController;
 use App\Enums\Permission;
 
@@ -104,7 +105,7 @@ Route::group([
 
 
 
-
+Route::get('/react-next-ticketb', [TicketbController::class, 'index'])->middleware('auth:sanctum');
 
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();

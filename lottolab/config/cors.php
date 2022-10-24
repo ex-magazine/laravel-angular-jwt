@@ -15,7 +15,7 @@ return [
     |
     */
 
-    'paths' => ['api/*', 'sanctum/csrf-cookie'],
+    'paths' => ['api/*', 'sanctum/csrf-cookie', 'react-next-login', 'react-next-logout'],
 
     //'paths' => ['api/*'],   
 
@@ -31,7 +31,7 @@ return [
 
     'max_age' => 0,
 
-    'supports_credentials' => false,
+    'supports_credentials' => true,
 
 ];
 
