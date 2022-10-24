@@ -16,4 +16,9 @@ class Category extends Model
         return $p;
     }
 
+    public function getAllParent()
+    {
+        Category::whereNull('parent')->get(['id', 'name']);
+    }
+
 }

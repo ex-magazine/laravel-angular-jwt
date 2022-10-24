@@ -397,6 +397,7 @@ function language()
         $langName = basename($file, '.json');
         $lang[$langName] = $langName;
     }
+
     return empty($lang) ? false : $lang;
 }
 
@@ -409,6 +410,8 @@ function langName($input = null)
         'ja' => 'Japanese',
         'zh' => 'Chinese',
         'ko' => 'Korean',
+        'bn' => "Bangla",
+        'hn' => "Hindi",
     ];
     if (is_null($input)) {
         return $output;

@@ -15,6 +15,7 @@ class SettingController extends Controller
     private function update_or_create($slug,$value){
         return AdminSetting::updateOrCreate(['slug'=>$slug],['slug'=>$slug,'value'=>$value]);
     }
+    
     // Admin setting view
     public function adminSettings(){
         $data['pageTitle']=__('General Settings');
@@ -22,7 +23,9 @@ class SettingController extends Controller
         $data['sub_menu'] = 'general';
         $data['adm_setting'] = allsetting();
 
-        return view('admin.setting.setting',$data);
+
+
+        return view('admin.setting.setting',$data); 
     }
     // Website setting view
     public function webSettings(){

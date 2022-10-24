@@ -278,7 +278,7 @@ class AdminController extends Controller
      * adminDashboardView
      *
      * Basic view of admin dashboard
-     *
+     *  
      *
      *
      *
@@ -288,6 +288,8 @@ class AdminController extends Controller
         $data['pageTitle'] = __('Admin|Dashboard');
         $data['menu'] = 'dashboard';
         $data['totalUser'] = User::where(['active_status'=> STATUS_ACTIVE, 'role' => USER_ROLE_USER])->count();
+
+      
         $data['totalProject'] = Portfolio::where(['status'=> STATUS_ACTIVE])->count();
         $data['teams'] = Team::where(['status'=> STATUS_ACTIVE])->count();
         $data['posts'] = Blog::where(['status'=> STATUS_ACTIVE])->count();
@@ -299,6 +301,8 @@ class AdminController extends Controller
             ->whereYear('created_at', Carbon::now()->year)
             ->groupBy('months')
             ->get();
+
+          
         $all_month = all_months();
         if (isset($monthlyPosts[0])) {
             foreach ($monthlyPosts as $mPosts) {
@@ -312,11 +316,14 @@ class AdminController extends Controller
         $data['all_posts'] = $allPosts;
 
         $data['blogs'] = Blog::where(['status'=> STATUS_ACTIVE])->orderBy('id', 'desc')->limit(4)->get();
+    
+       /*
         $data['view_posts'] = Blog::join('user_blogs', 'user_blogs.blog_id', '=', 'blogs.id')
             ->where(['blogs.status'=> STATUS_ACTIVE])
             ->select('blogs.*', DB::raw("count(user_blogs.blog_id) as count"))
             ->groupBy('user_blogs.blog_id')
             ->limit(4)->get();
+            */
         $data['portfolios'] = Portfolio::where(['status'=> STATUS_ACTIVE])->limit(4)->get();
 
         return view('admin.dashboard.dashboard', $data);

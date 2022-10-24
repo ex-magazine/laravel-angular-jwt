@@ -21,6 +21,9 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Validation\Rules\Password;
+use Illuminate\Support\Facades\Session;
+use Illuminate\Support\LazyCollection;
+
 
 class UserController extends Controller
 {
@@ -37,6 +40,9 @@ class UserController extends Controller
         $phases = Phase::where('status',1)->where('draw_status',0)->where('start','<',$time)->orderBy('end')->whereHas('lottery',function($lottery){
             $lottery->where('status',1);
         })->limit(6)->with(['lottery'])->get();
+
+      
+   
 
         return view($this->activeTemplate . 'user.dashboard', compact('pageTitle', 'user', 'phases'));
     }
