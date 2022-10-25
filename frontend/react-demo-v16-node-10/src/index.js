@@ -11,7 +11,9 @@ import './fonts/futura.css';
 import './common.scss';
 import 'react-modal-video/scss/modal-video.scss';
 import "slick-carousel/slick/slick.css";
-import 'react-id-swiper/lib/styles/scss/swiper.scss';
+// import 'react-id-swiper/lib/styles/scss/swiper.scss';
+import 'react-id-swiper/lib/styles/css/swiper.css'
+
 import {I18nextProvider} from 'react-i18next';
 import i18next from 'i18next';
 import './i18n';
