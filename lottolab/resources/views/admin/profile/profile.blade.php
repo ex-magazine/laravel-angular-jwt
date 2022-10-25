@@ -37,72 +37,7 @@
                         </div>
                         <div class="col-xl-7">
                             <div class="qz-user-profile-from">
-                                {{ Form::open(['route' => 'admin.ammelias.updateProfile', 'files' => 'true']) }}
-                                    <div class="form-group">
-                                        <label>{{__('Name')}}</label>
-                                        <input type="text" name="name" value="{{$user->name}}" class="form-control" placeholder="">
-                                        <span class="text-danger"><strong>{{ $errors->first('name') }}</strong></span>
-                                    </div>
-                                    <div class="form-group">
-                                        <label>{{__('Phone')}}</label>
-                                        <input type="text" name="phone" value="{{$user->phone}}" class="form-control" placeholder="">
-                                        <span class="text-danger"><strong>{{ $errors->first('phone') }}</strong></span>
-                                    </div>
-                                    <div class="form-group">
-                                        <label>{{__('Country')}}</label>
-                                        <div class="qz-question-category">
-                                            <select name="country" class="form-control">
-                                                <option value="">{{__('Select Country')}}</option>
-                                                @foreach(country() as $key => $value)
-                                                    <option @if(isset($user) && ($user->country == $key)) selected @elseif((old('country') != null)
-                                                     && (old('country') == $key)) selected @endif value="{{ $key }}">{{$value}}</option>
-                                                @endforeach
-                                            </select>
-                                        </div>
-                                        <span class="text-danger"><strong>{{ $errors->first('country') }}</strong></span>
-                                    </div>
-                                    <div class="form-group">
-                                        <label>{{__('City')}}</label>
-                                        <input type="text" name="city" value="{{$user->city}}" class="form-control" placeholder="">
-                                    </div>
-                                    <div class="form-group">
-                                        <label>{{__('State')}}</label>
-                                        <input type="text" name="state" value="{{$user->state}}" class="form-control" placeholder="">
-                                    </div>
-                                    <div class="form-group">
-                                        <label>{{__('zip')}}</label>
-                                        <input type="text" name="zip" value="{{$user->zip}}" class="form-control" placeholder="">
-                                    </div>
-                                    <div class="form-group">
-                                        <label>{{__('Full Address')}}</label>
-                                        <input type="text" name="address" value="{{$user->address}}" class="form-control" placeholder="">
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-lg-6">
-                                            <div class="form-group">
-                                                <label>{{__('Image')}}</label>
-                                                <div id="file-upload" class="section">
-                                                    <!--Default version-->
-                                                    <div class="row section">
-                                                        <div class="col s12 m12 l12">
-                                                            <input name="photo" type="file" id="input-file-now" class="dropify" data-default-file="{{isset($user) && !empty($user->photo) ? asset(path_user_image().$user->photo) : ''}}" />
-                                                            <span class="text-danger"><strong>{{ $errors->first('photo') }}</strong></span>
-                                                        </div>
-                                                    </div>
-                                                    <!--Default value-->
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-lg-6">
-                                            <div class="form-group">
-                                                <button type="submit" class="btn btn-primary btn-block add-category-btn"> {{__('Update')}} </button>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                {{ Form::close() }}
+                                Missing
                             </div>
                         </div>
                     </div>

@@ -48,10 +48,6 @@ class Ticketb extends Model
 {
     use HasFactory, SoftDeletes;
 
-    protected $table = 'ticketbs';
-   
-    protected $guarded = ['id'];
-
     protected $casts = [
         'created_at'   => 'datetime',
         'updated_at'   => 'datetime',
