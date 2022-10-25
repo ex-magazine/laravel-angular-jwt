@@ -72,7 +72,7 @@ class Kernel extends HttpKernel
         'checkStatus' => \App\Http\Middleware\CheckStatus::class,
         'checkStatusApi' => \App\Http\Middleware\CheckStatusApi::class,
        // 'guest' => \App\Http\Middleware\CORS::class,
-       // 'jwt.auth' => \Tymon\JWTAuth\Http\Middleware\Authenticate::class,
+        'auth.jwt' => \Tymon\JWTAuth\Http\Middleware\Authenticate::class,
         'jwt.verify' => \App\Http\Middleware\JwtMiddleware::class,
     ];
 }
